@@ -1,0 +1,46 @@
+[
+  {
+    "name": "Composite",
+    "blurb": "College comparison tool with a focus on equity.",
+    "backgroundcolor": "#6366f1",
+    "textcolor": "white",
+    "imageslug": "../Assets/composite_screenshot_1.png",
+    "points": [
+      "Implements Data from the US Department of Education",
+      "Sourced from a live database",
+      "Written in JavaScript using the React Framework",
+      "Uses Open-Source Libraries for Graphing",
+      "Involved Usage of Git CLI and Github CLI",
+      "Optimized for Accessibility"
+    ],
+    "technologies": ["JavaScript", "NPM", "Git", "Github", "ReactJS"],
+    "link": ""
+  },
+  {
+    "name": "Caldata",
+    "backgroundcolor": "#e2e8f0",
+    "textcolor": "#1f2937",
+    "blurb": "Learn about the countries' biggest state.",
+    "imageslug": "../Assets/caldata-screenshot.png",
+    "points": [
+      "Implements Data from the Californian Goverment and Climate Researchers",
+      "Sourced from live and local databases",
+      "Written in JavaScript using the React Framework",
+      "Data Analysis Conducted with Node.JS",
+      "Required SVG-Implementation",
+      "Involved Usage of Git CLI and Github CLI",
+      "Optimized for Accessibility"
+    ],
+    "technologies": [
+      "JavaScript",
+      "NPM",
+      "Git",
+      "Github",
+      "Node",
+      "http",
+      "CSS",
+      "ReactJS"
+    ],
+    "link": ""
+  }
+]
