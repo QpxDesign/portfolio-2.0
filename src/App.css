@@ -12,7 +12,6 @@ section {
   align-items: center;
   width: 100%;
   min-height: fit-content;
-  overflow: scroll;
 }
 button {
   transition: 0.4s;
@@ -25,7 +24,11 @@ button {
 .center {
   justify-content: center;
 }
-
+.disabled {
+  pointer-events: none;
+  color: #94a3b8 !important;
+  background-color: #475569 !important;
+}
 a {
   text-decoration: none;
 }
@@ -77,6 +80,7 @@ nav h1 {
 }
 .welcomemessage-wrapper {
   padding: 1em 2em;
+  font-size: 1.2em;
   font-family: "Basic-sans", sans-serif;
 }
 .welcomemessage-wrapper .greeting h1 {
@@ -154,4 +158,50 @@ nav h1 {
   flex-wrap: wrap;
   margin-top: 2em;
   grid-gap: 1em 1em;
+}
+.photo-stack {
+  width: 100% !important;
+  justify-content: center;
+  display: flex;
+  justify-content: flex-start;
+  gap: 0.75em;
+  overflow-x: scroll;
+  padding: 1em;
+  margin-left: 3em;
+  border-radius: 1em;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+.photo-stack img {
+  object-fit: cover;
+  width: 40em;
+  height: 30em;
+  border-radius: 1em;
+}
+.photography-section {
+  position: relative;
+}
+.photo-frame {
+  display: flex;
+  flex-direction: column;
+}
+.photo-frame h5 {
+  display: flex;
+  margin-top: 0.33em;
+  justify-content: flex-start;
+  align-items: center;
+  grid-gap: 0.25em;
+  font-size: 1.5em;
+}
+.photography-section .container {
+  display: flex;
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 1em;
+}
+.photography-section .container .button-1 {
+  font-size: 2em;
 }

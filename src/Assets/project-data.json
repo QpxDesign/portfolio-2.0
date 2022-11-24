@@ -1,10 +1,10 @@
 [
   {
     "name": "Composite",
+    "title": "Composite",
     "blurb": "College comparison tool with a focus on equity.",
     "backgroundcolor": "#6366f1",
     "textcolor": "white",
-    "imageslug": "../Assets/composite_screenshot_1.png",
     "points": [
       "Implements Data from the US Department of Education",
       "Sourced from a live database",
@@ -14,14 +14,16 @@
       "Optimized for Accessibility"
     ],
     "technologies": ["JavaScript", "NPM", "Git", "Github", "ReactJS"],
-    "link": ""
+    "link": "",
+    "github_link": "https://github.com/QpxDesign/composite/",
+    "isWebsite": true
   },
   {
     "name": "Caldata",
+    "title": "Caldata",
     "backgroundcolor": "#e2e8f0",
     "textcolor": "#1f2937",
     "blurb": "Learn about the countries' biggest state.",
-    "imageslug": "../Assets/caldata-screenshot.png",
     "points": [
       "Implements Data from the Californian Goverment and Climate Researchers",
       "Sourced from live and local databases",
@@ -41,6 +43,27 @@
       "CSS",
       "ReactJS"
     ],
-    "link": ""
+    "link": "",
+    "github_link": "https://github.com/QpxDesign/caldata/tree/main",
+    "isWebsite": true
+  },
+  {
+    "name": "school_webscraper",
+    "title": "Lunch Emailer",
+    "backgroundcolor": "#1e293b",
+    "textcolor": "#e2e8f0",
+    "blurb": "Know whats for lunch.",
+    "points": [
+      "Uses the Requests Library to Read HTML Lunch Menu",
+      "Interprets iCal Links and Finds Current Data",
+      "Evaluates Performance Metrics",
+      "Uses Unix Time Stamp to Handle Date/Time",
+      "Hosts IMAP & SMTP Server to Automatically Send HTML-Formatted Emails",
+      "Involved Usage of Git CLI and Github CLI"
+    ],
+    "technologies": ["Python", "Git", "Github", "http"],
+    "link": "",
+    "github_link": "https://github.com/QpxDesign/stugov_automailer",
+    "isWebsite": false
   }
 ]

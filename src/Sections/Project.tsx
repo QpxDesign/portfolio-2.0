@@ -2,13 +2,15 @@ import React from "react";
 
 interface ProjectObject {
   name: string;
+  title: string;
   blurb: string;
   backgroundcolor: string;
   textcolor: string;
-  imageslug: string;
   points: string[];
   technologies: string[];
   link: string;
+  isWebsite: boolean;
+  github_link: string;
 }
 
 interface ProjectProps {
@@ -25,7 +27,7 @@ export default function Project(props: ProjectProps) {
       }}
     >
       <div className="project-info-wrapper">
-        <h2>{props.data.name}</h2>
+        <h2>{props.data.title}</h2>
         <h3>{props.data.blurb}</h3>
       </div>
       <div className="quickfacts">
@@ -33,7 +35,7 @@ export default function Project(props: ProjectProps) {
           <img
             src={require("../Assets/" + props.data.name + ".png")}
             className="projectScreenshot"
-            alt={`demo of ${props.data.name}`}
+            alt={`demo of ${props.data.title}`}
           />
           <div className="logos-wrapper">
             {props.data.technologies.map((x, index) => {
@@ -42,6 +44,11 @@ export default function Project(props: ProjectProps) {
                   src={require("../Assets/logos/" + x + ".png")}
                   key={index}
                   alt={x}
+                  style={{
+                    background: props.data.backgroundcolor,
+                    color: props.data.textcolor,
+                    borderColor: props.data.textcolor,
+                  }}
                 />
               );
             })}
@@ -52,21 +59,7 @@ export default function Project(props: ProjectProps) {
             return <li key={index}>{x}</li>;
           })}
           <div className="options-list">
-            <button
-              className="button-1"
-              style={{
-                background: props.data.backgroundcolor,
-                color: props.data.textcolor,
-                borderColor: props.data.textcolor,
-              }}
-            >
-              Visit Site
-            </button>
-            <a
-              href="mailto:quinn@qpxdesign.com"
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a href={props.data.github_link}>
               <button
                 className="button-1"
                 style={{
@@ -75,9 +68,21 @@ export default function Project(props: ProjectProps) {
                   borderColor: props.data.textcolor,
                 }}
               >
-                Get In Touch
+                View Code
               </button>
             </a>
+            <button
+              className={
+                props.data.isWebsite ? "button-1" : "button-1 disabled"
+              }
+              style={{
+                background: props.data.backgroundcolor,
+                color: props.data.textcolor,
+                borderColor: props.data.textcolor,
+              }}
+            >
+              Visit Project
+            </button>
           </div>
         </ul>
       </div>

@@ -1,0 +1,27 @@
+[
+  {
+    "id": "23",
+    "location": "Mojave Dessert",
+    "description": "dessert mountain surrounded by limited vegitation"
+  },
+  {
+    "id": "38",
+    "location": "United States Supreme Court",
+    "description": "front of supreme court building with pillars"
+  },
+  {
+    "id": "100",
+    "location": "Black Lives Matter Plaza",
+    "description": "people walking on busy plaza with view of whitehouse"
+  },
+  {
+    "id": "45",
+    "location": "Valley of Fire State Park",
+    "description": "street sign with red-rock hills in the background"
+  },
+  {
+    "id": "113",
+    "location": "Yosemite National Park",
+    "description": "blue yosmite rocks and evergreens"
+  }
+]

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 
 interface CycleProps {
-    values: string[];
-    interval: number;
-    prefix: string;
-    suffix: string;
-    textcolor: string;
+  values: string[];
+  interval: number;
+  prefix: string;
+  suffix: string;
+  textcolor: string;
 }
 
 export default function Cycle(props: CycleProps) {
@@ -33,7 +33,12 @@ export default function Cycle(props: CycleProps) {
   return (
     <div>
       <h1
-        style={{ padding: 0, margin: 0, opacity: opacity, color: props.textcolor}}
+        style={{
+          padding: 0,
+          margin: 0,
+          opacity: opacity,
+          color: props.textcolor,
+        }}
         className="cycle-text"
       >
         {props.prefix}
