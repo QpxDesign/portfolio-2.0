@@ -3,7 +3,7 @@ import Footer from "../Components/Footer";
 import Header from "../Components/Header";
 import SelfImage from "../Assets/self.jpeg";
 import GithubLogo from "../Assets/logos/Github.png";
-import LinkedIn from "../Assets/logos/LinkedIn.png";
+import LinkedInLogo from "../Assets/logos/LinkedIn.png";
 
 export default function About() {
   return (
@@ -42,7 +42,7 @@ export default function About() {
                 <img src={GithubLogo} />
               </a>
               <a href="https://www.linkedin.com/in/quinn-patwardhan-3b32441b4/">
-                <img src={LinkedIn} />
+                <img src={LinkedInLogo} />
               </a>
             </div>
           </div>
