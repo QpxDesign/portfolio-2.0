@@ -71,18 +71,20 @@ export default function Project(props: ProjectProps) {
                 View Code
               </button>
             </a>
-            <button
-              className={
-                props.data.isWebsite ? "button-1" : "button-1 disabled"
-              }
-              style={{
-                background: props.data.backgroundcolor,
-                color: props.data.textcolor,
-                borderColor: props.data.textcolor,
-              }}
-            >
-              Visit Project
-            </button>
+            <a href={props.data.link}>
+              <button
+                className={
+                  props.data.isWebsite ? "button-1" : "button-1 disabled"
+                }
+                style={{
+                  background: props.data.backgroundcolor,
+                  color: props.data.textcolor,
+                  borderColor: props.data.textcolor,
+                }}
+              >
+                Visit Project
+              </button>
+            </a>
           </div>
         </ul>
       </div>

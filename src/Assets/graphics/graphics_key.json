@@ -1,0 +1,42 @@
+[
+  {
+    "filename": "CaldataLogo.png",
+    "name": "Caldata Logo",
+    "isFeatured": true
+  },
+  {
+    "filename": "FistWordmark.png",
+    "name": "Fist Wordmark",
+    "isFeatured": true
+  },
+  {
+    "filename": "HorizonLogoRedesign.png",
+    "name": "Newspaper Logo Redesign",
+    "isFeatured": true
+  },
+  {
+    "filename": "LooseEnds.png",
+    "name": "Loose Ends",
+    "isFeatured": false
+  },
+  {
+    "filename": "WaterUnderBridge.png",
+    "name": "Water Under The Bridge",
+    "isFeatured": false
+  },
+  {
+    "filename": "SunAndMoon.PNG",
+    "name": "Transformation from Winter to Summer",
+    "isFeatured": true
+  },
+  {
+    "filename": "Lightbulb.png",
+    "name": "Light Bulb",
+    "isFeatured": false
+  },
+  {
+    "filename": "Snowflake.png",
+    "name": "Snowflake",
+    "isFeatured": true
+  }
+]

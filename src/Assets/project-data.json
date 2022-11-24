@@ -14,7 +14,7 @@
       "Optimized for Accessibility"
     ],
     "technologies": ["JavaScript", "NPM", "Git", "Github", "ReactJS"],
-    "link": "",
+    "link": "https://637ff01b603c3c787e2c06b9--earnest-cucurucho-b11014.netlify.app/",
     "github_link": "https://github.com/QpxDesign/composite/",
     "isWebsite": true
   },
@@ -43,7 +43,7 @@
       "CSS",
       "ReactJS"
     ],
-    "link": "",
+    "link": "https://timely-pasca-a343c0.netlify.app/",
     "github_link": "https://github.com/QpxDesign/caldata/tree/main",
     "isWebsite": true
   },
@@ -65,5 +65,23 @@
     "link": "",
     "github_link": "https://github.com/QpxDesign/stugov_automailer",
     "isWebsite": false
+  },
+  {
+    "name": "cs_club_website",
+    "title": "CS Club Website",
+    "backgroundcolor": "#4E2B73",
+    "textcolor": "#e2e8f0",
+    "blurb": "Please join, i'm begging you.",
+    "points": [
+      "Uses CSS & Javascript Based Animations",
+      "Uses SQL-Based Personal Data Storage Method",
+      "Collected and Incorporated User Feedback ",
+      "Written in a time-crunch",
+      "Involved Usage of Git CLI and Github CLI"
+    ],
+    "technologies": ["ReactJS", "CSS", "Git", "Github"],
+    "link": "https://www.learnus.us/",
+    "github_link": "https://github.com/QpxDesign/csclubwesbite",
+    "isWebsite": true
   }
 ]

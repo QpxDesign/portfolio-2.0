@@ -2,7 +2,10 @@ import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
-import PhotoGallery from "./Pages/PhotoGallery";
+import PhotographyGallery from "./Pages/PhotgraphyGallery";
+import GraphicGallery from "./Pages/GraphicGallery";
+import NotFoundPage from "./Pages/NotFoundPage";
+import About from "./Pages/About";
 
 function App() {
   return (
@@ -10,7 +13,11 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/photo-gallery" element={<PhotoGallery />} />
+          <Route path="/photo-gallery" element={<PhotographyGallery />} />
+          <Route path="/graphics-gallery" element={<GraphicGallery />} />
+          <Route path="*" element={<NotFoundPage />} />
+          <Route path="/404" element={<NotFoundPage />} />
+          <Route path="/aboutme" element={<About />} />
         </Routes>
       </Router>
     </div>
