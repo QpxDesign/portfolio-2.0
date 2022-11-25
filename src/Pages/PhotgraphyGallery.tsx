@@ -4,6 +4,7 @@ import { BsArrowLeft } from "react-icons/bs";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import { Link } from "react-router-dom";
+import Footer from "../Components/Footer";
 
 export default function PhotgraphyGallery() {
   console.log();
@@ -69,7 +70,10 @@ export default function PhotgraphyGallery() {
           </div>
         </div>
       </div>
-      <div className="page-wrapper" style={{ backgroundColor: "#fff" }}>
+      <div
+        className="page-wrapper"
+        style={{ backgroundColor: "#fff", marginBottom: "1em" }}
+      >
         <div className="title-wrapper">
           <Link to="/">
             <BsArrowLeft className="back-icon" />
@@ -101,7 +105,8 @@ export default function PhotgraphyGallery() {
             })
           }
         </div>
-      </div>
+      </div>{" "}
+      <Footer />
     </>
   );
 }

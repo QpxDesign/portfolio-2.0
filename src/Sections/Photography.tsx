@@ -12,8 +12,6 @@ export default function Photography() {
         color: "white",
         background: "#164e63",
         justifyContent: "flex-start",
-        height: "100vh",
-        maxHeight: "100vh",
         overflow: "hidden",
       }}
     >

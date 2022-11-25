@@ -53,7 +53,7 @@ export default function Lead() {
       </div>
       <button
         style={{
-          position: "absolute",
+          marginTop:"10vh",
           bottom: "2em",
           padding: ".5em 2em",
           borderRadius: "10000rem",

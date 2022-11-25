@@ -5,10 +5,11 @@ import { AiFillCloseCircle } from "react-icons/ai";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import { Link } from "react-router-dom";
 import graphics_key from "../Assets/graphics_key.json";
+import Footer from "../Components/Footer";
 
 export default function PhotgraphyGallery() {
   console.log();
-  const runtime = new Array(129);
+  const runtime = new Array(graphics_key.length + 1);
   for (let i = 0; i < runtime.length; i++) {
     runtime[i] = i;
   }
@@ -61,7 +62,13 @@ export default function PhotgraphyGallery() {
           <div className="backward-area" onClick={() => handleSlideShowBack()}>
             <IoIosArrowBack className="backward-button" />
           </div>
-          <img src={"Assets/photos/image" + activeImage + ".webp"} />
+          <img
+            style={{ objectFit: "contain" }}
+            src={
+              "Assets/graphics/" +
+              graphics_key.find((x) => x.id === activeImage)?.filename
+            }
+          />
           <div
             className="forward-area"
             onClick={() => handleSlideShowForward()}
@@ -70,7 +77,10 @@ export default function PhotgraphyGallery() {
           </div>
         </div>
       </div>
-      <div className="page-wrapper" style={{ backgroundColor: "#fff" }}>
+      <div
+        className="page-wrapper"
+        style={{ backgroundColor: "#fff", marginBottom: "1em" }}
+      >
         <div className="title-wrapper">
           <Link to="/">
             <BsArrowLeft className="back-icon" />
@@ -84,12 +94,21 @@ export default function PhotgraphyGallery() {
               <img
                 src={"Assets/graphics/" + graphic.filename}
                 className="graphic"
+                onClick={() => {
+                  setActiveImage(index + 1);
+                  toggleSlideshow(true);
+                }}
+                onContextMenu={(e) => {
+                  e.preventDefault();
+                  return false;
+                }}
                 alt={graphic.name}
               />
             );
           })}
         </div>
       </div>
+      <Footer />
     </>
   );
 }

@@ -12,8 +12,6 @@ export default function GraphicDesign() {
         color: "white",
         background: "#64748b",
         justifyContent: "flex-start",
-        height: "100vh",
-        maxHeight: "100vh",
         overflow: "hidden",
       }}
     >

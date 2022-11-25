@@ -12,6 +12,7 @@ section {
   align-items: center;
   width: 100%;
   min-height: fit-content;
+  overflow: hidden;
 }
 button {
   transition: 0.4s;
@@ -146,7 +147,7 @@ nav h5 {
 .quickfacts ul {
   margin-bottom: auto;
   padding-left: 0.5em;
-  max-width: 90% !important;
+  max-width: 80% !important;
 }
 .quickfacts li {
   margin-top: 0.25em;
@@ -185,14 +186,14 @@ nav h5 {
   grid-gap: 1em 1em;
 }
 .photo-stack {
-  width: 100% !important;
+  width: 95% !important;
   justify-content: center;
   display: flex;
   justify-content: flex-start;
   gap: 0.75em;
   overflow-x: scroll;
   padding: 1em;
-  margin-left: 3em;
+  padding-right: 2em;
   border-radius: 1em;
   background-color: rgba(0, 0, 0, 0.25);
 }
@@ -225,7 +226,8 @@ nav h5 {
   flex: 1;
   justify-content: center;
   align-items: flex-end;
-  padding: 1em;
+  padding: 2em;
+  max-width: 100%;
 }
 .photography-section .container .button-1 {
   font-size: 2em;
@@ -376,7 +378,7 @@ nav h5 {
 .footer-wrapper {
   text-align: center;
   justify-content: center;
-  width: 100%;
+  max-width: 100%;
 }
 .page-wrapper {
   margin: 0;
