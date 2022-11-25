@@ -87,8 +87,10 @@ export default function About() {
               <li>Completor of Bebras Computing Challenge</li>
               <li>Member of Varisty Ultimate Frisbee Team</li>
             </ul>
-            I coded this wesbite 100% by hand in React using Typescript, NPM,
-            vanilla CSS and HTML. See below for all modules I used:
+            <p>
+              I coded this wesbite 100% by hand in React using Typescript, NPM,
+              vanilla CSS and HTML. See below for all modules I used:
+            </p>
             <ul style={{ marginTop: ".3em", fontFamily: "Basic-sans, sans" }}>
               <li>
                 <a
