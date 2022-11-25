@@ -1,7 +1,7 @@
 import React from "react";
 import { TbMapPin } from "react-icons/tb";
 import { BsArrowRight } from "react-icons/bs";
-import graphics_key from "../Assets/graphics/graphics_key.json";
+import graphics_key from "../Assets/graphics_key.json";
 import { Link } from "react-router-dom";
 
 export default function GraphicDesign() {
@@ -33,10 +33,7 @@ export default function GraphicDesign() {
           if (image.isFeatured === true) {
             return (
               <div className="photo-frame" key={index}>
-                <img
-                  src={require("../Assets/graphics/" + image.filename)}
-                  alt=""
-                />
+                <img src={"Assets/graphics/" + image.filename} alt="" />
                 <h5>{image.name}</h5>
               </div>
             );

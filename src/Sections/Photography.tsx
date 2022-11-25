@@ -1,7 +1,7 @@
 import React from "react";
 import { TbMapPin } from "react-icons/tb";
 import { BsArrowRight } from "react-icons/bs";
-import featured_images_key from "../Assets/photos/featured_images_key.json";
+import featured_images_key from "../Assets/featured_images_key.json";
 import { Link } from "react-router-dom";
 
 export default function Photography() {
@@ -33,7 +33,7 @@ export default function Photography() {
           return (
             <div className="photo-frame" key={index}>
               <img
-                src={require("../Assets/photos/image" + image.id + ".webp")}
+                src={"Assets/photos/image" + image.id + ".webp"}
                 alt={image.description}
               />
               <h5>

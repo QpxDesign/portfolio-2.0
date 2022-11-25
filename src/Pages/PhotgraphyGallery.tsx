@@ -60,9 +60,7 @@ export default function PhotgraphyGallery() {
           <div className="backward-area" onClick={() => handleSlideShowBack()}>
             <IoIosArrowBack className="backward-button" />
           </div>
-          <img
-            src={require("../Assets/photos/image" + activeImage + ".webp")}
-          />
+          <img src={"Assets/photos/image" + activeImage + ".webp"} />
           <div
             className="forward-area"
             onClick={() => handleSlideShowForward()}
@@ -95,9 +93,7 @@ export default function PhotgraphyGallery() {
                       return false;
                     }}
                     key={index}
-                    src={require("../Assets/photos/image" +
-                      (index + 1) +
-                      ".webp")}
+                    src={"Assets/photos/image" + (index + 1) + ".webp"}
                     alt="info"
                   />
                 );

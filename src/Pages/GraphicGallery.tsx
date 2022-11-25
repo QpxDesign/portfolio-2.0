@@ -4,7 +4,7 @@ import { BsArrowLeft } from "react-icons/bs";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import { Link } from "react-router-dom";
-import graphics_key from "../Assets/graphics/graphics_key.json";
+import graphics_key from "../Assets/graphics_key.json";
 
 export default function PhotgraphyGallery() {
   console.log();
@@ -61,9 +61,7 @@ export default function PhotgraphyGallery() {
           <div className="backward-area" onClick={() => handleSlideShowBack()}>
             <IoIosArrowBack className="backward-button" />
           </div>
-          <img
-            src={require("../Assets/photos/image" + activeImage + ".webp")}
-          />
+          <img src={"Assets/photos/image" + activeImage + ".webp"} />
           <div
             className="forward-area"
             onClick={() => handleSlideShowForward()}
@@ -84,7 +82,7 @@ export default function PhotgraphyGallery() {
           {graphics_key.map((graphic, index) => {
             return (
               <img
-                src={require("../Assets/graphics/" + graphic.filename)}
+                src={"Assets/graphics/" + graphic.filename}
                 className="graphic"
                 alt={graphic.name}
               />

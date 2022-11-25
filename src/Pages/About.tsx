@@ -2,8 +2,8 @@ import React from "react";
 import Footer from "../Components/Footer";
 import Header from "../Components/Header";
 import SelfImage from "../Assets/self.jpeg";
-import GithubLogo from "../Assets/logos/Github.png";
-import LinkedInLogo from "../Assets/logos/LinkedIn.png";
+import GithubLogo from "../Assets/Github.png";
+import LinkedInLogo from "../Assets/LinkedIn.png";
 
 export default function About() {
   return (

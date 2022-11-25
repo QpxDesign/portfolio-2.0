@@ -33,7 +33,7 @@ export default function Project(props: ProjectProps) {
       <div className="quickfacts">
         <div className="h-stack">
           <img
-            src={require("../Assets/" + props.data.name + ".png")}
+            src={"Assets/" + props.data.name + ".png"}
             className="projectScreenshot"
             alt={`demo of ${props.data.title}`}
           />
@@ -41,7 +41,7 @@ export default function Project(props: ProjectProps) {
             {props.data.technologies.map((x, index) => {
               return (
                 <img
-                  src={require("../Assets/logos/" + x + ".png")}
+                  src={"Assets/logos/" + x + ".png"}
                   key={index}
                   alt={x}
                   style={{
