@@ -7,13 +7,7 @@ export default function Lead() {
     window.scrollTo({ left: 0, top: window.innerHeight, behavior: "smooth" });
   }
   return (
-    <section
-      style={{
-        background:
-          "radial-gradient(at 64% 59%,#e34f6a 0,transparent 50%),radial-gradient(at 39% 30%,#fe897c 0,transparent 50%),radial-gradient(at 16% 50%,#f68dc5 0,transparent 50%),radial-gradient(at 51% 27%,#e84f59 0,transparent 50%),radial-gradient(at 62% 91%,#5cd5f0 0,transparent 50%),radial-gradient(at 19% 8%,#5defa3 0,transparent 50%),radial-gradient(at 91% 13%,#cdf193 0,transparent 50%)",
-        height: "90vh",
-      }}
-    >
+    <section className="lead">
       <div className="welcomemessage-wrapper">
         <div className="greeting">
           <Cycle
@@ -53,7 +47,7 @@ export default function Lead() {
       </div>
       <button
         style={{
-          marginTop:"10vh",
+          marginTop: "10vh",
           bottom: "2em",
           padding: ".5em 2em",
           borderRadius: "10000rem",
