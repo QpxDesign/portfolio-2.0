@@ -88,7 +88,7 @@ export default function PhotgraphyGallery() {
           <h1>Graphics</h1>
         </div>
 
-        <div className="gallery-wrapper graphic-gallery">
+        <div className="graphic-gallery">
           {graphics_key.map((graphic, index) => {
             return (
               <img

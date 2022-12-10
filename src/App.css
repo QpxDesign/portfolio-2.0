@@ -269,29 +269,30 @@ nav h5 {
 .gallery-wrapper {
   width: 90%;
   margin: 0 auto;
-  display: grid;
-  justify-content: center;
-  grid-template-columns: repeat(auto-fill, minmax(25em, 1fr));
-  grid-template-rows: 25em;
+  column-count: 2;
   gap: 0.25em;
   overflow: wrap;
 }
-.gallery-wrapper img {
-  max-width: 99%;
-  max-height: 99%;
-  width: 99%;
-  height: 99%;
-  object-fit: cover;
+@media screen and (max-width: 1000px) {
+  .gallery-wrapper {
+    column-count: 1;
+  }
 }
-.gallery-wrapper .graphic {
+
+.gallery-wrapper img {
+  width: 100% !important;
+  height: auto !important;
   object-fit: contain;
-  height: 12em;
-  width: 20em;
-  justify-content: center;
+}
+.graphic-gallery .graphic {
   align-items: center;
-  display: flex;
   background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  height: 12em;
+  justify-content: center;
+  object-fit: contain;
   padding: 1em;
+  width: 20em;
 }
 
 .gallery-wrapper img:hover {
@@ -354,7 +355,7 @@ nav h5 {
   aspect-ratio: 4/3;
   height: auto;
   margin: 0 auto;
-  object-fit: cover;
+  object-fit: contain;
   user-select: none;
 }
 .nav-img-wrapper {
@@ -381,6 +382,9 @@ nav h5 {
   flex-wrap: wrap;
   gap: 1em;
   width: 100%;
+  margin: 0 auto;
+  grid-template-rows: 25em;
+  grid-template-columns: repeat(auto-fill, minmax(25em, 1fr));
 }
 .footer-wrapper {
   background-color: black !important;
