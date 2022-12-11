@@ -108,6 +108,7 @@ nav {
   justify-content: space-between;
 }
 nav h1 {
+  white-space: nowrap;
   padding: 0.5em;
   color: white;
   font-size: 2em;
