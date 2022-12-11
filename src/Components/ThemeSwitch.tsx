@@ -28,6 +28,18 @@ export default function ThemeSwitch() {
         "--headerbackgroundtext",
         "#111827"
       );
+    } else {
+      setOn(false);
+      document.documentElement.style.setProperty("--backgroundcolor", "white");
+      document.documentElement.style.setProperty("--textcolor", "black");
+      document.documentElement.style.setProperty(
+        "--headerbackgroundcolor",
+        "#e5e7eb"
+      );
+      document.documentElement.style.setProperty(
+        "--headerbackgroundtext",
+        "#111827"
+      );
     }
   }, []);
   function handleToggle() {
