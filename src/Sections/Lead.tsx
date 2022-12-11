@@ -54,12 +54,13 @@ export default function Lead() {
           border: "none",
           fontSize: "1em",
           background: "#e2e8f0",
+          gap: ".5em",
           fontFamily: "Basic-sans, sans",
         }}
         onClick={() => scroll()}
       >
         <BsArrowDown />
-        Start The Party 🎉{" "}
+        Start The Party &nbsp;🎉
       </button>
     </section>
   );

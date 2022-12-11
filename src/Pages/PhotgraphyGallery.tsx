@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 import Footer from "../Components/Footer";
 
 export default function PhotgraphyGallery() {
-  console.log();
   const runtime = new Array(121);
   for (let i = 0; i < runtime.length; i++) {
     runtime[i] = i;
@@ -40,6 +39,7 @@ export default function PhotgraphyGallery() {
         toggleSlideshow(false);
       }
     });
+    window.scrollTo(0, 0);
   }, []);
   function handleSlideshowClose() {
     toggleSlideshow(false);
