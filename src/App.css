@@ -267,6 +267,7 @@ nav h5 {
   object-fit: cover;
   width: 36em;
   height: 28em;
+  max-height: 90%;
   border-radius: 1em;
 }
 .photography-section {

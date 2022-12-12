@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
@@ -6,15 +6,8 @@ import PhotographyGallery from "./Pages/PhotgraphyGallery";
 import GraphicGallery from "./Pages/GraphicGallery";
 import NotFoundPage from "./Pages/NotFoundPage";
 import About from "./Pages/About";
-import ReactGA from "react-ga";
-const TRACKING_ID = "G-8DH5546CJL"; // OUR_TRACKING_ID
-
-ReactGA.initialize(TRACKING_ID);
 
 function App() {
-  useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search);
-  }, []);
   return (
     <div className="App">
       <Router>
