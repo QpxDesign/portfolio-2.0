@@ -443,9 +443,9 @@ nav h5 {
   grid-template-columns: repeat(auto-fill, minmax(25em, 1fr));
 }
 .footer-wrapper {
-  background-color: black !important;
+  background-color: var(--headerbackgroundcolor) !important;
   display: flex;
-  color: white;
+  color: var(--headerbackgroundtext) !important;
   padding: 1em 1em;
   align-items: center;
   margin: 0 !important;
