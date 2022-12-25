@@ -72,7 +72,7 @@ export default function PhotgraphyGallery() {
       </div>
       <div
         className="page-wrapper"
-        style={{ backgroundColor: "#fff", marginBottom: "1em" }}
+        style={{ backgroundColor: "#fff", paddingBottom: "1em" }}
       >
         <div className="title-wrapper">
           <Link to="/">
