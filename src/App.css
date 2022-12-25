@@ -455,6 +455,9 @@ nav h5 {
   justify-content: center;
   max-width: 100%;
 }
+.footer-wrapper a {
+  color: var(--headerbackgroundtext) !important;
+}
 .page-wrapper {
   margin: 0;
   overflow: hidden;
