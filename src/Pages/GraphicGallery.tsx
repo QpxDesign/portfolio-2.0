@@ -77,7 +77,7 @@ export default function PhotgraphyGallery() {
           </div>
         </div>
       </div>
-      <div className="page-wrapper" style={{ marginBottom: "1em" }}>
+      <div className="page-wrapper" style={{ paddingBottom: "1em" }}>
         <div className="title-wrapper">
           <Link to="/">
             <BsArrowLeft className="back-icon" />
