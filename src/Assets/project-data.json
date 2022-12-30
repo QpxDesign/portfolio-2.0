@@ -4,7 +4,7 @@
     "title": "MarcMap",
     "backgroundcolor": "#004d93",
     "textcolor": "#fff",
-    "blurb": "Better than the MTA's version",
+    "blurb": "Never miss a train again",
     "points": [
       "Uses Mapbox GL JS API to provide a user friendly map interface",
       "Hosts Express.js Based Backend API to format GTFS-RS Data",
