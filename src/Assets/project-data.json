@@ -8,8 +8,9 @@
     "points": [
       "Uses Mapbox GL JS API to provide a user friendly map interface",
       "Hosts Express.js Based Backend API to format GTFS-RS Data",
-      "Required Binary & Bit Parsing of Data",
-      "Involved use npm & node in creating and deploying API"
+      "Required Use of Performance Performance and Testing Tools",
+      "Involved use npm & node in creating and deploying API",
+      "Required Extensive SEO optimization and use of Analytics"
     ],
     "technologies": [
       "ReactJS",
