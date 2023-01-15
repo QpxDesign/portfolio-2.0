@@ -20,6 +20,7 @@ export default function Lead() {
               "salutations",
               "hiya",
               "good day",
+              "whats poppin",
             ]}
             interval={5000}
             prefix={""}
@@ -33,7 +34,7 @@ export default function Lead() {
             values={[
               "web developer",
               "photographer",
-              "writer",
+              "marylander",
               "graphic designer",
               "skateboarder",
               "student",
