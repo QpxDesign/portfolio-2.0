@@ -31,7 +31,7 @@ export default function BlogEditor(props: EditProps) {
       return false;
     }
     let data = { token: d.token, Username: d.username };
-    fetch("http://localhost:3001/validate-token", {
+    fetch("https://api.quinnpatwardhan.com/validate-token", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -64,7 +64,7 @@ export default function BlogEditor(props: EditProps) {
         PostHTML: Post,
         timestamp: Date.now(),
       };
-      await fetch("http://localhost:3001/send-post", {
+      await fetch("https://api.quinnpatwardhan.com/send-post", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -88,7 +88,7 @@ export default function BlogEditor(props: EditProps) {
         PostHTML: Post,
         timestamp: Date.now(),
       };
-      await fetch("http://localhost:3001/edit-post", {
+      await fetch("https://api.quinnpatwardhan.com/edit-post", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
