@@ -132,6 +132,10 @@ nav h5 {
   color: var(--headerbackgroundtext);
   font-weight: 500;
 }
+nav a:hover {
+  text-decoration: underline;
+  color: var(--headerbackgroundtext);
+}
 .dropdown-wrapper {
   display: flex;
   justify-content: center;
@@ -716,7 +720,7 @@ input.invalid {
 .post-page-wrapper img {
   object-fit: contain;
   width: 100%;
-  max-width: min(90%, 40em);
+  max-width: min(90%, 50em);
   border-radius: 2em;
 }
 .post-page-wrapper p {
