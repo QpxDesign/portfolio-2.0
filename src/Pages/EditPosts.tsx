@@ -11,7 +11,7 @@ export default function EditPosts() {
   const [postID, setPostID]: any = useState("");
 
   async function FetchPosts() {
-    await fetch("http://localhost:3001/get-blog-posts")
+    await fetch("https://api.quinnpatwardhan.com/get-blog-posts")
       .then((res) => res.json())
       .then((r) => {
         setRes(r);
@@ -27,7 +27,7 @@ export default function EditPosts() {
       PostID: postID,
     };
 
-    await fetch("http://localhost:3001/delete-post", {
+    await fetch("https://api.quinnpatwardhan.com/delete-post", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -47,7 +47,7 @@ export default function EditPosts() {
       return false;
     }
     let data = { token: d.token, Username: d.username };
-    fetch("http://localhost:3001/validate-token", {
+    fetch("https://api.quinnpatwardhan.com/validate-token", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
