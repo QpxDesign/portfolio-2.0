@@ -544,6 +544,7 @@ nav a:hover {
   flex-direction: column;
   align-items: center;
   position: relative;
+  box-shadow: 0px 10px 100px rgba(255, 255, 255, 30%);
   padding-bottom: 1em;
 }
 .post h1,
@@ -722,6 +723,7 @@ input.invalid {
   width: 100%;
   max-width: min(90%, 50em);
   border-radius: 2em;
+  border: 3px solid var(--textcolor) !important;
 }
 .post-page-wrapper p {
   font-size: 1.25em;
@@ -737,4 +739,10 @@ input.invalid {
   align-items: center;
   gap: 1em;
   margin-left: auto;
+}
+.post-page-wrapper li {
+  font-size: 1.25em;
+}
+.post-page-wrapper ul {
+  margin: 0 auto;
 }
