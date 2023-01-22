@@ -20,17 +20,6 @@ import BlogPost from "./Pages/BlogPost";
 function App() {
   const [res, setRes] = useState([]);
   const [loaded, setLoaded] = useState(false);
-  function FetchPosts() {
-    fetch("http://localhost:3001/get-blog-posts")
-      .then((res) => res.json())
-      .then((r) => {
-        setRes(r);
-        setLoaded(true);
-      });
-  }
-  useEffect(() => {
-    FetchPosts();
-  }, []);
   return (
     <div className="App">
       <Router>
