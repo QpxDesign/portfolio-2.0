@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./App.css";
 import {
   BrowserRouter as Router,
@@ -18,8 +18,6 @@ import Login from "./Pages/Login";
 import BlogPost from "./Pages/BlogPost";
 
 function App() {
-  const [res, setRes] = useState([]);
-  const [loaded, setLoaded] = useState(false);
   return (
     <div className="App">
       <Router>

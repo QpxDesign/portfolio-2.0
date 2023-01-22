@@ -544,6 +544,7 @@ nav h5 {
 }
 .post h1,
 .post h2,
+.post h5,
 .post p {
   padding: 0 0.5em;
   width: 95%;
@@ -558,6 +559,10 @@ nav h5 {
   margin-top: 1em;
   font-size: 1.2em;
   font-weight: 400;
+}
+.post h5 {
+  margin-top: 0.25em;
+  font-size: 1em;
 }
 .post p {
   font-size: 1.25em;
