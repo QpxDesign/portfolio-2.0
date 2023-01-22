@@ -29,7 +29,7 @@ export default function Login(props: LoginProp) {
       Password: password,
     };
     if (mode === "Login") {
-      fetch("http://localhost:3001/login", {
+      fetch("https://api.quinnpatwardhan.com/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -45,7 +45,7 @@ export default function Login(props: LoginProp) {
         alert("invalid password");
         return;
       }
-      fetch("http://localhost:3001/signup", {
+      fetch("https://api.quinnpatwardhan.com/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
