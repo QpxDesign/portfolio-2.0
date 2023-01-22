@@ -47,7 +47,7 @@ export default function PhotgraphyGallery() {
   }
   return (
     <>
-      <Header activePage="" />
+      <Header />
       <div
         className={
           showSlideshow ? "slideshow-wrapper show" : "slideshow-wrapper hide"

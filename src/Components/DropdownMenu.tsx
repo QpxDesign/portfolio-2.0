@@ -3,11 +3,8 @@ import { Link } from "react-router-dom";
 import { BiMenuAltRight } from "react-icons/bi";
 import ThemeSwitch from "./ThemeSwitch";
 
-interface DropdownProps {
-  activePage: string;
-}
-
-export default function DropdownMenu(props: DropdownProps) {
+export default function DropdownMenu() {
+  const activePage = window.location.pathname.replace("/", "");
   const [showDropdown, setshowDropdown] = useState(false);
   return (
     <>
@@ -16,9 +13,12 @@ export default function DropdownMenu(props: DropdownProps) {
       >
         <ThemeSwitch />
         <Link to="/aboutme">
-          <h5 className={props.activePage === "aboutme" ? "underline" : ""}>
+          <h5 className={activePage === "aboutme" ? "underline" : ""}>
             About Me
           </h5>
+        </Link>
+        <Link to="/blog">
+          <h5 className={activePage === "blog" ? "underline" : ""}>Blog</h5>
         </Link>
       </div>
       <BiMenuAltRight

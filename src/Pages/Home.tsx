@@ -10,7 +10,7 @@ import GraphicDesign from "../Sections/GraphicDesign";
 export default function Home() {
   return (
     <div className="home-wrapper">
-      <Header activePage="" />
+      <Header />
       <Lead />
       {projectdata.map((x, index) => {
         return <Project data={x} key={index} />;

@@ -27,7 +27,7 @@ export default function About() {
 
   return (
     <>
-      <Header activePage="aboutme" />
+      <Header />
       <div className="page-wrapper">
         <h1 className="center" style={{ marginTop: ".5em" }}>
           About Me

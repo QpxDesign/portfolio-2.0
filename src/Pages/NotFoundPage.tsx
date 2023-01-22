@@ -7,7 +7,7 @@ export default function NotFoundPage() {
   return (
     <>
       <div className="page-wrapper">
-        <Header activePage="" />
+        <Header />
         <h1
           style={{ textAlign: "center", fontSize: "4em", marginTop: ".25em" }}
         >
