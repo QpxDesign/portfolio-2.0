@@ -15,7 +15,6 @@ export default function BlogPost() {
       .then((r) => {
         setRes(r);
         if (id !== undefined) {
-          console.log(res);
           const newID = id.replaceAll("/blog/path/", "");
           const post = r.find((r: any) => r.PostID === newID);
           setPostData(post);
@@ -24,8 +23,6 @@ export default function BlogPost() {
       });
   }
   function getPostFromId(postID: any) {
-    console.log(postID);
-    console.log(res);
     return res.find((r: any) => r.PostID === postID);
   }
   function formatTime(s: any) {

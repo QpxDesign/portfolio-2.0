@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import uuid from "react-uuid";
+import { ValidateLogin } from "../Helpers/ValidateLogin";
 
 interface EditProps {
   postTitle: String;
@@ -19,38 +20,7 @@ export default function BlogEditor(props: EditProps) {
   const [Post, setPost]: any = useState(props.Post);
   const [loggedIn, setLoggedIn] = useState(false);
   const [ImageURL, setImageURL]: any = useState(props.ImageURL);
-  function validateUserLoggedIn() {
-    if (loggedIn) return true;
-    setLoggedIn(true);
-    var d: any = localStorage.getItem("user");
-    d = JSON.parse(d);
-    console.log(d);
 
-    if (d == null) {
-      window.location.pathname = "/login+des=EditPosts";
-      return false;
-    }
-    let data = { token: d.token, Username: d.username };
-    fetch("https://api.quinnpatwardhan.com/validate-token", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*",
-      },
-      body: JSON.stringify(data),
-    })
-      .then((res) => res.json())
-      .then((r) => {
-        console.log(r);
-        if (!r.auth) {
-          window.location.pathname = "/login+des=EditPosts";
-        } else {
-          setLoggedIn(true);
-        }
-        return r.auth;
-      });
-    return true;
-  }
   async function handleFormSubmisson() {
     if (props.Mode === "" && localStorage.getItem("user") !== null) {
       let data = {
@@ -66,7 +36,7 @@ export default function BlogEditor(props: EditProps) {
         Username: JSON.parse(localStorage.getItem("user") ?? "").username,
         Token: JSON.parse(localStorage.getItem("user") ?? "").token,
       };
-      console.log(data)
+
       await fetch("https://api.quinnpatwardhan.com/send-post", {
         method: "POST",
         headers: {
@@ -93,7 +63,6 @@ export default function BlogEditor(props: EditProps) {
         Username: JSON.parse(localStorage.getItem("user") ?? "").username,
         Token: JSON.parse(localStorage.getItem("user") ?? "").token,
       };
-      console.log(data)
       await fetch("https://api.quinnpatwardhan.com/edit-post", {
         method: "POST",
         headers: {
@@ -112,7 +81,7 @@ export default function BlogEditor(props: EditProps) {
     setImageURL("");
   }
 
-  if (validateUserLoggedIn() == true) {
+  if (ValidateLogin("/login+des=BlogEditor") == true) {
     return (
       <div style={{ backgroundColor: "var(--backgroundcolor" }}>
         <Header />
@@ -167,6 +136,7 @@ export default function BlogEditor(props: EditProps) {
       </div>
     );
   } else {
+    window.location.pathname = "/login+des=BlogEditor"
     return null;
   }
 }

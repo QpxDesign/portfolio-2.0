@@ -8,7 +8,7 @@ import graphics_key from "../Assets/graphics_key.json";
 import Footer from "../Components/Footer";
 
 export default function PhotgraphyGallery() {
-  console.log();
+
   const runtime = new Array(graphics_key.length + 1);
   for (let i = 0; i < runtime.length; i++) {
     runtime[i] = i;

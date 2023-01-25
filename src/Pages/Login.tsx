@@ -1,17 +1,18 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import Header from "../Components/Header";
 import { AiFillCheckCircle, AiFillCloseCircle } from "react-icons/ai";
+import { ValidateLogin } from "../Helpers/ValidateLogin";
 
 interface LoginProp {
-  destination: String;
+  destination: string;
 }
 
 export default function Login(props: LoginProp) {
   const [mode, setMode] = useState("Login");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  function validateLogin(allowLogin: Boolean, token: String, username: String) {
-    if (allowLogin) {
+  function storeLogin(allowLogin: Boolean, token: String, username: String) {
+    if (allowLogin && token!==undefined) {
       let data: any = {
         username: username,
         token: token,
@@ -20,9 +21,18 @@ export default function Login(props: LoginProp) {
       localStorage.setItem("user", JSON.stringify(data));
       window.location.pathname = "/" + props.destination;
     } else {
+      console.log("Can't log ya in.")
+      alert("We couldn't find a user with that username/password.")
       window.location.reload();
+
     }
   }
+  useEffect(() => {
+    if (ValidateLogin(props.destination)) {
+      window.location.pathname = props.destination;
+    }
+    
+  }, [])
   function HandleLogin() {
     let data = {
       Username: username,
@@ -38,7 +48,7 @@ export default function Login(props: LoginProp) {
         body: JSON.stringify(data),
       })
         .then((res) => res.json())
-        .then((data) => validateLogin(data.allowLogin, data.token, username));
+        .then((data) => storeLogin(data.allowLogin, data.token, username));
     }
     if (mode === "Sign Up") {
       if (!validPasswordChecker()) {
@@ -54,7 +64,7 @@ export default function Login(props: LoginProp) {
         body: JSON.stringify(data),
       })
         .then((res) => res.json())
-        .then((data) => validateLogin(data.allowLogin, data.token, username));
+        .then((data) => storeLogin(data.allowLogin, data.token, username));
     }
   }
   function validPasswordChecker() {
@@ -84,7 +94,7 @@ export default function Login(props: LoginProp) {
       >
         {mode}
       </h1>
-      <div className="login-wrapper">
+      <form className="login-wrapper">
         <label
           style={{ marginBottom: "1em" }}
           className={mode === "Sign Up" ? "hide" : ""}
@@ -160,7 +170,7 @@ export default function Login(props: LoginProp) {
         >
           {mode}
         </button>
-      </div>
+      </form>
     </div>
   );
 }

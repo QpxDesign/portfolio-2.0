@@ -3,6 +3,7 @@ import Header from "../Components/Header";
 import { FaTrashAlt } from "react-icons/fa";
 import { RiEditBoxFill } from "react-icons/ri";
 import BlogEditor from "./BlogEditor";
+import { ValidateLogin } from "../Helpers/ValidateLogin";
 
 export default function EditPosts() {
   const [res, setRes]: Array<any> = useState([]);
@@ -22,7 +23,7 @@ export default function EditPosts() {
     FetchPosts();
   }, []);
   async function handlePostDelete(postID: String) {
-    console.log("a");
+
     let data = {
       PostID: postID,
       Username: JSON.parse(localStorage.getItem("user") ?? "").username,
@@ -39,38 +40,18 @@ export default function EditPosts() {
     });
     window.location.reload();
   }
-  function validateUserLoggedIn() {
-    var d: any = localStorage.getItem("user");
-    d = JSON.parse(d);
-    console.log(d);
-
-    if (d == null) {
-      window.location.pathname = "/login+des=EditPosts";
-      return false;
-    }
-    let data = { token: d.token, Username: d.username };
-    fetch("https://api.quinnpatwardhan.com/validate-token", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*",
-      },
-      body: JSON.stringify(data),
-    })
-      .then((res) => res.json())
-      .then((r) => {
-        console.log(r);
-        if (!r.auth) {
-          window.location.pathname = "/login+des=EditPosts";
-        }
-        return r.auth;
-      });
-    return true;
-  }
   function getPostFromId() {
     return res.find((r: any) => r.PostID === postID);
   }
-  if (validateUserLoggedIn() == true)
+  function formatTime(s: any) {
+    if (s === null || s === undefined) return;
+    s = parseInt(s);
+    const date = new Date(s);
+    const dateFormat = date.toLocaleDateString();
+    const timeFormat = date.toLocaleTimeString();
+    return dateFormat + " - " + timeFormat;
+  }
+  if (ValidateLogin("/login+des=EditPosts") == true)
     if (!showEdit) {
       return (
         <div>
@@ -95,7 +76,7 @@ export default function EditPosts() {
                         <img src={post.PostThumbnailLink} />
                         <h1>{post.PostTitle}</h1>
                         <h2>{post.AuthorName}</h2>
-                        <h5>{post.timestamp}</h5>
+                        <h5>{formatTime(post.timestamp)}</h5>
                         <FaTrashAlt
                           onClick={() => handlePostDelete(post.PostID)}
                           style={{
@@ -120,8 +101,7 @@ export default function EditPosts() {
                             bottom: 0,
                             margin: ".75em 2.5em",
                             fontSize: "1.75em",
-                            color: "black",
-                            backgroundColor: "var(--headertextcolor)",
+                            color: "var(--backgroudcolor)"
                           }}
                         />
                       </div>
@@ -150,6 +130,7 @@ export default function EditPosts() {
       }
     }
   else {
+    window.location.pathname = "/login+des=EditPosts"
     return <div>Need to login</div>;
   }
 }
