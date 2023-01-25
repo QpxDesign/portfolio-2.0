@@ -62,6 +62,11 @@ export default function Blog() {
                       <img src={post.PostThumbnailLink} />
                       <h1>{post.PostTitle}</h1>
                       <p>{post.PostBlurb}</p>
+                      <div className="tags-wrapper">
+                        {post.PostTags.split(",").map((tag: any) => {
+                          return <div className="tag">{tag}</div>;
+                        })}
+                      </div>
                       <h2>By {post.AuthorName}</h2>
                       <h5>{formatTime(post.timestamp)}</h5>
                     </div>

@@ -42,7 +42,7 @@ a:hover {
 @media screen and (max-width: 700px) {
   .greeting .cycle-text {
     color: red !important;
-    font-size: 3.2em !important;
+    font-size: 3em !important;
   }
 }
 button {
@@ -177,7 +177,7 @@ nav a:hover {
 
 .welcomemessage-wrapper {
   padding: 1em 2em;
-  font-size: 1.2em;
+  font-size: 1.5em;
   font-family: "Basic-sans", sans-serif;
 }
 .welcomemessage-wrapper .greeting h1 {
@@ -745,4 +745,18 @@ input.invalid {
 }
 .post-page-wrapper ul {
   margin: 0 auto;
+}
+.tags-wrapper {
+  margin-left: 0.75em;
+  display: flex;
+  grid-gap: 0.5em;
+  flex-wrap: wrap;
+  margin-top: 0.5em;
+  margin-right: auto;
+  font-size: 1em;
+}
+.tag {
+  padding: 0.25em 0.75em;
+  border-radius: 100em;
+  background-color: #ea580c;
 }
