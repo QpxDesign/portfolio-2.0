@@ -138,7 +138,7 @@ export default function EditPosts() {
           <BlogEditor
             postTitle={getPostFromId().PostTitle}
             Tags={getPostFromId().PostTags}
-            Blurb={getPostFromId().Blurb}
+            Blurb={getPostFromId().PostBlurb}
             Post={getPostFromId().PostHTML}
             ImageURL={getPostFromId().PostThumbnailLink}
             PostID={postID}
