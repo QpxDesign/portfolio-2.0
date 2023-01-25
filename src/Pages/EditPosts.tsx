@@ -25,6 +25,8 @@ export default function EditPosts() {
     console.log("a");
     let data = {
       PostID: postID,
+      Username: JSON.parse(localStorage.getItem("user") ?? "").username,
+      Token: JSON.parse(localStorage.getItem("user") ?? "").token,
     };
 
     await fetch("https://api.quinnpatwardhan.com/delete-post", {

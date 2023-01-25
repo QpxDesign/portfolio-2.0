@@ -52,7 +52,7 @@ export default function BlogEditor(props: EditProps) {
     return true;
   }
   async function handleFormSubmisson() {
-    if (props.Mode === "") {
+    if (props.Mode === "" && localStorage.getItem("user") !== null) {
       let data = {
         PostId: uuid(),
         AuthorName: "Quinn Patwardhan",
@@ -63,6 +63,8 @@ export default function BlogEditor(props: EditProps) {
         PostThumbnailLink: ImageURL,
         PostHTML: Post,
         timestamp: Date.now(),
+        Username: JSON.parse(localStorage.getItem("user") ?? "").username,
+        Token: JSON.parse(localStorage.getItem("user") ?? "").token,
       };
       await fetch("https://api.quinnpatwardhan.com/send-post", {
         method: "POST",
@@ -87,6 +89,8 @@ export default function BlogEditor(props: EditProps) {
         PostThumbnailLink: ImageURL,
         PostHTML: Post,
         timestamp: Date.now(),
+        Username: JSON.parse(localStorage.getItem("user") ?? "").username,
+        Token: JSON.parse(localStorage.getItem("user") ?? "").token,
       };
       await fetch("https://api.quinnpatwardhan.com/edit-post", {
         method: "POST",
