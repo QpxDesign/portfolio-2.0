@@ -17,6 +17,10 @@ export default function BlogPost() {
         if (id !== undefined) {
           const newID = id.replaceAll("/blog/path/", "");
           const post = r.find((r: any) => r.PostID === newID);
+          if (post == null) {
+            window.location.pathname = "/404";
+            return null;
+          }
           setPostData(post);
         }
         setLoaded(true);
@@ -36,6 +40,7 @@ export default function BlogPost() {
   useEffect(() => {
     FetchPosts();
   }, []);
+
   return (
     <div className="">
       <Header />

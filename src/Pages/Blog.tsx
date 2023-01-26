@@ -24,7 +24,11 @@ export default function Blog() {
     await fetch("https://api.quinnpatwardhan.com/get-blog-posts")
       .then((res) => res.json())
       .then((r) => {
-        setRes(r);
+        var byDate = r.slice(0);
+        byDate.sort(function (a: any, b: any) {
+          return b.timestamp - a.timestamp;
+        });
+        setRes(byDate);
         setLoaded(true);
       });
   }
@@ -55,7 +59,7 @@ export default function Blog() {
       <div className="posts-wrapper">
         {loaded
           ? res !== undefined
-            ? res.map((post: any) => {
+            ? res.sort().map((post: any) => {
                 return (
                   <Link to={"/blog/post/" + post.PostID}>
                     <div className={"post"}>
