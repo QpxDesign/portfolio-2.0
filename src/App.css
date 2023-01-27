@@ -528,15 +528,18 @@ nav a:hover {
   flex-direction: column;
   flex-wrap: wrap;
   gap: 1em;
-  width: 90%;
+  width: 50em !important;
+  max-width: 90%;
   margin: 0 auto;
   justify-content: flex-start;
   padding: 1em;
   align-items: center;
 }
+.posts-wrapper a {
+  width: 95%;
+}
 .post {
   background-color: var(--headerbackgroundtext);
-  max-width: 800px;
   height: fit-content;
   color: var(--headerbackgroundcolor);
   border-radius: 1em;
@@ -545,6 +548,7 @@ nav a:hover {
   align-items: center;
   position: relative;
   box-shadow: 0px 10px 100px rgba(255, 255, 255, 30%);
+
   padding-bottom: 1em;
 }
 .post h1,
@@ -573,7 +577,9 @@ nav a:hover {
   font-size: 1.25em;
 }
 .post img {
-  object-fit: contain;
+  max-height: 25em;
+  min-width: 100%;
+  object-fit: cover;
   width: 100%;
   bottom: 10;
   top: 0;
@@ -684,13 +690,7 @@ input.invalid {
 .cross {
   color: #dc2626;
 }
-@media screen and (min-width: 800px) {
-  .post img {
-    max-height: 30em;
-    min-width: 100%;
-    object-fit: cover;
-  }
-}
+
 .post-page-wrapper {
   display: flex;
   align-items: center;

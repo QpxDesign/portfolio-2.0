@@ -15,7 +15,11 @@ export default function EditPosts() {
     await fetch("https://api.quinnpatwardhan.com/get-blog-posts")
       .then((res) => res.json())
       .then((r) => {
-        setRes(r);
+        var byDate = r.slice(0);
+        byDate.sort(function (a: any, b: any) {
+          return b.timestamp - a.timestamp;
+        });
+        setRes(byDate);
         setLoaded(true);
       });
   }
@@ -23,7 +27,6 @@ export default function EditPosts() {
     FetchPosts();
   }, []);
   async function handlePostDelete(postID: String) {
-
     let data = {
       PostID: postID,
       Username: JSON.parse(localStorage.getItem("user") ?? "").username,
@@ -101,7 +104,7 @@ export default function EditPosts() {
                             bottom: 0,
                             margin: ".75em 2.5em",
                             fontSize: "1.75em",
-                            color: "var(--backgroudcolor)"
+                            color: "var(--backgroudcolor)",
                           }}
                         />
                       </div>
@@ -130,7 +133,7 @@ export default function EditPosts() {
       }
     }
   else {
-    window.location.pathname = "/login+des=EditPosts"
+    window.location.pathname = "/login+des=EditPosts";
     return <div>Need to login</div>;
   }
 }
