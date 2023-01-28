@@ -20,6 +20,7 @@ export default function About() {
     "nginx",
     "Linux",
     "ubuntu",
+    "mysql",
     "AdobeIllustrator",
     "AdobePhotoshop",
     "AdobeLightroom",
