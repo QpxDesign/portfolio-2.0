@@ -23,7 +23,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/blog/post/:id" element={<BlogPost />} />
-          <Route path="/login/des" element={<Login />} />
+          <Route path="/login/:des" element={<Login />} />
           <Route path="/" element={<Home />} />
           <Route path="/photo-gallery" element={<PhotographyGallery />} />
           <Route path="/photography" element={<PhotographyGallery />} />
@@ -32,7 +32,6 @@ function App() {
           <Route path="*" element={<NotFoundPage />} />
           <Route path="/404" element={<NotFoundPage />} />
           <Route path="/aboutme" element={<About />} />
-
           <Route
             path="/blog-editor"
             element={

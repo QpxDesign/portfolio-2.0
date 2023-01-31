@@ -475,7 +475,7 @@ nav a:hover {
 }
 .page-wrapper {
   margin: 0;
-  overflow: hidden;
+  overflow: hidden !important;
   min-height: 90vh !important;
   background-color: var(--backgroundcolor) !important;
   color: var(--textcolor) !important;
@@ -704,6 +704,9 @@ input.invalid {
 .post-page-wrapper p {
   color: var(--headerbackgroundtext) !important;
   width: min(90%, 70em) !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important; 
+  padding: 0 !important;
   font-family: "Source Serif Pro", serif !important;
 }
 .post-page-wrapper h1 {
@@ -840,4 +843,52 @@ hr {
 .comment .user-info h5 {
   font-size: 1.25em;
   font-family: "Source Serif Pro", serif !important;
+}
+.alert-wrapper {
+  position: fixed; 
+  top: 0;
+  margin-top: 1.5em;
+  left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto; 
+  border-radius: 1em;
+  background-color: var(--headerbackgroundcolor);
+  box-shadow: -.25em .25em 1em 0 var(--headerbackgroundtext);
+  max-width: max-content;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: .33em;
+  padding-bottom: 1.2em !important;
+  width: 30em;
+  align-items: center;
+}
+.alert-wrapper h1 {
+ padding: .25em 1em;
+ padding-bottom: 0;
+}
+.alert-wrapper p {
+  font-size: 1.25em;
+  max-width: 90%;
+}
+.alert-wrapper .options-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  width: 90%;
+}
+.alert-wrapper .options-wrapper button {
+padding: .25em 1em;
+max-width: 12em;
+font-family: "Source Serif Pro", serif !important;
+font-size: 1.3em;
+margin-top: .5em;
+background-color: var(--headerbackgroundcolor);
+border: none;
+width: 100% !important;
+box-shadow: -.25em .25em 1em 0 var(--headerbackgroundtext);
+border-radius: .25em;
+color: var(--headerbackgroundtext);
 }

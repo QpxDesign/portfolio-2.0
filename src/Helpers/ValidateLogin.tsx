@@ -27,4 +27,3 @@ export function ValidateLogin(loginDes : string) {
       
 }
 
-export class bar { }
