@@ -823,6 +823,8 @@ hr {
 .comment p {
   font-family: "Source Serif Pro", serif !important;
   font-size: 1.33em;
+  text-align: left !important;
+  width: 100%;
 }
 .comment .user-info {
   display: flex;
