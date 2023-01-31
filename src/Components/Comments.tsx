@@ -13,7 +13,13 @@ export default function Comments() {
   const [commentText, setCommentText] = useState("");
   const [res, setRes] = useState([]);
   const [loaded, setLoaded] = useState(false);
-
+  function getUsername() {
+    try {
+      return JSON.parse(localStorage.getItem("user") || "{}").username;
+    } catch (e) {
+      return;
+    }
+  }
   async function handlepost() {
     if (ValidateLogin("/blog/post/" + id)) {
       let data = {
@@ -91,8 +97,7 @@ export default function Comments() {
           }}
         >
           <h5>
-            <BsPersonFill />{" "}
-            {JSON.parse(localStorage.getItem("user") ?? "").username}
+            <BsPersonFill /> {getUsername()}
           </h5>
           <button className="cool-purple-button" onClick={handlepost}>
             Post
@@ -128,10 +133,7 @@ export default function Comments() {
                           handleCommentDelete(comment.CommentID);
                         }}
                         className={
-                          JSON.parse(localStorage.getItem("user") ?? "")
-                            .username === comment.Username
-                            ? "show"
-                            : "hie"
+                          getUsername === comment.Username ? "show" : "hie"
                         }
                       />
                     </div>
