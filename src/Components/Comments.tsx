@@ -15,9 +15,11 @@ export default function Comments() {
   const [loaded, setLoaded] = useState(false);
   function getUsername() {
     try {
-      return JSON.parse(localStorage.getItem("user") || "{}").username;
+      return JSON.parse(
+        localStorage.getItem("user") || "{username:'Not Signed In'}"
+      ).username;
     } catch (e) {
-      return;
+      return "Not Signed In";
     }
   }
   async function handlepost() {
@@ -38,6 +40,8 @@ export default function Comments() {
         body: JSON.stringify(data),
       });
       window.location.reload();
+    } else {
+      window.location.pathname = "/login";
     }
   }
   async function handleCommentDelete(c: String) {
@@ -133,7 +137,7 @@ export default function Comments() {
                           handleCommentDelete(comment.CommentID);
                         }}
                         className={
-                          getUsername === comment.Username ? "show" : "hie"
+                          getUsername() === comment.Username ? "show" : "hide"
                         }
                       />
                     </div>

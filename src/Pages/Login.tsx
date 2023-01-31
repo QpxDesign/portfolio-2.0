@@ -2,15 +2,13 @@ import React, { useState, useEffect } from "react";
 import Header from "../Components/Header";
 import { AiFillCheckCircle, AiFillCloseCircle } from "react-icons/ai";
 import { ValidateLogin } from "../Helpers/ValidateLogin";
+import { useParams } from "react-router-dom";
 
-interface LoginProp {
-  destination: string;
-}
-
-export default function Login(props: LoginProp) {
+export default function Login() {
   const [mode, setMode] = useState("Login");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const des: any = useParams();
   function storeLogin(allowLogin: Boolean, token: String, username: String) {
     if (allowLogin && token !== undefined) {
       let data: any = {
@@ -19,15 +17,16 @@ export default function Login(props: LoginProp) {
         timestamp: Date.now(),
       };
       localStorage.setItem("user", JSON.stringify(data));
-      window.location.pathname = "/" + props.destination;
+      window.location.pathname = "/" + des;
     } else {
       alert("We couldn't find a user with that username/password.");
       window.location.reload();
     }
   }
   useEffect(() => {
-    if (ValidateLogin(props.destination)) {
-      window.location.pathname = props.destination;
+    console.log("test");
+    if (ValidateLogin(des)) {
+      window.location.pathname = des;
     }
   }, []);
   function HandleLogin() {
