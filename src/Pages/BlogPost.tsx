@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
+import Comments from "../Components/Comments";
+import { FormatTime } from "../Helpers/FormatTime";
 
 export default function BlogPost() {
   const { id } = useParams();
@@ -29,14 +31,7 @@ export default function BlogPost() {
   function getPostFromId(postID: any) {
     return res.find((r: any) => r.PostID === postID);
   }
-  function formatTime(s: any) {
-    if (s === null || s === undefined) return;
-    s = parseInt(s);
-    const date = new Date(s);
-    const dateFormat = date.toLocaleDateString();
-    const timeFormat = date.toLocaleTimeString();
-    return dateFormat + " - " + timeFormat;
-  }
+
   useEffect(() => {
     FetchPosts();
   }, []);
@@ -48,7 +43,7 @@ export default function BlogPost() {
         <div className="post-page-wrapper">
           <h1>{postData.PostTitle}</h1>
           <h2>
-            By {postData.AuthorName} &#x2022; {formatTime(postData.timestamp)}
+            By {postData.AuthorName} &#x2022; {FormatTime(postData.timestamp)}
           </h2>
           <img src={postData.PostThumbnailLink} />
           <p
@@ -59,6 +54,7 @@ export default function BlogPost() {
       ) : (
         "Error"
       )}
+      <Comments />
       <Footer />
     </div>
   );

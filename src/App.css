@@ -83,6 +83,7 @@ a {
   flex-direction: column;
   gap: 1em;
 }
+
 .button-1 {
   border: 3px solid white;
   border-radius: 1000rem;
@@ -697,13 +698,11 @@ input.invalid {
   flex-direction: column;
   margin: 0 auto;
   background-color: var(--backgroundcolor);
-  padding-bottom: 3em;
 }
 .post-page-wrapper h1,
 .post-page-wrapper h2,
 .post-page-wrapper p {
   color: var(--headerbackgroundtext) !important;
-
   width: min(90%, 70em) !important;
   font-family: "Source Serif Pro", serif !important;
 }
@@ -759,4 +758,83 @@ input.invalid {
   padding: 0.25em 0.75em;
   border-radius: 100em;
   background-color: #ea580c;
+}
+.comment-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center !important;
+  justify-content: center !important;
+  padding-bottom: 1em;
+  margin: 1em;
+  gap: 1em;
+}
+.comment-wrapper h1 {
+  color: var(--textcolor);
+  margin: 0;
+  padding: 0.25em;
+  font-family: "Source Serif Pro", serif !important;
+}
+.comment-wrapper textarea {
+  width: 98%;
+  resize: none;
+  margin: 0;
+  font-size: 1.5em;
+  padding: 0.25em 0.5em;
+  height: 5em;
+  border-radius: 0.5em;
+  z-index: 9999;
+
+  font-family: "Source Serif Pro", serif !important;
+}
+.comment-wrapper .cool-purple-button {
+  font-size: 1.5em;
+  margin-top: 0.25em;
+}
+.post-comment-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  max-width: 90%;
+  width: 60em;
+}
+.post-comment-wrapper h5 {
+  color: var(--textcolor);
+  font-size: 1.2em;
+  display: flex;
+  gap: 0.25em;
+  align-items: center;
+  justify-content: center;
+  font-family: "Source Serif Pro", serif !important;
+}
+hr {
+  border-top: 1px solid var(--textcolor);
+  margin-top: 1em;
+  width: 90%;
+}
+.comment {
+  width: 100%;
+  border: 1px solid var(--textcolor);
+  padding: 0.25em 0.5em;
+  max-width: 90%;
+  width: 60em;
+}
+.comment p {
+  font-family: "Source Serif Pro", serif !important;
+  font-size: 1.33em;
+}
+.comment .user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25em;
+  margin-bottom: 0.25em;
+}
+.comment .user-info .icon {
+  font-size: 1.5em;
+}
+.comment .user-info h5 {
+  font-size: 1.25em;
+  font-family: "Source Serif Pro", serif !important;
 }

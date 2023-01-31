@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Header from "../Components/Header";
 import { Link } from "react-router-dom";
+import { FormatTime } from "../Helpers/FormatTime";
 
 interface PostInterface {
   post: PostItemInterface;
@@ -35,14 +36,7 @@ export default function Blog() {
   useEffect(() => {
     FetchPosts();
   }, []);
-  function formatTime(s: any) {
-    if (s === null || s === undefined) return;
-    s = parseInt(s);
-    const date = new Date(s);
-    const dateFormat = date.toLocaleDateString();
-    const timeFormat = date.toLocaleTimeString();
-    return dateFormat + " - " + timeFormat;
-  }
+
   return (
     <div className="page-wrapper">
       <Header />
@@ -72,7 +66,7 @@ export default function Blog() {
                         })}
                       </div>
                       <h2>By {post.AuthorName}</h2>
-                      <h5>{formatTime(post.timestamp)}</h5>
+                      <h5>{FormatTime(post.timestamp)}</h5>
                     </div>
                   </Link>
                 );

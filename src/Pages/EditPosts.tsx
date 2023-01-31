@@ -4,6 +4,7 @@ import { FaTrashAlt } from "react-icons/fa";
 import { RiEditBoxFill } from "react-icons/ri";
 import BlogEditor from "./BlogEditor";
 import { ValidateLogin } from "../Helpers/ValidateLogin";
+import { FormatTime } from "../Helpers/FormatTime";
 
 export default function EditPosts() {
   const [res, setRes]: Array<any> = useState([]);
@@ -46,14 +47,6 @@ export default function EditPosts() {
   function getPostFromId() {
     return res.find((r: any) => r.PostID === postID);
   }
-  function formatTime(s: any) {
-    if (s === null || s === undefined) return;
-    s = parseInt(s);
-    const date = new Date(s);
-    const dateFormat = date.toLocaleDateString();
-    const timeFormat = date.toLocaleTimeString();
-    return dateFormat + " - " + timeFormat;
-  }
   if (ValidateLogin("/login+des=EditPosts") == true)
     if (!showEdit) {
       return (
@@ -79,7 +72,7 @@ export default function EditPosts() {
                         <img src={post.PostThumbnailLink} />
                         <h1>{post.PostTitle}</h1>
                         <h2>{post.AuthorName}</h2>
-                        <h5>{formatTime(post.timestamp)}</h5>
+                        <h5>{FormatTime(post.timestamp)}</h5>
                         <FaTrashAlt
                           onClick={() => handlePostDelete(post.PostID)}
                           style={{
