@@ -9,23 +9,25 @@ export default function Login() {
   const [mode, setMode] = useState("Login");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const {des}: any = useParams();
+  const { des }: any = useParams();
   function storeLogin(allowLogin: Boolean, token: String, username: String) {
-    if (allowLogin && token !== undefined) {
+    if ((allowLogin && token !== undefined) || mode === "Sign Up") {
       let data: any = {
         username: username,
         token: token,
         timestamp: Date.now(),
       };
       localStorage.setItem("user", JSON.stringify(data));
-      window.location.pathname = "/" + des.replaceAll("+","/");
+      window.location.pathname = "/" + des.replaceAll("+", "/");
     } else {
-      CustomAlert("Couldn't Log You In","We couldn't find a user with that username/password.","Okay");
-     
+      CustomAlert(
+        "Couldn't Log You In",
+        "We couldn't find a user with that username/password.",
+        "Okay"
+      );
     }
   }
   useEffect(() => {
-    console.log("test");
     if (ValidateLogin(des)) {
       window.location.pathname = des;
     }
@@ -49,7 +51,11 @@ export default function Login() {
     }
     if (mode === "Sign Up") {
       if (!validPasswordChecker()) {
-        CustomAlert("invalid password","","Okay");
+        CustomAlert(
+          "invalid password",
+          "Passwords must be inbetween 8 and 32 characters in length and contain at least one capital letter and one lowercase number",
+          "Okay"
+        );
         return;
       }
       fetch("https://api.quinnpatwardhan.com/signup", {
@@ -61,12 +67,19 @@ export default function Login() {
         body: JSON.stringify(data),
       })
         .then((res) => res.json())
-        .then((data) => storeLogin(data.allowLogin, data.token, username));
+        .then((data) => {
+          storeLogin(data.allowLogin, data.token, username);
+          console.log(data);
+          if (data.allowLogin) {
+            setMode("Login");
+            window.location.reload();
+          }
+        });
     }
   }
   function validPasswordChecker() {
     if (mode === "Sign Up") {
-      if (password.length < 8) return false;
+      if (password.length < 8 || password.length > 32) return false;
       if (
         password.toLowerCase() === password ||
         password.toUpperCase() === password

@@ -705,7 +705,7 @@ input.invalid {
   color: var(--headerbackgroundtext) !important;
   width: min(90%, 70em) !important;
   max-width: 100% !important;
-  overflow-x: hidden !important; 
+  overflow-x: hidden !important;
   padding: 0 !important;
   font-family: "Source Serif Pro", serif !important;
 }
@@ -728,7 +728,7 @@ input.invalid {
   border: 3px solid var(--textcolor) !important;
 }
 .post-page-wrapper p {
-  font-size: 1.25em;
+  font-size: 1.2em;
   margin: 0 auto;
   margin-top: 1em;
   text-indent: 2em;
@@ -739,7 +739,7 @@ input.invalid {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1em;
+  gap: 0.25em;
   margin-left: auto;
 }
 .post-page-wrapper li {
@@ -845,33 +845,39 @@ hr {
   font-family: "Source Serif Pro", serif !important;
 }
 .alert-wrapper {
-  position: fixed; 
+  position: fixed;
   top: 0;
   margin-top: 1.5em;
-  left: 0; 
-  right: 0; 
-  margin-left: auto; 
-  margin-right: auto; 
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
   border-radius: 1em;
-  background-color: var(--headerbackgroundcolor);
-  box-shadow: -.25em .25em 1em 0 var(--headerbackgroundtext);
+  background-color: var(--backgroundcolor);
+  box-shadow: 0em 0em 2em 0 var(--headerbackgroundtext);
   max-width: max-content;
   z-index: 9999;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: .33em;
+  padding: 0.33em;
   padding-bottom: 1.2em !important;
   width: 30em;
+  max-width: 90% !important;
   align-items: center;
 }
+
 .alert-wrapper h1 {
- padding: .25em 1em;
- padding-bottom: 0;
+  padding: 0.25em 1em;
+  padding-bottom: 0;
+  color: var(--textcolor) !important;
 }
 .alert-wrapper p {
+  text-align: center;
   font-size: 1.25em;
   max-width: 90%;
+  margin: 0 auto;
+  color: var(--textcolor) !important;
 }
 .alert-wrapper .options-wrapper {
   display: flex;
@@ -880,15 +886,13 @@ hr {
   width: 90%;
 }
 .alert-wrapper .options-wrapper button {
-padding: .25em 1em;
-max-width: 12em;
-font-family: "Source Serif Pro", serif !important;
-font-size: 1.3em;
-margin-top: .5em;
-background-color: var(--headerbackgroundcolor);
-border: none;
-width: 100% !important;
-box-shadow: -.25em .25em 1em 0 var(--headerbackgroundtext);
-border-radius: .25em;
-color: var(--headerbackgroundtext);
+  padding: 0.25em 1em;
+  max-width: 12em;
+  font-family: "Source Serif Pro", serif !important;
+  font-size: 1.3em;
+  border: none;
+  width: 100% !important;
+  border-radius: 0.25em;
+  margin: 0 auto;
+  margin-top: 0.5em;
 }

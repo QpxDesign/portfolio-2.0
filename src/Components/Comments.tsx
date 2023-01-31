@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
 import { FaTrashAlt } from "react-icons/fa";
 import { FormatTime } from "../Helpers/FormatTime";
-import {CustomAlert} from "../Helpers/CustomAlert"
+import { CustomAlert } from "../Helpers/CustomAlert";
 
 export default function Comments() {
   const { id } = useParams();
@@ -25,10 +25,14 @@ export default function Comments() {
   }
   async function handlepost() {
     if (commentText.length <= 1) {
-      CustomAlert("Too short","Comments must have a length greater than 0.","Okay");
+      CustomAlert(
+        "Too short",
+        "Comments must have a length greater than 1.",
+        "Okay"
+      );
       return false;
     }
-    if (ValidateLogin("/blog/post/" + id) ) {
+    if (ValidateLogin("/blog/post/" + id)) {
       let data = {
         PostID: id,
         CommentID: uuid(),
@@ -46,7 +50,7 @@ export default function Comments() {
       });
       window.location.reload();
     } else {
-      window.location.pathname = "/login/blog+post+"+id
+      window.location.pathname = "/login/blog+post+" + id;
     }
   }
   async function handleCommentDelete(c: String) {
@@ -142,7 +146,9 @@ export default function Comments() {
                           handleCommentDelete(comment.CommentID);
                         }}
                         className={
-                          getUsername() === comment.Username  === true ? "show" : "hide"
+                          (getUsername() === comment.Username) === true
+                            ? "show"
+                            : "hide"
                         }
                       />
                     </div>
