@@ -121,7 +121,7 @@ export default function Comments() {
                         color="red"
                         style={{
                           marginLeft: ".5em",
-                          fontSize: "1.2em",
+                          fontSize: "1em",
                           cursor: "pointer",
                         }}
                         onClick={() => {
