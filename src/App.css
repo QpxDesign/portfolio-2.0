@@ -864,6 +864,7 @@ hr {
   padding-bottom: 1.2em !important;
   width: 30em;
   max-width: 90% !important;
+  color: var(--headerbackgroundtext);
   align-items: center;
 }
 
