@@ -74,7 +74,6 @@ export default function Comments() {
     let data = {
       PostID: id,
     };
-    console.log(id);
     await fetch("https://api.quinnpatwardhan.com/get-comments", {
       method: "POST",
       headers: {
@@ -85,7 +84,6 @@ export default function Comments() {
     })
       .then((res) => res.json())
       .then((r) => {
-        console.log(r);
         setRes(r);
         setLoaded(true);
       });

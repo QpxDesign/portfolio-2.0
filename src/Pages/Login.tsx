@@ -68,7 +68,6 @@ export default function Login() {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
           if (data.status !== undefined) {
             storeLogin(data.status === "okay", data.token, username);
           } else if (data.ERROR_FOUND) {
