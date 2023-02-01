@@ -129,7 +129,7 @@ nav h1 {
 nav h5 {
   font-family: "Source Serif Pro" !important;
   color: white;
-  font-size: 1.6em;
+  font-size: 1.5em;
   color: var(--headerbackgroundtext);
   font-weight: 500;
 }
@@ -141,7 +141,7 @@ nav a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1em;
+  gap: 1.25em;
   padding-right: 3rem;
 }
 .dropdown-toggle {
@@ -150,7 +150,7 @@ nav a:hover {
   color: var(--headerbackgroundtext);
   display: none;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 750px) {
   .dropdown-wrapper {
     display: none;
   }

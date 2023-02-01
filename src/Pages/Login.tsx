@@ -9,7 +9,10 @@ export default function Login() {
   const [mode, setMode] = useState("Login");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const { des }: any = useParams();
+  var { des }: any = useParams();
+  if (des === undefined) {
+    des = "";
+  }
   function storeLogin(allowLogin: Boolean, token: String, username: String) {
     if ((allowLogin && token !== undefined) || mode === "Sign Up") {
       let data: any = {

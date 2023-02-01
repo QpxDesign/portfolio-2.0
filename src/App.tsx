@@ -24,6 +24,8 @@ function App() {
         <Routes>
           <Route path="/blog/post/:id" element={<BlogPost />} />
           <Route path="/login/:des" element={<Login />} />
+          <Route path="/login" element={<Login />} />
+
           <Route path="/" element={<Home />} />
           <Route path="/photo-gallery" element={<PhotographyGallery />} />
           <Route path="/photography" element={<PhotographyGallery />} />

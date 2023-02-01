@@ -6,6 +6,17 @@ import ThemeSwitch from "./ThemeSwitch";
 export default function DropdownMenu() {
   const activePage = window.location.pathname.replace("/", "");
   const [showDropdown, setshowDropdown] = useState(false);
+  function isLoggedIn() {
+    if (localStorage.getItem("user") !== null) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  function handleSignout() {
+    localStorage.clear();
+    window.location.reload();
+  }
   return (
     <>
       <div
@@ -20,6 +31,17 @@ export default function DropdownMenu() {
         <Link to="/blog">
           <h5 className={activePage === "blog" ? "underline" : ""}>Blog</h5>
         </Link>
+        {isLoggedIn() ? (
+          <Link to={window.location.pathname}>
+            <h5 onClick={handleSignout} className="underline-hover">
+              Sign Out
+            </h5>
+          </Link>
+        ) : (
+          <Link to="/login">
+            <h5>Sign In</h5>
+          </Link>
+        )}
       </div>
       <BiMenuAltRight
         className="dropdown-toggle"
