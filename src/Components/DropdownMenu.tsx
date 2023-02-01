@@ -14,7 +14,9 @@ export default function DropdownMenu() {
     }
   }
   function handleSignout() {
-    localStorage.clear();
+    if (localStorage.getItem("user") !== null) {
+      localStorage.removeItem("user");
+    }
     window.location.reload();
   }
   return (
