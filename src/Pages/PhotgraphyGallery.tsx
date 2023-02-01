@@ -98,7 +98,6 @@ export default function PhotgraphyGallery() {
                     }}
                     key={index}
                     src={"Assets/photos/image" + (index + 1) + ".webp"}
-                    alt="info"
                   />
                 );
               }

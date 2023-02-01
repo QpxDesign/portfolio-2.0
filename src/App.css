@@ -316,6 +316,11 @@ nav a:hover {
 .back-icon {
   font-size: 3rem;
   margin-left: auto;
+  color: var(--headerbackgroundtext) !important;
+}
+.back-icon:hover {
+  transform: scale(0.95);
+  color: var(--textcolor) !important;
 }
 .title-wrapper {
   display: flex;
@@ -352,17 +357,17 @@ nav a:hover {
 }
 .graphic-gallery .graphic {
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: #e2e8f0;
   display: flex;
   height: 12em;
   justify-content: center;
   object-fit: contain;
   padding: 1em;
+  cursor: pointer;
   width: 20em;
 }
 
 .gallery-wrapper img:hover {
-  opacity: 0.5;
   cursor: pointer;
   user-select: none;
 }
