@@ -68,11 +68,13 @@ export default function Login() {
       })
         .then((res) => res.json())
         .then((data) => {
-          storeLogin(data.allowLogin, data.token, username);
           console.log(data);
-          if (data.allowLogin) {
-            setMode("Login");
-            window.location.reload();
+          if (data.status !== undefined) {
+            storeLogin(data.status === "okay", data.token, username);
+          } else if (data.ERROR_FOUND) {
+            CustomAlert("Couldn't Create Account", data.ERROR_MESSAGE, "Okay");
+          } else {
+            CustomAlert("Unknown Error", "We don't know what happened", "Okay");
           }
         });
     }
