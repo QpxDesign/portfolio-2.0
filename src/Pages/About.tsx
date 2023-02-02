@@ -4,6 +4,7 @@ import Header from "../Components/Header";
 import SelfImage from "../Assets/self.jpeg";
 import GithubLogo from "../Assets/Github.png";
 import LinkedInLogo from "../Assets/LinkedIn.png";
+import { Link } from "react-router-dom";
 
 export default function About() {
   const skills = [
@@ -21,6 +22,8 @@ export default function About() {
     "Linux",
     "ubuntu",
     "mysql",
+    "csharp",
+    "xna",
     "AdobeIllustrator",
     "AdobePhotoshop",
     "AdobeLightroom",
@@ -82,7 +85,7 @@ export default function About() {
               skateboarding, photography, graphic design, and programming. I am
               a die-hard Ravens fan and an environmentalist. I play ultimate
               frisbee. I am an apsiring Software Engineer and Comedy Writer. See
-              below for some of what i'm to in school:
+              below for some of what i'm up to in school:
             </p>
             <ul style={{ marginTop: ".3em", fontFamily: "Basic-sans, sans" }}>
               <li>Graphics Editor of School Newspaper</li>
@@ -93,7 +96,17 @@ export default function About() {
             </ul>
             <p>
               I coded this wesbite 100% by hand in React using Typescript, NPM,
-              vanilla CSS and HTML. See below for all modules I used:
+              MySQL, Express.js, vanilla CSS and HTML/JSX. My goal when making
+              this site was to demenstarte by web development skills by using as
+              few modules as I could, and to develop as much of my site by
+              myself. Adhering to this, principal, I also{" "}
+              <Link
+                to="/blog/post/0c7e88d7-68e4-13b5-76cb-f09e2d569943"
+                style={{ color: "#E91E63" }}
+              >
+                self-host my websites on my own Linux server
+              </Link>
+              . See below for all of the modules I used:
             </p>
             <ul style={{ marginTop: ".3em", fontFamily: "Basic-sans, sans" }}>
               <li>
@@ -118,6 +131,22 @@ export default function About() {
                   style={{ color: "#E91E63" }}
                 >
                   Create-React-App
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.npmjs.com/package/bcrypt"
+                  style={{ color: "#E91E63" }}
+                >
+                  Bcrypt
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.npmjs.com/package/mysql2"
+                  style={{ color: "#E91E63" }}
+                >
+                  mysql2
                 </a>
               </li>
             </ul>
