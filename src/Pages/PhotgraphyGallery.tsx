@@ -33,12 +33,19 @@ export default function PhotgraphyGallery() {
       window.scroll(0, 0);
     }
   };
+  function handleKeyPress(event: any) {
+    console.log("a");
+    if (event.key === "ArrowRight") {
+      handleSlideShowForward();
+    }
+    if (event.key === "ArrowLeft") {
+      handleSlideShowBack();
+    }
+    if (event.key === "Escape") {
+      toggleSlideshow(false);
+    }
+  }
   useEffect(() => {
-    window.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") {
-        toggleSlideshow(false);
-      }
-    });
     window.scrollTo(0, 0);
   }, []);
   function handleSlideshowClose() {
@@ -51,6 +58,7 @@ export default function PhotgraphyGallery() {
         className={
           showSlideshow ? "slideshow-wrapper show" : "slideshow-wrapper hide"
         }
+        onKeyDown={handleKeyPress}
       >
         <AiFillCloseCircle
           onClick={() => handleSlideshowClose()}
