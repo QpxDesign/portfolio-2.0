@@ -1,5 +1,33 @@
 [
   {
+    "name": "chess",
+    "title": "Chess",
+    "backgroundcolor": "#f1f5f9",
+    "textcolor": "#000",
+    "blurb": "A 21st century take on a 6th century game",
+    "points": [
+      "Uses GameCode system to allow seemless multiplayer between anyone in the world",
+      "Hosts Express.js Based Backend API facilitate moves between clients and MySQL Server",
+      "Required use of ES6 Syntax and Asynchronous Functions",
+      "Involved use npm & node in creating and deploying API",
+      "Required detailed knowledge of HTTP Post and Get Requests"
+    ],
+    "technologies": [
+      "ReactJS",
+      "Typescript",
+      "CSS",
+      "Git",
+      "mysql",
+      "Github",
+      "http",
+      "Node",
+      "Expressjs"
+    ],
+    "link": "https://chess.quinnpatwardhan.com",
+    "github_link": "https://github.com/QpxDesign/chess",
+    "isWebsite": true
+  },
+  {
     "name": "marcmap",
     "title": "MarcMap",
     "backgroundcolor": "#004d93",
