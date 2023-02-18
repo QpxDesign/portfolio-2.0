@@ -265,6 +265,9 @@ nav a:hover {
   margin-top: 2em;
   grid-gap: 1em 1em;
 }
+.options-list.center {
+  justify-content: center;
+}
 .photo-stack {
   width: 95% !important;
   justify-content: center;
@@ -555,7 +558,6 @@ nav a:hover {
   align-items: center;
   position: relative;
   box-shadow: 0px 10px 100px rgba(255, 255, 255, 30%);
-
   padding-bottom: 1em;
 }
 .post h1,
@@ -901,4 +903,45 @@ hr {
   border-radius: 0.25em;
   margin: 0 auto;
   margin-top: 0.5em;
+}
+.code-block {
+  width: 40em;
+  height: 20em;
+  border-radius: 2em;
+  display: flex;
+  padding: 0.5em 1.5em;
+  background-color: #1e293b;
+  font-family: "Courier New", Courier, monospace;
+  color: white;
+  flex-direction: column;
+  max-width: 90%;
+}
+.line {
+  overflow: scroll;
+  white-space: nowrap;
+  font-size: 1.5em;
+}
+.function {
+  color: #ef4444 !important;
+}
+.parentheses {
+  color: blue !important;
+}
+.curly-bracket {
+  color: purple;
+}
+.function_name {
+  color: #22c55e !important;
+}
+.indent {
+  text-indent: 1em;
+}
+.variable-identifier {
+  color: lawngreen;
+}
+.variable-name {
+  color: slateblue;
+}
+.string {
+  color: violet !important;
 }

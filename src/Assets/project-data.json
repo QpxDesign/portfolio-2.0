@@ -25,7 +25,8 @@
     ],
     "link": "https://chess.quinnpatwardhan.com",
     "github_link": "https://github.com/QpxDesign/chess",
-    "isWebsite": true
+    "isWebsite": true,
+    "centerButtons": true
   },
   {
     "name": "marcmap",
@@ -51,7 +52,8 @@
     ],
     "link": "https://marcmap.app",
     "github_link": "https://github.com/QpxDesign/marc-map",
-    "isWebsite": true
+    "isWebsite": true,
+    "centerButtons": true
   },
   {
     "name": "Composite",
@@ -70,7 +72,8 @@
     "technologies": ["JavaScript", "NPM", "Git", "Github", "ReactJS"],
     "link": "https://composite.quinnpatwardhan.com/",
     "github_link": "https://github.com/QpxDesign/composite/",
-    "isWebsite": true
+    "isWebsite": true,
+    "centerButtons": false
   },
   {
     "name": "Caldata",
@@ -99,7 +102,8 @@
     ],
     "link": "https://caldata.quinnpatwardhan.com/",
     "github_link": "https://github.com/QpxDesign/caldata/tree/main",
-    "isWebsite": true
+    "isWebsite": true,
+    "centerButtons": true
   },
   {
     "name": "school_webscraper",
@@ -118,7 +122,8 @@
     "technologies": ["Python", "Git", "Github", "http"],
     "link": "",
     "github_link": "https://github.com/QpxDesign/stugov_automailer",
-    "isWebsite": false
+    "isWebsite": false,
+    "centerButtons": false
   },
   {
     "name": "cs_club_website",
@@ -136,6 +141,7 @@
     "technologies": ["ReactJS", "CSS", "Git", "Github"],
     "link": "https://csclub.quinnpatwardhan.com/",
     "github_link": "https://github.com/QpxDesign/csclubwesbite",
-    "isWebsite": true
+    "isWebsite": true,
+    "centerButtons": false
   }
 ]

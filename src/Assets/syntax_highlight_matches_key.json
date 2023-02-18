@@ -1,0 +1,93 @@
+[
+  {
+    "match": "function",
+    "replaceWith": "<span class='function'>function</span>",
+    "matchesVariableName": false,
+    "useRegex": false
+  },
+  {
+    "match": "(",
+    "replaceWith": "<span class='parentheses'>(</span>",
+    "matchesVariableName": false,
+    "useRegex": false
+  },
+  {
+    "match": ")",
+    "replaceWith": "<span class='parentheses'>)</span>",
+    "useRegex": false,
+    "matchesVariableName": false
+  },
+  {
+    "match": "{",
+    "replaceWith": "<span class='curly-bracket'>{</span>",
+    "matchesVariableName": false,
+    "useRegex": false
+  },
+  {
+    "match": "}",
+    "replaceWith": "<span class='curly-bracket'>}</span>",
+    "matchesVariableName": false,
+    "useRegex": false
+  },
+  {
+    "match": "(?<=<span class='function'>function</span>)(.*?)(?=<span class='parentheses'>)",
+    "replaceWith": "<span class='function_name'> $1</span>",
+    "matchesVariableName": false,
+    "useRegex": true
+  },
+  {
+    "match": "var",
+    "replaceWith": "<span class='variable-identifier'>var</span>",
+    "matchesVariableName": false,
+    "useRegex": false
+  },
+  {
+    "match": "(?<=var</span>)(.*?)(?==)",
+    "replaceWith": "<span class='variable-name'> $1 </span>",
+    "matchesVariableName": false,
+    "useRegex": true
+  },
+  {
+    "match": "const",
+    "replaceWith": "<span class='variable-identifier'>const</span>",
+    "matchesVariableName": true,
+    "useRegex": false
+  },
+  {
+    "match": "(?<=const</span>)(.*?)(?==)",
+    "replaceWith": "<span class='variable-name'> $1 </span>",
+    "matchesVariableName": true,
+    "useRegex": true
+  },
+  {
+    "match": "let",
+    "replaceWith": "<span class='variable-identifier'>let</span>",
+    "useRegex": false,
+    "matchesVariableName": false
+  },
+  {
+    "match": "(?<=let</span>)(.*?)(?==)",
+    "replaceWith": "<span class='variable-name'> $1 </span>",
+    "matchesVariableName": true,
+    "useRegex": true,
+    "matchesVariableName": false
+  },
+  {
+    "match": "(?<=\")(.*?)(?=\")",
+    "replaceWith": "<span class='string'>$1</span>",
+    "useRegex": true,
+    "matchesVariableName": false
+  },
+  {
+    "match": "\"",
+    "replaceWith": "<span class='string'>\"</span>",
+    "useRegex": false,
+    "matchesVariableName": false
+  },
+  {
+    "match": "for",
+    "replaceWith": "<span class='variable-name'>for</span>",
+    "useRegex": false,
+    "matchesVariableName": false
+  }
+]

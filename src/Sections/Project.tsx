@@ -11,6 +11,7 @@ interface ProjectObject {
   link: string;
   isWebsite: boolean;
   github_link: string;
+  centerButtons: boolean;
 }
 
 interface ProjectProps {
@@ -58,7 +59,11 @@ export default function Project(props: ProjectProps) {
           {props.data.points.map((x, index) => {
             return <li key={index}>{x}</li>;
           })}
-          <div className="options-list">
+          <div
+            className={
+              props.data.centerButtons ? "options-list center" : "options-list"
+            }
+          >
             <a href={props.data.github_link}>
               <button
                 className="button-1"

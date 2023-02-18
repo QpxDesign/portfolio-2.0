@@ -16,6 +16,7 @@ import BlogEditor from "./Pages/BlogEditor";
 import EditPosts from "./Pages/EditPosts";
 import Login from "./Pages/Login";
 import BlogPost from "./Pages/BlogPost";
+import Solutions from "./Pages/Solutions";
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
           <Route path="/blog/post/:id" element={<BlogPost />} />
           <Route path="/login/:des" element={<Login />} />
           <Route path="/login" element={<Login />} />
-
+          <Route path="/solutions" element={<Solutions />} />
           <Route path="/" element={<Home />} />
           <Route path="/photo-gallery" element={<PhotographyGallery />} />
           <Route path="/photography" element={<PhotographyGallery />} />
