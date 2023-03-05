@@ -151,7 +151,7 @@ nav a:hover {
   color: var(--headerbackgroundtext);
   display: none;
 }
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 780px) {
   .dropdown-wrapper {
     display: none;
   }

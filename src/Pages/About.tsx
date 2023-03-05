@@ -23,7 +23,7 @@ export default function About() {
     "ubuntu",
     "mysql",
     "csharp",
-    "xna",
+    "swift",
     "AdobeIllustrator",
     "AdobePhotoshop",
     "AdobeLightroom",
