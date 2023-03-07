@@ -1,5 +1,36 @@
 [
   {
+    "name": "marcmap",
+    "title": "MarcMap",
+    "backgroundcolor": "#004d93",
+    "textcolor": "#fff",
+    "blurb": "Never miss a train again",
+    "points": [
+      "Uses Mapbox GL JS API to provide a user friendly map interface",
+      "Hosts Express.js Based Backend API to format GTFS-RS Data",
+      "Required Use of Performance Performance and Testing Tools",
+      "Involved use npm & node in creating and deploying API",
+      "Required Extensive SEO optimization and use of Analytics",
+      "Designed, Developed, and Published an IOS Version written Swift/SwiftUI to the Apple App Store"
+    ],
+    "technologies": [
+      "ReactJS",
+      "CSS",
+      "Git",
+      "Github",
+      "http",
+      "Node",
+      "Expressjs",
+      "swift"
+    ],
+    "link": "https://marcmap.app",
+    "github_link": "https://github.com/QpxDesign/marc-map",
+    "isWebsite": true,
+    "centerButtons": true,
+    "onAppStore": true,
+    "appstore_link": "https://apps.apple.com/us/app/marcmap/id6445867355"
+  },
+  {
     "name": "chess",
     "title": "Chess",
     "backgroundcolor": "#f1f5f9",
@@ -26,34 +57,9 @@
     "link": "https://chess.quinnpatwardhan.com",
     "github_link": "https://github.com/QpxDesign/chess",
     "isWebsite": true,
-    "centerButtons": true
-  },
-  {
-    "name": "marcmap",
-    "title": "MarcMap",
-    "backgroundcolor": "#004d93",
-    "textcolor": "#fff",
-    "blurb": "Never miss a train again",
-    "points": [
-      "Uses Mapbox GL JS API to provide a user friendly map interface",
-      "Hosts Express.js Based Backend API to format GTFS-RS Data",
-      "Required Use of Performance Performance and Testing Tools",
-      "Involved use npm & node in creating and deploying API",
-      "Required Extensive SEO optimization and use of Analytics"
-    ],
-    "technologies": [
-      "ReactJS",
-      "CSS",
-      "Git",
-      "Github",
-      "http",
-      "Node",
-      "Expressjs"
-    ],
-    "link": "https://marcmap.app",
-    "github_link": "https://github.com/QpxDesign/marc-map",
-    "isWebsite": true,
-    "centerButtons": true
+    "centerButtons": true,
+    "onAppStore": false,
+    "appstore_link": ""
   },
   {
     "name": "Composite",
@@ -73,7 +79,9 @@
     "link": "https://composite.quinnpatwardhan.com/",
     "github_link": "https://github.com/QpxDesign/composite/",
     "isWebsite": true,
-    "centerButtons": false
+    "centerButtons": false,
+    "onAppStore": false,
+    "appstore_link": ""
   },
   {
     "name": "Caldata",
@@ -103,7 +111,9 @@
     "link": "https://caldata.quinnpatwardhan.com/",
     "github_link": "https://github.com/QpxDesign/caldata/tree/main",
     "isWebsite": true,
-    "centerButtons": true
+    "centerButtons": true,
+    "onAppStore": false,
+    "appstore_link": ""
   },
   {
     "name": "school_webscraper",
@@ -123,7 +133,9 @@
     "link": "",
     "github_link": "https://github.com/QpxDesign/stugov_automailer",
     "isWebsite": false,
-    "centerButtons": false
+    "centerButtons": false,
+    "onAppStore": false,
+    "appstore_link": ""
   },
   {
     "name": "cs_club_website",
@@ -142,6 +154,8 @@
     "link": "https://csclub.quinnpatwardhan.com/",
     "github_link": "https://github.com/QpxDesign/csclubwesbite",
     "isWebsite": true,
-    "centerButtons": false
+    "centerButtons": false,
+    "onAppStore": false,
+    "appstore_link": ""
   }
 ]

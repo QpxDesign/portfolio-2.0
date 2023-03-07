@@ -1,5 +1,5 @@
 import React from "react";
-
+import {AiFillApple} from "react-icons/ai"
 interface ProjectObject {
   name: string;
   title: string;
@@ -12,6 +12,8 @@ interface ProjectObject {
   isWebsite: boolean;
   github_link: string;
   centerButtons: boolean;
+  onAppStore : boolean;
+  appstore_link : string
 }
 
 interface ProjectProps {
@@ -89,7 +91,13 @@ export default function Project(props: ProjectProps) {
               >
                 Visit Project
               </button>
+              
             </a>
+            {props.data.onAppStore ? 
+            <a href={props.data.appstore_link}>
+            <button className="button-1" style={{display:"flex",justifyContent:"center",background:"transparent"}}>
+             Download on the App Store
+              </button></a> : ""}
           </div>
         </ul>
       </div>
