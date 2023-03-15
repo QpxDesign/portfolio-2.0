@@ -33,6 +33,9 @@ export default function DropdownMenu() {
         <Link to="/blog">
           <h5 className={activePage === "blog" ? "underline" : ""}>Blog</h5>
         </Link>
+        <a href="/Assets/Resume.pdf">
+          <h5>Resume</h5>
+        </a>
         {isLoggedIn() ? (
           <Link to={window.location.pathname}>
             <h5 onClick={handleSignout} className="underline-hover">
