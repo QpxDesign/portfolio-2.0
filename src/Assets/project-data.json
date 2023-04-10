@@ -150,7 +150,7 @@
       "Written in a time-crunch",
       "Involved Usage of Git CLI and Github CLI"
     ],
-    "technologies": ["ReactJS", "CSS", "Git", "Github","http","expressjs","Node"],
+    "technologies": ["ReactJS", "CSS", "Git", "Github","http","Expressjs","Node"],
     "link": "https://csclub.social/",
     "github_link": "https://github.com/QpxDesign/csclubwesbite",
     "isWebsite": true,
