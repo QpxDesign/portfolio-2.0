@@ -1,4 +1,25 @@
 [
+    {
+    "name": "cs_club_website",
+    "title": "CS Club Website",
+    "backgroundcolor": "#4E2B73",
+    "textcolor": "#e2e8f0",
+    "blurb": "Please join, i'm begging you.",
+    "points": [
+      "Uses CSS & Javascript Based Animations",
+      "Uses Secure Methods to Authenticate Users by Password or by Google Login",
+      "Allows users to create, delete, and edit posts",
+      "Uses shell script and Express.js Backend to deploy static websites from Github",
+      "Involved Usage of Git CLI and Github CLI"
+    ],
+    "technologies": ["ReactJS", "CSS", "Git", "Github","http","Expressjs","Node"],
+    "link": "https://csclub.social/",
+    "github_link": "https://github.com/QpxDesign/csclubwesbite",
+    "isWebsite": true,
+    "centerButtons": false,
+    "onAppStore": false,
+    "appstore_link": ""
+  },
   {
     "name": "marcmap",
     "title": "MarcMap",
@@ -133,27 +154,6 @@
     "link": "",
     "github_link": "https://github.com/QpxDesign/stugov_automailer",
     "isWebsite": false,
-    "centerButtons": false,
-    "onAppStore": false,
-    "appstore_link": ""
-  },
-  {
-    "name": "cs_club_website",
-    "title": "CS Club Website",
-    "backgroundcolor": "#4E2B73",
-    "textcolor": "#e2e8f0",
-    "blurb": "Please join, i'm begging you.",
-    "points": [
-      "Uses CSS & Javascript Based Animations",
-      "Uses SQL-Based Personal Data Storage Method",
-      "Collected and Incorporated User Feedback ",
-      "Written in a time-crunch",
-      "Involved Usage of Git CLI and Github CLI"
-    ],
-    "technologies": ["ReactJS", "CSS", "Git", "Github","http","Expressjs","Node"],
-    "link": "https://csclub.social/",
-    "github_link": "https://github.com/QpxDesign/csclubwesbite",
-    "isWebsite": true,
     "centerButtons": false,
     "onAppStore": false,
     "appstore_link": ""
