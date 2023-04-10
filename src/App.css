@@ -864,7 +864,7 @@ hr {
   background-color: var(--backgroundcolor);
   box-shadow: 0em 0em 2em 0 var(--headerbackgroundtext);
   max-width: max-content;
-  z-index: 9999;
+  z-index: 99999999999;
   display: flex;
   flex-direction: column;
   justify-content: center;
