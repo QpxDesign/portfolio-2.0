@@ -1,5 +1,5 @@
 [
-    {
+  {
     "name": "cs_club_website",
     "title": "CS Club Website",
     "backgroundcolor": "#4E2B73",
@@ -12,11 +12,19 @@
       "Uses shell script and Express.js Backend to deploy static websites from Github",
       "Involved Usage of Git CLI and Github CLI"
     ],
-    "technologies": ["ReactJS", "CSS", "Git", "Github","http","Expressjs","Node"],
+    "technologies": [
+      "ReactJS",
+      "CSS",
+      "Git",
+      "Github",
+      "http",
+      "Expressjs",
+      "Node"
+    ],
     "link": "https://csclub.social/",
     "github_link": "https://github.com/QpxDesign/csclubwesbite",
     "isWebsite": true,
-    "centerButtons": false,
+    "centerButtons": true,
     "onAppStore": false,
     "appstore_link": ""
   },
