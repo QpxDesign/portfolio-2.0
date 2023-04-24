@@ -267,8 +267,6 @@ nav a:hover {
 }
 .options-list.center {
   justify-content: center;
-  max-width: 50em;
-  margin: 0 auto;
 }
 .photo-stack {
   width: 95% !important;
