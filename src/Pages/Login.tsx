@@ -4,6 +4,7 @@ import { AiFillCheckCircle, AiFillCloseCircle } from "react-icons/ai";
 import { ValidateLogin } from "../Helpers/ValidateLogin";
 import { useParams } from "react-router-dom";
 import { CustomAlert } from "../Helpers/CustomAlert";
+import { Helmet } from "react-helmet";
 
 export default function Login() {
   const [mode, setMode] = useState("Login");
@@ -96,6 +97,14 @@ export default function Login() {
   }
   return (
     <div>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>login</title>
+        <meta
+          name="description"
+          content="see a curated collection of quinn's work, including his photography, graphic design and web development. quinn patwardhan is a creative and software developer based in washington, dc"
+        />
+      </Helmet>
       <Header />
       <h1
         className="center"

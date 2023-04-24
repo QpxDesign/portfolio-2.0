@@ -18,7 +18,6 @@ import Login from "./Pages/Login";
 import BlogPost from "./Pages/BlogPost";
 import Solutions from "./Pages/Solutions";
 import { Helmet } from "react-helmet";
-import Header from "./Components/Header";
 
 function App() {
   return (

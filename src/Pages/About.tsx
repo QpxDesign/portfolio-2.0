@@ -5,6 +5,7 @@ import SelfImage from "../Assets/self.jpeg";
 import GithubLogo from "../Assets/Github.png";
 import LinkedInLogo from "../Assets/LinkedIn.png";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 export default function About() {
   const skills = [
@@ -31,6 +32,14 @@ export default function About() {
 
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>about me</title>
+        <meta
+          name="description"
+          content="see a curated collection of quinn's work, including his photography, graphic design and web development. quinn patwardhan is a creative and software developer based in washington, dc"
+        />
+      </Helmet>
       <Header />
       <div className="page-wrapper">
         <h1 className="center" style={{ marginTop: ".5em" }}>
@@ -42,7 +51,7 @@ export default function About() {
             width: "90%",
             marginRight: "auto",
             marginLeft: "auto",
-            gap: ".5em",
+            gap: "1.5em",
             marginTop: ".5em",
             justifyContent: "center",
             alignItems: "flex-start",
@@ -73,8 +82,6 @@ export default function About() {
             className="contents-wrapper"
             style={{
               width: "90%",
-              marginRight: "auto",
-              marginLeft: "auto",
               maxWidth: "900px",
               fontSize: "1.3em",
               marginBottom: "1em",
