@@ -267,6 +267,8 @@ nav a:hover {
 }
 .options-list.center {
   justify-content: center;
+  max-width: 50em;
+  margin: 0 auto;
 }
 .photo-stack {
   width: 95% !important;
@@ -319,7 +321,7 @@ nav a:hover {
 }
 .back-icon {
   font-size: 3rem;
-  margin-left: auto;
+  margin-g: auto;
   color: var(--headerbackgroundtext) !important;
 }
 .back-icon:hover {
@@ -944,4 +946,27 @@ hr {
 }
 .string {
   color: violet !important;
+}
+.button-1:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 20%;
+  height: 100%;
+  white-space: nowrap;
+  background-color: none;
+  bottom: 0;
+  border-radius: 1000rem;
+  left: 0;
+  transition: 1s;
+  z-index: -99;
+}
+.button-1:hover,
+.button-1:focus {
+  color: black !important;
+}
+.button-1:hover:after,
+.button-1:focus:after {
+  width: 100%;
+  background-color: white;
 }

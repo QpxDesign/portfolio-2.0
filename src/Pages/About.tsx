@@ -101,7 +101,7 @@ export default function About() {
               few modules as I could, and to develop as much of my site by
               myself. Adhering to this, principal, I also{" "}
               <Link
-                to="/blog/post/0c7e88d7-68e4-13b5-76cb-f09e2d569943"
+                to="/blog/post/3b5ae772-88d2-99ae-ef74-a285dea56b05"
                 style={{ color: "#E91E63" }}
               >
                 self-host my websites on my own Linux server
