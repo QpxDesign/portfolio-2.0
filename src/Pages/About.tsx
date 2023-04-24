@@ -85,14 +85,18 @@ export default function About() {
               skateboarding, photography, graphic design, and programming. I am
               a die-hard Ravens fan and an environmentalist. I play ultimate
               frisbee. I am an apsiring Software Engineer and Comedy Writer. See
-              below for some of what i'm up to in school:
+              below for some of what i'm up to in and out of school:
             </p>
             <ul style={{ marginTop: ".3em", fontFamily: "Basic-sans, sans" }}>
               <li>Graphics Editor of School Newspaper</li>
-              <li>Graphics Editor & Head of School Satirical Newspaper</li>
+              <li>Editor-in-Cheif of School Satirical Newspaper</li>
               <li>Co-Head of CS Club</li>
               <li>Completor of Bebras Computing Challenge</li>
               <li>Member of Varisty Ultimate Frisbee Team</li>
+              <li>
+                Incoming Intern at Georgetown Universty Department of Computer
+                Science's InfoSense Artificial Intelligence Research Lab{" "}
+              </li>
             </ul>
             <p>
               I coded this wesbite 100% by hand in React using Typescript, NPM,

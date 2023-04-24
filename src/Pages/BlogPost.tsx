@@ -4,6 +4,7 @@ import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import Comments from "../Components/Comments";
 import { FormatTime } from "../Helpers/FormatTime";
+import { Helmet } from "react-helmet";
 
 export default function BlogPost() {
   const { id } = useParams();
@@ -38,6 +39,11 @@ export default function BlogPost() {
 
   return (
     <div className="">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>{postData.PostTitle}</title>
+        <meta name="description" content={postData.PostBlurb} />
+      </Helmet>
       <Header />
       {postData !== undefined ? (
         <div className="post-page-wrapper">

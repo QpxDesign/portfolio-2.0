@@ -742,6 +742,9 @@ input.invalid {
   text-indent: 2em;
   line-height: 1.5em;
 }
+.post-page-wrapper a {
+  color: rgb(233, 30, 99);
+}
 .post-page-wrapper .content-wrapper {
   margin: 0 auto;
   display: flex;

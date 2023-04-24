@@ -17,10 +17,20 @@ import EditPosts from "./Pages/EditPosts";
 import Login from "./Pages/Login";
 import BlogPost from "./Pages/BlogPost";
 import Solutions from "./Pages/Solutions";
+import { Helmet } from "react-helmet";
+import Header from "./Components/Header";
 
 function App() {
   return (
-    <div className="App">
+    <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>quinn patwardhan</title>
+        <meta
+          name="description"
+          content="see a curated collection of quinn's work, including his photography, graphic design and web development. quinn patwardhan is a creative and software developer based in washington, dc"
+        />
+      </Helmet>
       <Router>
         <Routes>
           <Route path="/blog/post/:id" element={<BlogPost />} />
@@ -54,7 +64,7 @@ function App() {
           <Route path="/blog" element={<Blog />} />
         </Routes>
       </Router>
-    </div>
+    </>
   );
 }
 
