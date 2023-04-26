@@ -20,7 +20,49 @@ export default function BlogEditor(props: EditProps) {
   const [Post, setPost]: any = useState(props.Post);
   const [loggedIn, setLoggedIn] = useState(false);
   const [ImageURL, setImageURL]: any = useState(props.ImageURL);
+  function handleImageUpload() {
+    let input = document.createElement("input");
+    input.type = "file";
+    console.log("nerd");
+    input.click();
+    input.onchange = (_) => {
+      // you can use this method to get file and perform respective operations
+      // let files = Array.from(input.files);
+      let files = input.files;
+      if (files?.length == 1) {
+        const formData = new FormData();
 
+        formData.append("file", files[0]);
+        console.log(files[0]);
+
+        formData.append(
+          "username",
+          JSON.parse(
+            localStorage.getItem("user") ?? "{'username':'nerdfailhahayls'}"
+          ).username
+        );
+        formData.append(
+          "token",
+          JSON.parse(
+            localStorage.getItem("user") ?? "{'token':'nerdfailhahayls'}"
+          ).token
+        );
+
+        fetch("https://media.quinnpatwardhan.com/upload-image", {
+          method: "POST",
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+          },
+          body: formData,
+        })
+          .then((r) => r.json())
+          .then((r: any) => {
+            console.log(r);
+            setImageURL(r.url);
+          });
+      }
+    };
+  }
   async function handleFormSubmisson() {
     if (props.Mode === "" && localStorage.getItem("user") !== null) {
       let data = {
@@ -87,12 +129,28 @@ export default function BlogEditor(props: EditProps) {
         <Header />
         <div className="blog-editor-wrapper">
           <div className="form-item">
-            <label>
-              Image (paste <a href="https://unsplash.com/">Upslash</a> Link)
+            <label style={{ display: "flex" }}>
+              <span>
+                Image (paste{" "}
+                <a
+                  href="https://unsplash.com/"
+                  style={{ textDecoration: "underline" }}
+                >
+                  Upslash
+                </a>{" "}
+                Link or{" "}
+              </span>
+              <a
+                style={{ marginLeft: ".5em", textDecoration: "underline" }}
+                onClick={() => handleImageUpload()}
+              >
+                upload an image
+              </a>
+              )
             </label>
             <img
               src={ImageURL}
-              className={ImageURL.length > 10 ? "show" : "hide"}
+              className={(ImageURL ?? []).length > 10 ? "show" : "hide"}
             />
             <input
               onChange={(e) => {
@@ -136,7 +194,7 @@ export default function BlogEditor(props: EditProps) {
       </div>
     );
   } else {
-    window.location.pathname = "/login+des=BlogEditor"
+    window.location.pathname = "/login+des=BlogEditor";
     return null;
   }
 }
