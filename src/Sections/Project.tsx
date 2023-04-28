@@ -1,6 +1,7 @@
 import React from "react";
 import { AiFillApple } from "react-icons/ai";
 import { BsFillArrowRightCircleFill } from "react-icons/bs";
+import AppStoreBadge from "../Assets/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg";
 interface ProjectObject {
   name: string;
   title: string;
@@ -97,17 +98,7 @@ export default function Project(props: ProjectProps) {
             </a>
             {props.data.onAppStore ? (
               <a href={props.data.appstore_link}>
-                <button
-                  className="button-1"
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    background: "transparent",
-                  }}
-                >
-                  🍎 Download on the App Store
-                 
-                </button>
+                <img src={AppStoreBadge} style={{ width: "10em" }} />
               </a>
             ) : (
               ""
