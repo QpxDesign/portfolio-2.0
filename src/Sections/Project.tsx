@@ -106,7 +106,7 @@ export default function Project(props: ProjectProps) {
                   }}
                 >
                   🍎 Download on the App Store
-                  <BsFillArrowRightCircleFill />
+                 
                 </button>
               </a>
             ) : (
