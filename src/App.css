@@ -455,6 +455,7 @@ nav a:hover {
   padding: 0.75em;
   width: 25em;
   height: 25em;
+  max-width: 70vw;
 }
 .graphic-gallery {
   display: flex;
