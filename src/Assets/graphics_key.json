@@ -1,5 +1,11 @@
 [
   {
+    "id": 9,
+    "filename": "DensityMatters.png",
+    "name": "logo for Density Matters",
+    "isFeatured": true
+  },
+  {
     "id": 1,
     "filename": "CaldataLogo.png",
     "name": "Caldata Logo",
@@ -46,5 +52,41 @@
     "filename": "Snowflake.png",
     "name": "Snowflake",
     "isFeatured": true
+  },
+  {
+    "id": 10,
+    "filename": "Leaf.png",
+    "name": "Leaf",
+    "isFeatured": false
+  },
+  {
+    "id": 11,
+    "filename": "BrokenHeart.png",
+    "name": "BrokenHeart",
+    "isFeatured": false
+  },
+  {
+    "id": 11,
+    "filename": "Hearts.png",
+    "name": "Hearts",
+    "isFeatured": false
+  },
+  {
+    "id": 12,
+    "filename": "Chocolates.png",
+    "name": "Chocolates",
+    "isFeatured": false
+  },
+  {
+    "id": 13,
+    "filename": "DDLM_Grave.png",
+    "name": "DDLM_Grave",
+    "isFeatured": false
+  },
+  {
+    "id": 14,
+    "filename": "Moon.png",
+    "name": "Moon",
+    "isFeatured": false
   }
 ]

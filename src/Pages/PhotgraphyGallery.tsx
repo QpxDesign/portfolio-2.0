@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import Footer from "../Components/Footer";
 
 export default function PhotgraphyGallery() {
-  const runtime = new Array(121);
+  const runtime = new Array(135);
   for (let i = 0; i < runtime.length; i++) {
     runtime[i] = i;
   }
