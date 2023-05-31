@@ -17,6 +17,7 @@ import EditPosts from "./Pages/EditPosts";
 import Login from "./Pages/Login";
 import BlogPost from "./Pages/BlogPost";
 import Solutions from "./Pages/Solutions";
+import Contact from "./Pages/Contact";
 import { Helmet } from "react-helmet";
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
           <Route path="*" element={<NotFoundPage />} />
           <Route path="/404" element={<NotFoundPage />} />
           <Route path="/aboutme" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
           <Route
             path="/blog-editor"
             element={
