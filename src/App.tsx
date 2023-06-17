@@ -19,6 +19,7 @@ import BlogPost from "./Pages/BlogPost";
 import Solutions from "./Pages/Solutions";
 import Contact from "./Pages/Contact";
 import { Helmet } from "react-helmet";
+import Projects from "./Pages/Projects";
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
           <Route path="/404" element={<NotFoundPage />} />
           <Route path="/aboutme" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/projects" element={<Projects />} />
           <Route
             path="/blog-editor"
             element={

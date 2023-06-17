@@ -6,18 +6,24 @@ import projectdata from "../Assets/project-data.json";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import GraphicDesign from "../Sections/GraphicDesign";
+import SideScrollJumper from "../Components/SideScrollJumper";
 
 export default function Home() {
   return (
-    <div className="home-wrapper">
-      <Header />
-      <Lead />
-      {projectdata.map((x, index) => {
-        return <Project data={x} key={index} />;
-      })}
-      <Photography />
-      <GraphicDesign />
-      <Footer />
-    </div>
+    <>
+      <SideScrollJumper />
+      <div className="home-wrapper">
+        <Header />
+        <Lead />
+        {projectdata
+          .filter((a: any) => a.featured === true)
+          .map((x, index) => {
+            return <Project data={x} key={index} />;
+          })}
+        <Photography />
+        <GraphicDesign />
+        <Footer />
+      </div>
+    </>
   );
 }

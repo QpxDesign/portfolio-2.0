@@ -1,5 +1,70 @@
 [
   {
+    "name": "locomotive",
+    "title": "Locomotive: Amtrak Tracker",
+    "backgroundcolor": "#18567D",
+    "textcolor": "white",
+    "blurb": "See Exactly How Late Your Amtrak Train Is",
+
+    "points": [
+      "React-Native Based IOS and Android App",
+      "Uses Express.js API to serve train data",
+      "Followed App & Play Store Guidelines",
+      "Used Adobe Illustrator & Figma to Design Brand & User Experience",
+      "Involved Usage of Git CLI and Github CLI"
+    ],
+    "technologies": [
+      "ReactJS",
+      "Git",
+      "Github",
+      "http",
+      "Expressjs",
+      "Node",
+      "AdobeIllustrator",
+      "Swift",
+      "Typescript"
+    ],
+    "link": "",
+    "github_link": "https://github.com/QpxDesign/locomotive",
+    "isWebsite": false,
+    "centerButtons": true,
+    "onAppStore": true,
+    "onPlayStore": true,
+    "appstore_link": "https://apps.apple.com/us/app/locomotive-amtrak-tracker/id6449875541",
+    "playstore_link": "https://play.google.com/store/apps/details?id=com.amtrack",
+    "featured": true
+  },
+  {
+    "name": "density_matters",
+    "title": "Density Matters",
+    "backgroundcolor": "#A5B4FB",
+    "textcolor": "white",
+    "blurb": "learn how changing the shape of your city can help change the course of climate change.",
+
+    "points": [
+      "Uses RESTful APIs & Advanced React Components for an interactive experience",
+      "Mockups & Logos made in Adobe Illustrator",
+      "Fully Custom Mission-Focused CSS & UI/UX Design"
+    ],
+    "technologies": [
+      "ReactJS",
+      "Git",
+      "Github",
+      "http",
+      "AdobeIllustrator",
+      "Typescript"
+    ],
+    "link": "https://densitymatters.org",
+    "github_link": "https://github.com/QpxDesign/density_matters",
+    "isWebsite": true,
+    "centerButtons": true,
+    "onAppStore": false,
+    "onPlayStore": false,
+    "appstore_link": "",
+    "playstore_link": "",
+    "featured": true
+  },
+  {
     "name": "cs_club_website",
     "title": "CS Club Website",
     "backgroundcolor": "#4E2B73",
@@ -26,7 +91,10 @@
     "isWebsite": true,
     "centerButtons": true,
     "onAppStore": false,
-    "appstore_link": ""
+    "onPlayStore": false,
+    "appstore_link": "",
+    "playstore_link": "",
+    "featured": true
   },
   {
     "name": "marcmap",
@@ -57,7 +125,10 @@
     "isWebsite": true,
     "centerButtons": true,
     "onAppStore": true,
-    "appstore_link": "https://apps.apple.com/us/app/marcmap/id6445867355"
+    "onPlayStore": false,
+    "playstore_link": "",
+    "appstore_link": "https://apps.apple.com/us/app/marcmap/id6445867355",
+    "featured": true
   },
   {
     "name": "chess",
@@ -88,7 +159,10 @@
     "isWebsite": true,
     "centerButtons": true,
     "onAppStore": false,
-    "appstore_link": ""
+    "onPlayStore": false,
+    "appstore_link": "",
+    "playstore_link": "",
+    "featured": true
   },
   {
     "name": "Composite",
@@ -110,7 +184,9 @@
     "isWebsite": true,
     "centerButtons": false,
     "onAppStore": false,
-    "appstore_link": ""
+    "onPlayStore": false,
+    "appstore_link": "",
+    "playstore_link": ""
   },
   {
     "name": "Caldata",
@@ -142,7 +218,9 @@
     "isWebsite": true,
     "centerButtons": true,
     "onAppStore": false,
-    "appstore_link": ""
+    "onPlayStore": false,
+    "appstore_link": "",
+    "playstore_link": ""
   },
   {
     "name": "school_webscraper",
@@ -164,6 +242,8 @@
     "isWebsite": false,
     "centerButtons": false,
     "onAppStore": false,
-    "appstore_link": ""
+    "onPlayStore": false,
+    "appstore_link": "",
+    "playstore_link": ""
   }
 ]
