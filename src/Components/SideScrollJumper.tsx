@@ -65,7 +65,7 @@ export default function SideScrollJumper() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          zIndex: 9999999,
+          zIndex: 1,
         }}
       >
         <div
