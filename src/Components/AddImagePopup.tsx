@@ -52,6 +52,8 @@ export default function AddImagePopup(props: AddImagePopupProps) {
   }
   async function handleSubmit() {
     let data = {
+      Username: JSON.parse(localStorage.getItem("user") ?? "").username,
+      Token: JSON.parse(localStorage.getItem("user") ?? "").token,
       imageURL: ImageURL,
       title: imageTitle,
     };
