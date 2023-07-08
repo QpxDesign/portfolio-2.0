@@ -1,20 +1,24 @@
 import React, { useState, useEffect } from "react";
 import Header from "../Components/Header";
 import { BsArrowLeft } from "react-icons/bs";
-import { AiFillCloseCircle } from "react-icons/ai";
+import { AiFillCloseCircle, AiFillPlusCircle } from "react-icons/ai";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import { Link } from "react-router-dom";
 import graphics_key from "../Assets/graphics_key.json";
 import Footer from "../Components/Footer";
+import { ValidateLogin } from "../Helpers/ValidateLogin";
+import AddImagePopup from "../Components/AddImagePopup";
 
 export default function PhotgraphyGallery() {
-
   const runtime = new Array(graphics_key.length + 1);
   for (let i = 0; i < runtime.length; i++) {
     runtime[i] = i;
   }
+  const [graphics, setGraphics]: any = useState([]);
   const [showSlideshow, toggleSlideshow] = useState(false);
+  const [showAddImageOption, setShowAddImageOption] = useState(false);
   const [activeImage, setActiveImage] = useState(1);
+  const [showAddImagePopup, setShowAddImagePopup] = useState(false);
   function handleSlideShowBack() {
     if (activeImage === 1) {
       setActiveImage(runtime.length - 1);
@@ -36,6 +40,12 @@ export default function PhotgraphyGallery() {
     }
   };
   useEffect(() => {
+    fetch("https://api.quinnpatwardhan.com/get-graphics")
+      .then((r) => r.json())
+      .then((r2) => setGraphics(r2));
+    if (ValidateLogin("dont-redirect")) {
+      setShowAddImageOption(true);
+    }
     window.addEventListener("keydown", (e) => {
       if (e.key === "Escape") {
         toggleSlideshow(false);
@@ -47,6 +57,7 @@ export default function PhotgraphyGallery() {
   }
   return (
     <>
+      {showAddImagePopup ? <AddImagePopup mode={"graphic"} /> : ""}
       <Header />
       <div
         className={
@@ -86,10 +97,19 @@ export default function PhotgraphyGallery() {
         </div>
 
         <div className="graphic-gallery">
-          {graphics_key.map((graphic, index) => {
+          <div
+            className="graphic"
+            style={{ display: showAddImageOption ? "" : "none" }}
+            onClick={() => {
+              setShowAddImagePopup(true);
+            }}
+          >
+            <AiFillPlusCircle style={{ fontSize: "4rem" }} />
+          </div>
+          {graphics.map((graphic: any, index: any) => {
             return (
               <img
-                src={"Assets/graphics/" + graphic.filename}
+                src={graphic.imageURL}
                 className="graphic"
                 onClick={() => {
                   setActiveImage(index + 1);
@@ -99,7 +119,7 @@ export default function PhotgraphyGallery() {
                   e.preventDefault();
                   return false;
                 }}
-                alt={graphic.name}
+                alt={graphic.title}
               />
             );
           })}

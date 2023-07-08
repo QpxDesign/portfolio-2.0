@@ -1,18 +1,25 @@
 import React, { useState, useEffect } from "react";
 import Header from "../Components/Header";
 import { BsArrowLeft } from "react-icons/bs";
-import { AiFillCloseCircle } from "react-icons/ai";
+import { AiFillCloseCircle, AiFillPlusCircle } from "react-icons/ai";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import { Link } from "react-router-dom";
 import Footer from "../Components/Footer";
+import { ValidateLogin } from "../Helpers/ValidateLogin";
+import AddImagePopup from "../Components/AddImagePopup";
 
 export default function PhotgraphyGallery() {
   const runtime = new Array(135);
   for (let i = 0; i < runtime.length; i++) {
     runtime[i] = i;
   }
+  const [photos, setPhotos]: any = useState([]);
+
   const [showSlideshow, toggleSlideshow] = useState(false);
   const [activeImage, setActiveImage] = useState(1);
+  const [showAddImageOption, setShowAddImageOption] = useState(false);
+  const [showAddImagePopup, setShowAddImagePopup] = useState(false);
+
   function handleSlideShowBack() {
     if (activeImage === 1) {
       setActiveImage(runtime.length - 1);
@@ -46,6 +53,12 @@ export default function PhotgraphyGallery() {
     }
   }
   useEffect(() => {
+    fetch("https://api.quinnpatwardhan.com/get-photos")
+      .then((r) => r.json())
+      .then((r2) => setPhotos(r2));
+    if (ValidateLogin("dont-redirect")) {
+      setShowAddImageOption(true);
+    }
     window.scrollTo(0, 0);
   }, []);
   function handleSlideshowClose() {
@@ -53,6 +66,7 @@ export default function PhotgraphyGallery() {
   }
   return (
     <>
+      {showAddImagePopup ? <AddImagePopup mode={"photo"} /> : ""}
       <Header />
       <div
         className={
@@ -90,9 +104,24 @@ export default function PhotgraphyGallery() {
         </div>
 
         <div className="gallery-wrapper">
+          <div
+            className="faux-photo"
+            style={{
+              display: showAddImageOption ? "flex" : "none",
+              backgroundColor: "#cbd5e1",
+              justifyContent: "center",
+              minHeight: "20em",
+              alignItems: "center",
+            }}
+            onClick={() => {
+              setShowAddImagePopup(true);
+            }}
+          >
+            <AiFillPlusCircle style={{ fontSize: "4rem" }} />
+          </div>
           {
             // map runtimee
-            runtime.map((image, index) => {
+            photos.map((image: any, index: any) => {
               if (index < runtime.length - 1) {
                 return (
                   <img
@@ -105,7 +134,7 @@ export default function PhotgraphyGallery() {
                       return false;
                     }}
                     key={index}
-                    src={"Assets/photos/image" + (index + 1) + ".webp"}
+                    src={image.imageURL}
                   />
                 );
               }

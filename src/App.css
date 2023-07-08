@@ -75,7 +75,7 @@ a {
   text-decoration: none;
   color: inherit;
   cursor: pointer;
-  z-index:1;
+  z-index: 1;
 }
 .h-stack {
   justify-content: center;
@@ -356,7 +356,8 @@ nav a:hover {
   }
 }
 
-.gallery-wrapper img {
+.gallery-wrapper img,
+.gallery-wrapper .faux-photo {
   width: 100% !important;
   height: auto !important;
   object-fit: contain;
