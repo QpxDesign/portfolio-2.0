@@ -31,7 +31,7 @@ export default function DropdownMenu() {
           </h5>
         </Link>
         <Link to="/contact">
-          <h5 className={activePage === "aboutme" ? "underline" : ""}>
+          <h5 className={activePage === "contact" ? "underline" : ""}>
             Contact
           </h5>
         </Link>

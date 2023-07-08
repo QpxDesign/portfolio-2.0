@@ -39,13 +39,19 @@ export default function PhotgraphyGallery() {
       window.scroll(0, 0);
     }
   };
+  async function checkVal() {
+    await ValidateLogin("dont-redirect").then((r) => {
+      console.log("cn: " + r);
+      if (r) {
+        setShowAddImageOption(true);
+      }
+    });
+  }
   useEffect(() => {
     fetch("https://api.quinnpatwardhan.com/get-graphics")
       .then((r) => r.json())
       .then((r2) => setGraphics(r2));
-    if (ValidateLogin("dont-redirect")) {
-      setShowAddImageOption(true);
-    }
+    checkVal();
     window.addEventListener("keydown", (e) => {
       if (e.key === "Escape") {
         toggleSlideshow(false);

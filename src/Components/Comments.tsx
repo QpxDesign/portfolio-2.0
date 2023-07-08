@@ -32,26 +32,28 @@ export default function Comments() {
       );
       return false;
     }
-    if (ValidateLogin("/blog/post/" + id)) {
-      let data = {
-        PostID: id,
-        CommentID: uuid(),
-        CommentText: commentText,
-        Username: JSON.parse(localStorage.getItem("user") ?? "").username,
-        Token: JSON.parse(localStorage.getItem("user") ?? "").token,
-      };
-      await fetch("https://api.quinnpatwardhan.com/send-comment", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*",
-        },
-        body: JSON.stringify(data),
-      });
-      window.location.reload();
-    } else {
-      window.location.pathname = "/login/blog+post+" + id;
-    }
+    ValidateLogin("/blog/post/" + id).then((r) => {
+      if (r) {
+        let data = {
+          PostID: id,
+          CommentID: uuid(),
+          CommentText: commentText,
+          Username: JSON.parse(localStorage.getItem("user") ?? "").username,
+          Token: JSON.parse(localStorage.getItem("user") ?? "").token,
+        };
+        fetch("https://api.quinnpatwardhan.com/send-comment", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+          },
+          body: JSON.stringify(data),
+        });
+        window.location.reload();
+      } else {
+        window.location.pathname = "/login/blog+post+" + id;
+      }
+    });
   }
   async function handleCommentDelete(c: String) {
     let data = {

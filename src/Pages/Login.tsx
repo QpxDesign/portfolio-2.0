@@ -32,9 +32,11 @@ export default function Login() {
     }
   }
   useEffect(() => {
-    if (ValidateLogin(des)) {
-      window.location.pathname = des;
-    }
+    ValidateLogin(des).then((r) => {
+      if (r) {
+        window.location.pathname = des;
+      }
+    });
   }, []);
   function HandleLogin() {
     let data = {
