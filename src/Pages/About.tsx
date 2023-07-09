@@ -89,28 +89,44 @@ export default function About() {
           >
             <p>
               I'm a high school junior in Washington, DC. My hobbies include
-              skateboarding, photography, graphic design, and programming. I am
-              a die-hard Ravens fan and an environmentalist. I play ultimate
-              frisbee. I am an apsiring Software Engineer and Comedy Writer. See
-              below for some of what i'm up to in and out of school:
+              skateboarding, photography, graphic design, 3D printing, and
+              programming. I am a die-hard Ravens fan and an environmentalist. I
+              play ultimate frisbee. I am an apsiring Software Engineer and
+              Comedy Writer. See below for some of what i'm up to in and out of
+              school:
             </p>
             <ul style={{ marginTop: ".3em", fontFamily: "Basic-sans, sans" }}>
               <li>Graphics Editor of School Newspaper</li>
-              <li>Editor-in-Cheif of School Satirical Newspaper</li>
-              <li>Co-Head of CS Club</li>
-              <li>Completor of Bebras Computing Challenge</li>
+              <li>Editor-in-Chief of School Satirical Newspaper</li>
+              <li>Founder, Co-Head, & Lead Developer of CS Club</li>
               <li>Member of Varisty Ultimate Frisbee Team</li>
               <li>
-                Incoming Intern at Georgetown Universty Department of Computer
-                Science's InfoSense Artificial Intelligence Research Lab{" "}
+                Intern at Georgetown University Department of Computer Science's
+                InfoSense Artificial Intelligence Research Lab{" "}
+              </li>
+              <li>
+                I've appeared in the{" "}
+                <a
+                  href="https://www.nytimes.com/2023/07/08/business/student-loans-college-admissions-supreme-court.html"
+                  style={{ color: "#E91E63" }}
+                >
+                  New York Times
+                </a>
               </li>
             </ul>
             <p>
-              I coded this wesbite 100% by hand in React using Typescript, NPM,
+              I built this website 100% by hand in React using Typescript, NPM,
               MySQL, Express.js, vanilla CSS and HTML/JSX. My goal when making
-              this site was to demenstarte by web development skills by using as
+              this site was to demonstrate by web development skills by using as
               few modules as I could, and to develop as much of my site by
-              myself. Adhering to this, principal, I also{" "}
+              myself. You can find the source code on my{" "}
+              <a
+                href="https://github.com/qpxdesign/portfolio-2.0"
+                style={{ color: "#E91E63" }}
+              >
+                Github
+              </a>
+              . Adhering to this, principal, I also{" "}
               <Link
                 to="/blog/post/3b5ae772-88d2-99ae-ef74-a285dea56b05"
                 style={{ color: "#E91E63" }}

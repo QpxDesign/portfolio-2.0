@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import uuid from "react-uuid";
@@ -123,95 +123,97 @@ export default function BlogEditor(props: EditProps) {
     setPost("");
     setImageURL("");
   }
-  return (
-    <>
-      {ValidateLogin("/login+des=BlogEditor").then((r) => {
-        setLoaded(true);
-        if (r) {
-          return (
-            <div style={{ backgroundColor: "var(--backgroundcolor" }}>
-              <Header />
-              <div className="blog-editor-wrapper">
-                <div className="form-item">
-                  <label style={{ display: "flex" }}>
-                    <span>
-                      Image (paste{" "}
-                      <a
-                        href="https://unsplash.com/"
-                        style={{ textDecoration: "underline" }}
-                      >
-                        Upslash
-                      </a>{" "}
-                      Link or{" "}
-                    </span>
-                    <a
-                      style={{
-                        marginLeft: ".5em",
-                        textDecoration: "underline",
-                      }}
-                      onClick={() => handleImageUpload()}
-                    >
-                      upload an image
-                    </a>
-                    )
-                  </label>
-                  <img
-                    src={ImageURL}
-                    className={(ImageURL ?? []).length > 10 ? "show" : "hide"}
-                  />
-                  <input
-                    onChange={(e) => {
-                      setImageURL(e.target.value);
-                    }}
-                    value={ImageURL}
-                    type="url"
-                  />
-                </div>{" "}
-                <div className="form-item">
-                  <label>Title</label>
-                  <input
-                    onChange={(e) => setpostTitle(e.target.value)}
-                    value={postTitle}
-                  />
-                </div>{" "}
-                <div className="form-item">
-                  <label>Tags (Seperate with commas):</label>
-                  <input
-                    onChange={(e) => setTags(e.target.value)}
-                    value={Tags}
-                  />
-                </div>{" "}
-                <div className="form-item">
-                  <label>Blurb</label>
-                  <textarea
-                    onChange={(e) => setBlurb(e.target.value)}
-                    value={Blurb}
-                  />
-                </div>{" "}
-                <div className="form-item">
-                  <label>Post</label>
-                  <textarea
-                    className="big"
-                    onChange={(e) => setPost(e.target.value)}
-                    value={Post}
-                  />
-                </div>{" "}
-                <button
-                  onClick={handleFormSubmisson}
-                  className="cool-purple-button"
+  useEffect(() => {
+    ValidateLogin("/login+des=BlogEditor").then((r) => {
+      setLoaded(true);
+      if (r === true) {
+        setLoggedIn(true);
+      } else {
+        setLoggedIn(false);
+      }
+    });
+  }, []);
+  if (loaded) {
+    return (
+      <>
+        <div style={{ backgroundColor: "var(--backgroundcolor" }}>
+          <Header />
+          <div className="blog-editor-wrapper">
+            <div className="form-item">
+              <label style={{ display: "flex" }}>
+                <span>
+                  Image (paste{" "}
+                  <a
+                    href="https://unsplash.com/"
+                    style={{ textDecoration: "underline" }}
+                  >
+                    Upslash
+                  </a>{" "}
+                  Link or{" "}
+                </span>
+                <a
+                  style={{
+                    marginLeft: ".5em",
+                    textDecoration: "underline",
+                  }}
+                  onClick={() => handleImageUpload()}
                 >
-                  Post
-                </button>
-              </div>
-              <Footer />
-            </div>
-          );
-        } else {
-          window.location.pathname = "/login+des=BlogEditor";
-          return null;
-        }
-      })}
-      {!loaded ? <h1>loading</h1> : ""}
-    </>
-  );
+                  upload an image
+                </a>
+                )
+              </label>
+              <img
+                src={ImageURL}
+                className={(ImageURL ?? []).length > 10 ? "show" : "hide"}
+              />
+              <input
+                onChange={(e) => {
+                  setImageURL(e.target.value);
+                }}
+                value={ImageURL}
+                type="url"
+              />
+            </div>{" "}
+            <div className="form-item">
+              <label>Title</label>
+              <input
+                onChange={(e) => setpostTitle(e.target.value)}
+                value={postTitle}
+              />
+            </div>{" "}
+            <div className="form-item">
+              <label>Tags (Seperate with commas):</label>
+              <input onChange={(e) => setTags(e.target.value)} value={Tags} />
+            </div>{" "}
+            <div className="form-item">
+              <label>Blurb</label>
+              <textarea
+                onChange={(e) => setBlurb(e.target.value)}
+                value={Blurb}
+              />
+            </div>{" "}
+            <div className="form-item">
+              <label>Post</label>
+              <textarea
+                className="big"
+                onChange={(e) => setPost(e.target.value)}
+                value={Post}
+              />
+            </div>{" "}
+            <button
+              onClick={handleFormSubmisson}
+              className="cool-purple-button"
+            >
+              Post
+            </button>
+          </div>
+          <Footer />
+        </div>
+        );
+        {!loaded ? <h1>loading</h1> : ""}
+      </>
+    );
+  } else {
+    return <h1>Loading</h1>;
+  }
 }
