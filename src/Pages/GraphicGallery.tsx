@@ -13,10 +13,10 @@ export default function GraphicsGallery() {
   const [graphics, setGraphics]: any = useState([]);
   const [showSlideshow, toggleSlideshow] = useState(false);
   const [showAddImageOption, setShowAddImageOption] = useState(false);
-  const [activeImage, setActiveImage] = useState(1);
+  const [activeImage, setActiveImage] = useState(0);
   const [showAddImagePopup, setShowAddImagePopup] = useState(false);
   function handleSlideShowBack() {
-    if (activeImage === 1) {
+    if (activeImage === 0) {
       setActiveImage(graphics.length - 1);
     } else {
       setActiveImage(activeImage - 1);
@@ -24,7 +24,7 @@ export default function GraphicsGallery() {
   }
   function handleSlideShowForward() {
     if (activeImage === graphics.length - 1) {
-      setActiveImage(1);
+      setActiveImage(0);
       return;
     } else {
       setActiveImage(activeImage + 1);
