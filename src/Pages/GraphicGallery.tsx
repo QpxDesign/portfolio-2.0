@@ -9,11 +9,7 @@ import Footer from "../Components/Footer";
 import { ValidateLogin } from "../Helpers/ValidateLogin";
 import AddImagePopup from "../Components/AddImagePopup";
 
-export default function PhotgraphyGallery() {
-  const runtime = new Array(graphics_key.length + 1);
-  for (let i = 0; i < runtime.length; i++) {
-    runtime[i] = i;
-  }
+export default function GraphicsGallery() {
   const [graphics, setGraphics]: any = useState([]);
   const [showSlideshow, toggleSlideshow] = useState(false);
   const [showAddImageOption, setShowAddImageOption] = useState(false);
@@ -21,13 +17,13 @@ export default function PhotgraphyGallery() {
   const [showAddImagePopup, setShowAddImagePopup] = useState(false);
   function handleSlideShowBack() {
     if (activeImage === 1) {
-      setActiveImage(runtime.length - 1);
+      setActiveImage(graphics.length - 1);
     } else {
       setActiveImage(activeImage - 1);
     }
   }
   function handleSlideShowForward() {
-    if (activeImage === runtime.length - 1) {
+    if (activeImage === graphics.length - 1) {
       setActiveImage(1);
       return;
     } else {
@@ -81,10 +77,7 @@ export default function PhotgraphyGallery() {
           </div>
           <img
             style={{ objectFit: "contain" }}
-            src={
-              "Assets/graphics/" +
-              graphics_key.find((x) => x.id === activeImage)?.filename
-            }
+            src={graphics[activeImage]?.imageURL}
           />
           <div
             className="forward-area"
@@ -118,7 +111,8 @@ export default function PhotgraphyGallery() {
                 src={graphic.imageURL}
                 className="graphic"
                 onClick={() => {
-                  setActiveImage(index + 1);
+                  setActiveImage(index);
+
                   toggleSlideshow(true);
                 }}
                 onContextMenu={(e) => {

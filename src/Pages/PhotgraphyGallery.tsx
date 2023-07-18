@@ -9,10 +9,6 @@ import { ValidateLogin } from "../Helpers/ValidateLogin";
 import AddImagePopup from "../Components/AddImagePopup";
 
 export default function PhotgraphyGallery() {
-  const runtime = new Array(135);
-  for (let i = 0; i < runtime.length; i++) {
-    runtime[i] = i;
-  }
   const [photos, setPhotos]: any = useState([]);
 
   const [showSlideshow, toggleSlideshow] = useState(false);
@@ -22,13 +18,13 @@ export default function PhotgraphyGallery() {
 
   function handleSlideShowBack() {
     if (activeImage === 1) {
-      setActiveImage(runtime.length - 1);
+      setActiveImage(photos.length - 1);
     } else {
       setActiveImage(activeImage - 1);
     }
   }
   function handleSlideShowForward() {
-    if (activeImage === runtime.length - 1) {
+    if (activeImage === photos.length - 1) {
       setActiveImage(1);
       return;
     } else {
@@ -89,7 +85,7 @@ export default function PhotgraphyGallery() {
           <div className="backward-area" onClick={() => handleSlideShowBack()}>
             <IoIosArrowBack className="backward-button" />
           </div>
-          <img src={"Assets/photos/image" + activeImage + ".webp"} />
+          <img src={photos[activeImage]?.imageURL} />
           <div
             className="forward-area"
             onClick={() => handleSlideShowForward()}
@@ -128,22 +124,20 @@ export default function PhotgraphyGallery() {
           {
             // map runtimee
             photos.map((image: any, index: any) => {
-              if (index < runtime.length - 1) {
-                return (
-                  <img
-                    onClick={() => {
-                      setActiveImage(index + 1);
-                      toggleSlideshow(true);
-                    }}
-                    onContextMenu={(e) => {
-                      e.preventDefault();
-                      return false;
-                    }}
-                    key={index}
-                    src={image.imageURL}
-                  />
-                );
-              }
+              return (
+                <img
+                  onClick={() => {
+                    setActiveImage(index);
+                    toggleSlideshow(true);
+                  }}
+                  onContextMenu={(e) => {
+                    e.preventDefault();
+                    return false;
+                  }}
+                  key={index}
+                  src={image.imageURL}
+                />
+              );
             })
           }
         </div>
