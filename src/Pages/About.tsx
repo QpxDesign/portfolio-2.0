@@ -180,7 +180,7 @@ export default function About() {
             <h1 className="center" style={{ marginTop: ".5em" }}>
               Skills:
             </h1>
-            <div className="logos-wrapper">
+            <div className="logos-wrapper" style={{maxWidth:"100%"}}>
               {skills.map((skill, index) => {
                 return (
                   <img src={"Assets/logos/" + skill + ".png"} alt={skill} />
