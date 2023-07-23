@@ -20,6 +20,7 @@ import Solutions from "./Pages/Solutions";
 import Contact from "./Pages/Contact";
 import { Helmet } from "react-helmet";
 import Projects from "./Pages/Projects";
+import AppStoreRedirecter from "./Pages/AppStoreRedirecter";
 
 function App() {
   return (
@@ -34,6 +35,10 @@ function App() {
       </Helmet>
       <Router>
         <Routes>
+          <Route
+            path="/determine-appstore/ios/:IOS_LINK/android/:ANDROID_LINK"
+            element={<AppStoreRedirecter />}
+          />
           <Route path="/blog/post/:id" element={<BlogPost />} />
           <Route path="/login/:des" element={<Login />} />
           <Route path="/login" element={<Login />} />
