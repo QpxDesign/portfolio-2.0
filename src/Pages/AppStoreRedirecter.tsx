@@ -26,8 +26,8 @@ export default function AppStoreRedirecter() {
   }, []);
 
   return (
-    <div>
-      {IOS_LINK} - {ANDROID_LINK}
+    <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
+      <h1>Redirect in Progress</h1>
     </div>
   );
 }
