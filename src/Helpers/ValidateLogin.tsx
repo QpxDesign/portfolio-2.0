@@ -1,4 +1,4 @@
-export async function ValidateLogin(loginDes: string) {
+export async function ValidateLogin(loginDes: string, lowAuthMode?: Boolean) {
   return new Promise((resolve) => {
     const MAX_SIGNIN_TIME = 172800;
     var d: any = localStorage.getItem("user");
@@ -8,29 +8,58 @@ export async function ValidateLogin(loginDes: string) {
     }
 
     let data = { token: d.token, Username: d.username };
-    if (d.timestamp + MAX_SIGNIN_TIME < Date.now() / 1000)
-      return resolve(false);
-    fetch("https://api.quinnpatwardhan.com/validate-token", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*",
-      },
-      body: JSON.stringify(data),
-    })
-      .then((res) => res.json())
-      .then((r) => {
-        if (!r.auth) {
-          if (loginDes !== "dont-redirect") {
-            window.location.pathname = loginDes;
-          }
-          return resolve(false);
-        }
-        console.log(r);
-        return resolve(r);
+    console.log(JSON.stringify(data));
+
+    if (lowAuthMode === true) {
+      fetch("http://localhost:3001/can-user-comment", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+        },
+        body: JSON.stringify(data),
       })
-      .catch((e) => {
-        return resolve(false);
-      });
+        .then((res) => res.json())
+        .then((r) => {
+          console.log(r);
+          if (!r.auth) {
+            if (loginDes !== "dont-redirect") {
+              window.location.pathname = loginDes.replaceAll("+", "/");
+            }
+            return resolve(false);
+          }
+          console.log(r);
+          return resolve(r);
+        })
+        .catch((e) => {
+          console.log(e);
+          return resolve(false);
+        });
+    } else {
+      fetch("https://api.quinnpatwardhan.com/validate-token", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+        },
+        body: JSON.stringify(data),
+      })
+        .then((res) => res.json())
+        .then((r) => {
+          console.log(r);
+          if (!r.auth) {
+            if (loginDes !== "dont-redirect") {
+              window.location.pathname = loginDes.replaceAll("+", "/");
+            }
+            return resolve(false);
+          }
+          console.log(r);
+          return resolve(r);
+        })
+        .catch((e) => {
+          console.log(e);
+          return resolve(false);
+        });
+    }
   });
 }

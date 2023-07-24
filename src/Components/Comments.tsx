@@ -32,7 +32,8 @@ export default function Comments() {
       );
       return false;
     }
-    ValidateLogin("/blog/post/" + id).then((r) => {
+    ValidateLogin("/blog/post/" + id, true).then((r) => {
+      console.log(r);
       if (r) {
         let data = {
           PostID: id,
@@ -41,7 +42,7 @@ export default function Comments() {
           Username: JSON.parse(localStorage.getItem("user") ?? "").username,
           Token: JSON.parse(localStorage.getItem("user") ?? "").token,
         };
-        fetch("https://api.quinnpatwardhan.com/send-comment", {
+        fetch("http://localhost:3001/send-comment", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
