@@ -11,7 +11,7 @@ export async function ValidateLogin(loginDes: string, lowAuthMode?: Boolean) {
     console.log(JSON.stringify(data));
 
     if (lowAuthMode === true) {
-      fetch("http://localhost:3001/can-user-comment", {
+      fetch("https://api.quinnpatwardhan.com/can-user-comment", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

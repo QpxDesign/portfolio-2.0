@@ -42,7 +42,7 @@ export default function Comments() {
           Username: JSON.parse(localStorage.getItem("user") ?? "").username,
           Token: JSON.parse(localStorage.getItem("user") ?? "").token,
         };
-        fetch("http://localhost:3001/send-comment", {
+        fetch("https://api.quinnpatwardhan.com/send-comment", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
