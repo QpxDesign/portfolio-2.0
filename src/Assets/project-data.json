@@ -1,5 +1,29 @@
 [
   {
+    "name": "esteem",
+    "title": "Esteem: Historical Weather Viewer",
+    "backgroundcolor": "#E2E8F0",
+    "textcolor": "black",
+    "blurb": "View over 70 years of weather. anywhere. 100% free.",
+
+    "points": [
+      "React based web app that calls two apis to retrieve location and weather data",
+      "took steps to increase performance and reduce load times",
+      "optimized for SEO ",
+      "used advanced methods to restrict API keys"
+    ],
+    "technologies": ["ReactJS", "Git", "Github", "http", "Typescript"],
+    "link": "https://esteem.quinnpatwardhan.com",
+    "github_link": "https://github.com/QpxDesign/esteem",
+    "isWebsite": true,
+    "centerButtons": true,
+    "onAppStore": false,
+    "onPlayStore": false,
+    "appstore_link": "",
+    "playstore_link": "",
+    "featured": false
+  },
+  {
     "name": "locomotive",
     "title": "Locomotive: Amtrak Tracker",
     "backgroundcolor": "#18567D",
@@ -11,7 +35,7 @@
       "Uses Express.js API to serve train data",
       "Followed App & Play Store Guidelines",
       "Used Adobe Illustrator & Figma to Design Brand & User Experience",
-      "Involved Usage of Git CLI and Github CLI"
+      "Received 1,000+ Downloads and dozens of daily users"
     ],
     "technologies": [
       "ReactJS",
@@ -108,7 +132,8 @@
       "Required Use of Performance Performance and Testing Tools",
       "Involved use npm & node in creating and deploying API",
       "Required Extensive SEO optimization and use of Analytics",
-      "Designed, Developed, and Published an IOS Version written Swift/SwiftUI to the Apple App Store"
+      "Designed, Developed, and Published an IOS Version written Swift/SwiftUI to the Apple App Store",
+      "App Received 1,000+ App Store Downloads and dozens of daily users"
     ],
     "technologies": [
       "ReactJS",
