@@ -26,7 +26,7 @@ export default function EditPosts() {
       });
   }
   useEffect(() => {
-    ValidateLogin("/login+des=EditPosts").then((r) => {
+    ValidateLogin("/login/").then((r) => {
       if (r) {
         setLoggedIn(true);
       } else {

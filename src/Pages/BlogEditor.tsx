@@ -124,7 +124,7 @@ export default function BlogEditor(props: EditProps) {
     setImageURL("");
   }
   useEffect(() => {
-    ValidateLogin("/login+des=BlogEditor").then((r) => {
+    ValidateLogin("/login/").then((r) => {
       setLoaded(true);
       if (r === true) {
         setLoggedIn(true);

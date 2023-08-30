@@ -47,6 +47,9 @@ export async function ValidateLogin(loginDes: string, lowAuthMode?: Boolean) {
         .then((res) => res.json())
         .then((r) => {
           console.log(r);
+          if (r.auth && loginDes === "admin-page") {
+            window.location.pathname = "/";
+          }
           if (!r.auth) {
             if (loginDes !== "dont-redirect") {
               window.location.pathname = loginDes.replaceAll("+", "/");
