@@ -49,6 +49,9 @@ export default function BlogPost() {
         <meta charSet="utf-8" />
         <title>{postData.PostTitle}</title>
         <meta name="description" content={postData.PostBlurb} />
+        <time dateTime={new Date(postData.timestamp).toISOString()}>
+          {FormatTime(postData.timestamp)}
+        </time>
       </Helmet>
       <Header />
       {postData !== undefined ? (
