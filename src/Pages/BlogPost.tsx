@@ -53,7 +53,9 @@ export default function BlogPost() {
           </h2>
           <img src={postData.PostThumbnailLink} />
           <p
-            dangerouslySetInnerHTML={{ __html: postData.PostHTML }}
+            dangerouslySetInnerHTML={{
+              __html: postData.PostHTML,
+            }}
             className="content-wrapper"
           ></p>
         </div>

@@ -124,12 +124,13 @@ export default function BlogEditor(props: EditProps) {
     setImageURL("");
   }
   useEffect(() => {
-    ValidateLogin("/login/").then((r) => {
+    ValidateLogin("/login").then((r) => {
       setLoaded(true);
-      if (r === true) {
+      if (r) {
         setLoggedIn(true);
       } else {
         setLoggedIn(false);
+        window.location.pathname = "/login";
       }
     });
   }, []);

@@ -31,6 +31,7 @@ export default function EditPosts() {
         setLoggedIn(true);
       } else {
         setLoggedIn(false);
+        window.location.pathname = "/login";
       }
     });
     FetchPosts();

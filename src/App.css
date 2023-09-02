@@ -994,3 +994,13 @@ hr {
 .scrolljumper-container h1:not(.active) {
   margin-left: 1em;
 }
+.content-wrapper span.codeblock{
+  padding: .2em 1.75em;
+  font-family: monospace;
+  background-color: #d4d4d4;
+  text-indent: 0em ;
+
+}
+.content-wrapper img.subimage {
+  max-width: 45%;
+}

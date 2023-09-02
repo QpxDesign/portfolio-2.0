@@ -1,4 +1,7 @@
-export async function ValidateLogin(loginDes: string, lowAuthMode?: Boolean) {
+export async function ValidateLogin(
+  loginDes: string,
+  lowAuthMode?: Boolean
+): Promise<Boolean> {
   return new Promise((resolve) => {
     const MAX_SIGNIN_TIME = 172800;
     var d: any = localStorage.getItem("user");
@@ -57,7 +60,7 @@ export async function ValidateLogin(loginDes: string, lowAuthMode?: Boolean) {
             return resolve(false);
           }
           console.log(r);
-          return resolve(r);
+          return resolve(true);
         })
         .catch((e) => {
           console.log(e);
