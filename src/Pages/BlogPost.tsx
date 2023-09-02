@@ -19,7 +19,13 @@ export default function BlogPost() {
         setRes(r);
         if (id !== undefined) {
           const newID = id.replaceAll("/blog/path/", "");
-          const post = r.find((r: any) => r.PostID === newID);
+          const post = r.find(
+            (r: any) =>
+              r.PostTitle.replaceAll(" ", "-").replace(
+                /[^a-zA-Z0-9-_]/g,
+                ""
+              ) === newID
+          );
           if (post == null) {
             window.location.pathname = "/404";
             return null;

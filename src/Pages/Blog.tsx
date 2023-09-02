@@ -65,7 +65,15 @@ export default function Blog() {
             ? res !== undefined
               ? res.sort().map((post: any) => {
                   return (
-                    <Link to={"/blog/post/" + post.PostID}>
+                    <Link
+                      to={
+                        "/blog/post/" +
+                        post.PostTitle.replaceAll(" ", "-").replace(
+                          /[^a-zA-Z0-9-_]/g,
+                          ""
+                        )
+                      }
+                    >
                       <div className={"post"}>
                         <img src={post.PostThumbnailLink} />
                         <h1>{post.PostTitle}</h1>
