@@ -26,6 +26,7 @@ export default function BlogPost() {
                 ""
               ) === newID
           );
+          console.log(post);
           if (post == null) {
             window.location.pathname = "/404";
             return null;
@@ -49,7 +50,17 @@ export default function BlogPost() {
         <meta charSet="utf-8" />
         <title>{postData.PostTitle}</title>
         <meta name="description" content={postData.PostBlurb} />
-        <time dateTime={new Date(postData.timestamp).toISOString()}>
+        <time
+          dateTime={new Date(
+            postData !== null &&
+            postData !== undefined &&
+            postData.timestamp !== undefined &&
+            postData.timestamp !== null
+              ? new Date(parseInt(postData.timestamp))
+              : Date.now()
+          ).toISOString()}
+        >
+          {" "}
           {FormatTime(postData.timestamp)}
         </time>
       </Helmet>
