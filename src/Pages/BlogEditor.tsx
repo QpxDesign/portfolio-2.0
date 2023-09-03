@@ -21,48 +21,50 @@ export default function BlogEditor(props: EditProps) {
   const [loggedIn, setLoggedIn] = useState(false);
   const [ImageURL, setImageURL]: any = useState(props.ImageURL);
   const [loaded, setLoaded]: any = useState(false);
-  function handleImageUpload() {
-    let input = document.createElement("input");
-    input.type = "file";
-    console.log("nerd");
-    input.click();
-    input.onchange = (_) => {
-      // you can use this method to get file and perform respective operations
-      // let files = Array.from(input.files);
-      let files = input.files;
-      if (files?.length == 1) {
-        const formData = new FormData();
+  function handleImageUpload(): Promise<string> {
+    return new Promise((resolve) => {
+      let input = document.createElement("input");
+      input.type = "file";
+      console.log("nerd");
+      input.click();
+      input.onchange = (_) => {
+        // you can use this method to get file and perform respective operations
+        // let files = Array.from(input.files);
+        let files = input.files;
+        if (files?.length == 1) {
+          const formData = new FormData();
 
-        formData.append("file", files[0]);
-        console.log(files[0]);
+          formData.append("file", files[0]);
+          console.log(files[0]);
 
-        formData.append(
-          "username",
-          JSON.parse(
-            localStorage.getItem("user") ?? "{'username':'nerdfailhahayls'}"
-          ).username
-        );
-        formData.append(
-          "token",
-          JSON.parse(
-            localStorage.getItem("user") ?? "{'token':'nerdfailhahayls'}"
-          ).token
-        );
+          formData.append(
+            "username",
+            JSON.parse(
+              localStorage.getItem("user") ?? "{'username':'nerdfailhahayls'}"
+            ).username
+          );
+          formData.append(
+            "token",
+            JSON.parse(
+              localStorage.getItem("user") ?? "{'token':'nerdfailhahayls'}"
+            ).token
+          );
 
-        fetch("https://media.quinnpatwardhan.com/upload-image", {
-          method: "POST",
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-          },
-          body: formData,
-        })
-          .then((r) => r.json())
-          .then((r: any) => {
-            console.log(r);
-            setImageURL(r.url);
-          });
-      }
-    };
+          fetch("https://media.quinnpatwardhan.com/upload-image", {
+            method: "POST",
+            headers: {
+              "Access-Control-Allow-Origin": "*",
+            },
+            body: formData,
+          })
+            .then((r) => r.json())
+            .then((r: any) => {
+              console.log(r);
+              return resolve(r.url);
+            });
+        }
+      };
+    });
   }
   async function handleFormSubmisson() {
     if (props.Mode === "" && localStorage.getItem("user") !== null) {
@@ -150,14 +152,18 @@ export default function BlogEditor(props: EditProps) {
                   >
                     Upslash
                   </a>{" "}
-                  Link or{" "}
+                  Link or
                 </span>
                 <a
                   style={{
                     marginLeft: ".5em",
                     textDecoration: "underline",
                   }}
-                  onClick={() => handleImageUpload()}
+                  onClick={() =>
+                    handleImageUpload().then((url) => {
+                      setImageURL(url);
+                    })
+                  }
                 >
                   upload an image
                 </a>
@@ -194,7 +200,22 @@ export default function BlogEditor(props: EditProps) {
               />
             </div>{" "}
             <div className="form-item">
-              <label>Post</label>
+              <label>
+                Post (
+                <a
+                  style={{
+                    textDecoration: "underline",
+                  }}
+                  onClick={() =>
+                    handleImageUpload().then((url) => {
+                      navigator.clipboard.writeText(url);
+                    })
+                  }
+                >
+                  upload an image and copy link
+                </a>
+              </label>
+              )
               <textarea
                 className="big"
                 onChange={(e) => setPost(e.target.value)}
