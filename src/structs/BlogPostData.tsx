@@ -1,4 +1,5 @@
 export interface BlogPostData {
+  views: Number;
   PostID: string;
   AuthorName: string;
   PostTitle: string;

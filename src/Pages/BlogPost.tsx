@@ -18,6 +18,7 @@ export default function BlogPost() {
       .then((res) => res.json())
       .then((r) => {
         setRes(r);
+
         if (id !== undefined) {
           const newID = id.replaceAll("/blog/path/", "");
           const post = r.find(
@@ -37,9 +38,15 @@ export default function BlogPost() {
               return null;
             } else {
               setPostData(newPost);
+              fetch(
+                `https://api.quinnpatwardhan.com/log-view?postid=${newPost?.PostID}`
+              );
             }
           } else {
             setPostData(post);
+            fetch(
+              `https://api.quinnpatwardhan.com/log-view?postid=${post?.PostID}`
+            );
           }
         }
         setLoaded(true);
@@ -75,7 +82,8 @@ export default function BlogPost() {
         <div className="post-page-wrapper">
           <h1>{postData.PostTitle}</h1>
           <h2>
-            By {postData.AuthorName} &#x2022; {FormatTime(postData.timestamp)}
+            By {postData.AuthorName} &#x2022; {FormatTime(postData.timestamp)}{" "}
+            &#x2022; {postData.views.toString()} views
           </h2>
           <img src={postData.PostThumbnailLink} />
           <p
