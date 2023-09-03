@@ -3,7 +3,7 @@ import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import uuid from "react-uuid";
 import { ValidateLogin } from "../Helpers/ValidateLogin";
-
+import { ImageUploadResponse } from "../structs/ImageUploadResponse";
 interface EditProps {
   postTitle: String;
   Tags: String;
@@ -13,14 +13,17 @@ interface EditProps {
   Mode: String;
   PostID: String;
 }
+
 export default function BlogEditor(props: EditProps) {
-  const [postTitle, setpostTitle]: any = useState(props.postTitle);
-  const [Tags, setTags]: any = useState(props.Tags);
-  const [Blurb, setBlurb]: any = useState(props.Blurb);
-  const [Post, setPost]: any = useState(props.Post);
-  const [loggedIn, setLoggedIn] = useState(false);
-  const [ImageURL, setImageURL]: any = useState(props.ImageURL);
-  const [loaded, setLoaded]: any = useState(false);
+  const [postTitle, setpostTitle] = useState<string>(
+    props.postTitle.toString()
+  );
+  const [Tags, setTags] = useState<string>(props.Tags.toString());
+  const [Blurb, setBlurb] = useState<string>(props.Blurb.toString());
+  const [Post, setPost] = useState<string>(props.Post.toString());
+  const [loggedIn, setLoggedIn] = useState<Boolean>(false);
+  const [ImageURL, setImageURL] = useState<string>(props.ImageURL.toString());
+  const [loaded, setLoaded] = useState<Boolean>(false);
   function handleImageUpload(): Promise<string> {
     return new Promise((resolve) => {
       let input = document.createElement("input");
@@ -58,9 +61,9 @@ export default function BlogEditor(props: EditProps) {
             body: formData,
           })
             .then((r) => r.json())
-            .then((r: any) => {
+            .then((r: ImageUploadResponse) => {
               console.log(r);
-              return resolve(r.url);
+              return resolve(r.url ?? "");
             });
         }
       };
@@ -212,7 +215,7 @@ export default function BlogEditor(props: EditProps) {
                     })
                   }
                 >
-                  upload an image and copy link
+                  upload an image and copy link to keyboard
                 </a>
               </label>
               )

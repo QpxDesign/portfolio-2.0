@@ -8,8 +8,12 @@ import Footer from "../Components/Footer";
 import { ValidateLogin } from "../Helpers/ValidateLogin";
 import AddImagePopup from "../Components/AddImagePopup";
 
+interface PhotoProps {
+  imageURL: string;
+}
+
 export default function PhotgraphyGallery() {
-  const [photos, setPhotos]: any = useState([]);
+  const [photos, setPhotos] = useState<[PhotoProps] | undefined>(undefined);
 
   const [showSlideshow, toggleSlideshow] = useState(false);
   const [activeImage, setActiveImage] = useState(1);
@@ -17,18 +21,22 @@ export default function PhotgraphyGallery() {
   const [showAddImagePopup, setShowAddImagePopup] = useState(false);
 
   function handleSlideShowBack() {
-    if (activeImage === 1) {
-      setActiveImage(photos.length - 1);
-    } else {
-      setActiveImage(activeImage - 1);
+    if (photos !== undefined) {
+      if (activeImage === 1) {
+        setActiveImage(photos.length - 1);
+      } else {
+        setActiveImage(activeImage - 1);
+      }
     }
   }
   function handleSlideShowForward() {
-    if (activeImage === photos.length - 1) {
-      setActiveImage(1);
-      return;
-    } else {
-      setActiveImage(activeImage + 1);
+    if (photos !== undefined) {
+      if (activeImage === photos.length - 1) {
+        setActiveImage(1);
+        return;
+      } else {
+        setActiveImage(activeImage + 1);
+      }
     }
   }
   window.onscroll = () => {
@@ -85,7 +93,9 @@ export default function PhotgraphyGallery() {
           <div className="backward-area" onClick={() => handleSlideShowBack()}>
             <IoIosArrowBack className="backward-button" />
           </div>
-          <img src={photos[activeImage]?.imageURL} />
+          <img
+            src={photos !== undefined ? photos[activeImage]?.imageURL : ""}
+          />
           <div
             className="forward-area"
             onClick={() => handleSlideShowForward()}
@@ -123,22 +133,24 @@ export default function PhotgraphyGallery() {
           </div>
           {
             // map runtimee
-            photos.map((image: any, index: any) => {
-              return (
-                <img
-                  onClick={() => {
-                    setActiveImage(index);
-                    toggleSlideshow(true);
-                  }}
-                  onContextMenu={(e) => {
-                    e.preventDefault();
-                    return false;
-                  }}
-                  key={index}
-                  src={image.imageURL}
-                />
-              );
-            })
+            photos !== undefined
+              ? photos.map((image: PhotoProps, index) => {
+                  return (
+                    <img
+                      onClick={() => {
+                        setActiveImage(index);
+                        toggleSlideshow(true);
+                      }}
+                      onContextMenu={(e) => {
+                        e.preventDefault();
+                        return false;
+                      }}
+                      key={index}
+                      src={image.imageURL}
+                    />
+                  );
+                })
+              : "loading"
           }
         </div>
       </div>{" "}

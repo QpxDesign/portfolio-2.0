@@ -3,6 +3,7 @@ import Header from "../Components/Header";
 import { Link } from "react-router-dom";
 import { FormatTime } from "../Helpers/FormatTime";
 import { Helmet } from "react-helmet";
+import { BlogPostData } from "../structs/BlogPostData";
 
 interface PostInterface {
   post: PostItemInterface;
@@ -20,15 +21,15 @@ interface PostItemInterface {
 }
 
 export default function Blog() {
-  const [res, setRes]: Array<any> = useState([]);
-  const [loaded, setLoaded]: any = useState(false);
+  const [res, setRes] = useState<Array<BlogPostData> | undefined>(undefined);
+  const [loaded, setLoaded] = useState(false);
   async function FetchPosts() {
     await fetch("https://api.quinnpatwardhan.com/get-blog-posts")
       .then((res) => res.json())
       .then((r) => {
         var byDate = r.slice(0);
-        byDate.sort(function (a: any, b: any) {
-          return b.timestamp - a.timestamp;
+        byDate.sort(function (a: BlogPostData, b: BlogPostData) {
+          return parseInt(b.timestamp) - parseInt(a.timestamp);
         });
         setRes(byDate);
         setLoaded(true);
@@ -63,7 +64,7 @@ export default function Blog() {
         <div className="posts-wrapper">
           {loaded
             ? res !== undefined
-              ? res.sort().map((post: any) => {
+              ? res.sort().map((post: BlogPostData) => {
                   return (
                     <Link
                       to={
@@ -79,7 +80,7 @@ export default function Blog() {
                         <h1>{post.PostTitle}</h1>
                         <p>{post.PostBlurb}</p>
                         <div className="tags-wrapper">
-                          {post.PostTags.split(",").map((tag: any) => {
+                          {post.PostTags.split(",").map((tag: string) => {
                             return <div className="tag">{tag}</div>;
                           })}
                         </div>
@@ -91,9 +92,7 @@ export default function Blog() {
                 })
               : null
             : "Loading..."}
-          {res !== undefined && res.length == 0 && loaded == true ? (
-            <h2>No Posts Found</h2>
-          ) : null}
+          {res !== undefined && loaded == true ? <h2>No Posts Found</h2> : null}
         </div>
       </div>
     </>

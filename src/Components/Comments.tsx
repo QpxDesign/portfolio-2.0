@@ -7,6 +7,7 @@ import { FaUserCircle } from "react-icons/fa";
 import { FaTrashAlt } from "react-icons/fa";
 import { FormatTime } from "../Helpers/FormatTime";
 import { CustomAlert } from "../Helpers/CustomAlert";
+import { BlogComment } from "../structs/BlogComment";
 
 export default function Comments() {
   const { id } = useParams();
@@ -121,7 +122,7 @@ export default function Comments() {
       <hr />
       {loaded
         ? res !== undefined
-          ? res.map((comment: any) => {
+          ? res.map((comment: BlogComment) => {
               return (
                 <div className="comment">
                   <div className="user-info">

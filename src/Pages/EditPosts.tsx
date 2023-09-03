@@ -5,21 +5,22 @@ import { RiEditBoxFill } from "react-icons/ri";
 import BlogEditor from "./BlogEditor";
 import { ValidateLogin } from "../Helpers/ValidateLogin";
 import { FormatTime } from "../Helpers/FormatTime";
+import { BlogPostData } from "../structs/BlogPostData";
 
 export default function EditPosts() {
-  const [res, setRes]: Array<any> = useState([]);
-  const [loaded, setLoaded]: any = useState(false);
-  const [showEdit, setShowEdit]: any = useState(false);
-  const [postID, setPostID]: any = useState("");
-  const [loggedIn, setLoggedIn]: any = useState(false);
+  const [res, setRes] = useState<[BlogPostData] | undefined>(undefined);
+  const [loaded, setLoaded] = useState<boolean>(false);
+  const [showEdit, setShowEdit] = useState<boolean>(false);
+  const [postID, setPostID] = useState<string>("");
+  const [loggedIn, setLoggedIn] = useState<boolean>(false);
 
   async function FetchPosts() {
     await fetch("https://api.quinnpatwardhan.com/get-blog-posts")
       .then((res) => res.json())
       .then((r) => {
         var byDate = r.slice(0);
-        byDate.sort(function (a: any, b: any) {
-          return b.timestamp - a.timestamp;
+        byDate.sort(function (a: BlogPostData, b: BlogPostData) {
+          return parseInt(b.timestamp) - parseInt(a.timestamp);
         });
         setRes(byDate);
         setLoaded(true);
@@ -54,7 +55,8 @@ export default function EditPosts() {
     window.location.reload();
   }
   function getPostFromId() {
-    return res.find((r: any) => r.PostID === postID);
+    if (res === undefined) return undefined;
+    return res.find((r: BlogPostData) => r.PostID === postID);
   }
 
   if (!showEdit) {
@@ -74,8 +76,8 @@ export default function EditPosts() {
         </h1>
         <div className="posts-wrapper" style={{ color: "var(--textcolor)" }}>
           {loaded
-            ? res !== undefined && res.length !== 0 && loaded
-              ? res.map((post: any) => {
+            ? res !== undefined && loaded
+              ? res.map((post: BlogPostData) => {
                   return (
                     <div className={"post"}>
                       <img src={post.PostThumbnailLink} />
@@ -121,11 +123,11 @@ export default function EditPosts() {
     if (getPostFromId() !== undefined) {
       return (
         <BlogEditor
-          postTitle={getPostFromId().PostTitle}
-          Tags={getPostFromId().PostTags}
-          Blurb={getPostFromId().PostBlurb}
-          Post={getPostFromId().PostHTML}
-          ImageURL={getPostFromId().PostThumbnailLink}
+          postTitle={getPostFromId()?.PostTitle ?? ""}
+          Tags={getPostFromId()?.PostTags ?? ""}
+          Blurb={getPostFromId()?.PostBlurb ?? ""}
+          Post={getPostFromId()?.PostHTML ?? ""}
+          ImageURL={getPostFromId()?.PostThumbnailLink ?? ""}
           PostID={postID}
           Mode={"edit"}
         />

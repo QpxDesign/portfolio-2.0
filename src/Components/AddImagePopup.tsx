@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { ImageUploadResponse } from "../structs/ImageUploadResponse";
 
 interface AddImagePopupProps {
   mode: string;
@@ -43,9 +44,9 @@ export default function AddImagePopup(props: AddImagePopupProps) {
           body: formData,
         })
           .then((r) => r.json())
-          .then((r: any) => {
+          .then((r: ImageUploadResponse) => {
             console.log(r);
-            setImageURL(r.url);
+            setImageURL(r.url ?? "");
           });
       }
     };

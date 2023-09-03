@@ -9,25 +9,38 @@ import Footer from "../Components/Footer";
 import { ValidateLogin } from "../Helpers/ValidateLogin";
 import AddImagePopup from "../Components/AddImagePopup";
 
+interface GraphicProps {
+  id: Number;
+  imageURL: string;
+  title: string;
+  isFeatured: boolean | undefined;
+}
+
 export default function GraphicsGallery() {
-  const [graphics, setGraphics]: any = useState([]);
+  const [graphics, setGraphics] = useState<[GraphicProps] | undefined>(
+    undefined
+  );
   const [showSlideshow, toggleSlideshow] = useState(false);
   const [showAddImageOption, setShowAddImageOption] = useState(false);
   const [activeImage, setActiveImage] = useState(0);
   const [showAddImagePopup, setShowAddImagePopup] = useState(false);
   function handleSlideShowBack() {
     if (activeImage === 0) {
-      setActiveImage(graphics.length - 1);
+      if (graphics !== undefined) {
+        setActiveImage(graphics.length - 1);
+      }
     } else {
       setActiveImage(activeImage - 1);
     }
   }
   function handleSlideShowForward() {
-    if (activeImage === graphics.length - 1) {
-      setActiveImage(0);
-      return;
-    } else {
-      setActiveImage(activeImage + 1);
+    if (graphics !== undefined) {
+      if (activeImage === graphics.length - 1) {
+        setActiveImage(0);
+        return;
+      } else {
+        setActiveImage(activeImage + 1);
+      }
     }
   }
   window.onscroll = () => {
@@ -77,7 +90,7 @@ export default function GraphicsGallery() {
           </div>
           <img
             style={{ objectFit: "contain" }}
-            src={graphics[activeImage]?.imageURL}
+            src={graphics !== undefined ? graphics[activeImage].imageURL : ""}
           />
           <div
             className="forward-area"
@@ -105,24 +118,26 @@ export default function GraphicsGallery() {
           >
             <AiFillPlusCircle style={{ fontSize: "4rem" }} />
           </div>
-          {graphics.map((graphic: any, index: any) => {
-            return (
-              <img
-                src={graphic.imageURL}
-                className="graphic"
-                onClick={() => {
-                  setActiveImage(index);
+          {graphics !== undefined
+            ? graphics.map((graphic: GraphicProps, index) => {
+                return (
+                  <img
+                    src={graphic.imageURL}
+                    className="graphic"
+                    onClick={() => {
+                      setActiveImage(index);
 
-                  toggleSlideshow(true);
-                }}
-                onContextMenu={(e) => {
-                  e.preventDefault();
-                  return false;
-                }}
-                alt={graphic.title}
-              />
-            );
-          })}
+                      toggleSlideshow(true);
+                    }}
+                    onContextMenu={(e) => {
+                      e.preventDefault();
+                      return false;
+                    }}
+                    alt={graphic.title}
+                  />
+                );
+              })
+            : "loading"}
         </div>
       </div>
       <Footer />

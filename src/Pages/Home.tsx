@@ -7,6 +7,7 @@ import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import GraphicDesign from "../Sections/GraphicDesign";
 import SideScrollJumper from "../Components/SideScrollJumper";
+import { ProjectData } from "../structs/ProjectData";
 
 export default function Home() {
   return (
@@ -16,7 +17,7 @@ export default function Home() {
         <Header />
         <Lead />
         {projectdata
-          .filter((a: any) => a.featured === true)
+          .filter((a: ProjectData) => a.featured === true)
           .map((x, index) => {
             return <Project data={x} key={index} />;
           })}

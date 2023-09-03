@@ -16,7 +16,7 @@ export default function Login() {
   }
   function storeLogin(allowLogin: Boolean, token: String, username: String) {
     if ((allowLogin && token !== undefined) || mode === "Sign Up") {
-      let data: any = {
+      let data = {
         username: username,
         token: token,
         timestamp: Date.now(),

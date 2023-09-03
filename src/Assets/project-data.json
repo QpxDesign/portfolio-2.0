@@ -211,7 +211,8 @@
     "onAppStore": false,
     "onPlayStore": false,
     "appstore_link": "",
-    "playstore_link": ""
+    "playstore_link": "",
+    "featured": false
   },
   {
     "name": "Caldata",
@@ -245,7 +246,8 @@
     "onAppStore": false,
     "onPlayStore": false,
     "appstore_link": "",
-    "playstore_link": ""
+    "playstore_link": "",
+    "featured": false
   },
   {
     "name": "school_webscraper",
@@ -269,6 +271,7 @@
     "onAppStore": false,
     "onPlayStore": false,
     "appstore_link": "",
-    "playstore_link": ""
+    "playstore_link": "",
+    "featured": false
   }
 ]

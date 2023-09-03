@@ -3,8 +3,8 @@ import { BiRadioCircle } from "react-icons/bi";
 import { BsFillArrowRightCircleFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 export default function SideScrollJumper() {
-  const [currentSection, setCurrentSection]: any = useState("");
-  const [showExtended, setShowExtended]: any = useState(false);
+  const [currentSection, setCurrentSection] = useState<string>("");
+  const [showExtended, setShowExtended] = useState<boolean>(false);
 
   useEffect(() => {
     const a = () => {
@@ -18,7 +18,7 @@ export default function SideScrollJumper() {
 
       var firstSectionOffset = window.innerHeight;
       var ph = 0;
-      document.querySelectorAll(".project").forEach((item: any) => {
+      document.querySelectorAll(".project").forEach((item) => {
         ph += item.clientHeight;
       });
       if (
@@ -116,7 +116,7 @@ export default function SideScrollJumper() {
             onClick={() => {
               setCurrentSection("photography");
               var ph = 0;
-              document.querySelectorAll(".project").forEach((item: any) => {
+              document.querySelectorAll(".project").forEach((item) => {
                 ph += item.clientHeight;
               });
               window.scrollTo({
@@ -134,7 +134,7 @@ export default function SideScrollJumper() {
             onClick={() => {
               var ph = 0;
               setCurrentSection("graphics");
-              document.querySelectorAll(".project").forEach((item: any) => {
+              document.querySelectorAll(".project").forEach((item) => {
                 ph += item.clientHeight;
               });
               window.scrollTo({

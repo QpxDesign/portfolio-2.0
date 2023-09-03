@@ -5,13 +5,14 @@ import Footer from "../Components/Footer";
 import Comments from "../Components/Comments";
 import { FormatTime } from "../Helpers/FormatTime";
 import { Helmet } from "react-helmet";
+import { BlogPostData } from "../structs/BlogPostData";
 
 export default function BlogPost() {
   const { id } = useParams();
 
-  const [res, setRes]: Array<any> = useState([]);
-  const [loaded, setLoaded]: any = useState(false);
-  const [postData, setPostData]: any = useState({});
+  const [res, setRes] = useState<[BlogPostData] | undefined>(undefined);
+  const [loaded, setLoaded] = useState<Boolean>(false);
+  const [postData, setPostData] = useState<BlogPostData | undefined>(undefined);
   async function FetchPosts() {
     await fetch("https://api.quinnpatwardhan.com/get-blog-posts")
       .then((res) => res.json())
@@ -20,7 +21,7 @@ export default function BlogPost() {
         if (id !== undefined) {
           const newID = id.replaceAll("/blog/path/", "");
           const post = r.find(
-            (r: any) =>
+            (r: BlogPostData) =>
               r.PostTitle.replaceAll(" ", "-").replace(
                 /[^a-zA-Z0-9-_]/g,
                 ""
@@ -29,7 +30,7 @@ export default function BlogPost() {
 
           if (post == null) {
             const newPost = r.find(
-              (r: any) => r.PostID === id.replaceAll("/blog/path/", "")
+              (r: BlogPostData) => r.PostID === id.replaceAll("/blog/path/", "")
             );
             if (newPost == null) {
               window.location.pathname = "/404";
@@ -44,9 +45,6 @@ export default function BlogPost() {
         setLoaded(true);
       });
   }
-  function getPostFromId(postID: any) {
-    return res.find((r: any) => r.PostID === postID);
-  }
 
   useEffect(() => {
     FetchPosts();
@@ -56,8 +54,8 @@ export default function BlogPost() {
     <div className="">
       <Helmet>
         <meta charSet="utf-8" />
-        <title>{postData.PostTitle}</title>
-        <meta name="description" content={postData.PostBlurb} />
+        <title>{postData?.PostTitle}</title>
+        <meta name="description" content={postData?.PostBlurb} />
         <time
           dateTime={new Date(
             postData !== null &&
@@ -69,7 +67,7 @@ export default function BlogPost() {
           ).toISOString()}
         >
           {" "}
-          {FormatTime(postData.timestamp)}
+          {FormatTime(String(postData?.timestamp))}
         </time>
       </Helmet>
       <Header />
