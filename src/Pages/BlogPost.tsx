@@ -26,12 +26,20 @@ export default function BlogPost() {
                 ""
               ) === newID
           );
-          console.log(post);
+
           if (post == null) {
-            window.location.pathname = "/404";
-            return null;
+            const newPost = r.find(
+              (r: any) => r.PostID === id.replaceAll("/blog/path/", "")
+            );
+            if (newPost == null) {
+              window.location.pathname = "/404";
+              return null;
+            } else {
+              setPostData(newPost);
+            }
+          } else {
+            setPostData(post);
           }
-          setPostData(post);
         }
         setLoaded(true);
       });
