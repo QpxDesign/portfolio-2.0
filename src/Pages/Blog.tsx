@@ -92,7 +92,6 @@ export default function Blog() {
                 })
               : null
             : "Loading..."}
-          {res !== undefined && loaded == true ? <h2>No Posts Found</h2> : null}
         </div>
       </div>
     </>
