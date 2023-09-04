@@ -85,7 +85,7 @@ export default function Blog() {
                           })}
                         </div>
                         <h2>By {post.AuthorName}</h2>
-                        <h5>{FormatTime(post.timestamp)} - {post.views} views</h5>
+                        <h5>{FormatTime(post.timestamp)} - {post.views.toString()} views</h5>
                       </div>
                     </Link>
                   );
