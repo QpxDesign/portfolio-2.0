@@ -88,8 +88,8 @@ export default function About() {
             }}
           >
             <p>
-              I'm a high school junior in Washington, DC. My hobbies include
-              skateboarding, photography, graphic design, 3D printing, and
+              I'm a high school senior in Washington, DC. My hobbies include
+              skateboarding, comedy, photography, graphic design, 3D printing, and
               programming. I am a die-hard Ravens fan and an environmentalist. I
               play ultimate frisbee. I am an apsiring Software Engineer and
               Comedy Writer. See below for some of what i'm up to in and out of
