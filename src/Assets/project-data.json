@@ -5,14 +5,24 @@
     "backgroundcolor": "#E2E8F0",
     "textcolor": "black",
     "blurb": "View over 70 years of weather. anywhere. 100% free.",
-
     "points": [
       "React based web app that calls two apis to retrieve location and weather data",
       "took steps to increase performance and reduce load times",
       "optimized for SEO ",
-      "used advanced methods to restrict API keys"
+      "used advanced methods to restrict API keys",
+      "used redis cache layer to store and serve data from downstream API with Redis and Flask"
     ],
-    "technologies": ["ReactJS", "Git", "Github", "http", "Typescript"],
+    "technologies": [
+      "ReactJS",
+      "Git",
+      "Github",
+      "http",
+      "Typescript",
+      "Redis",
+      "Python",
+      "Flask",
+      "http"
+    ],
     "link": "https://esteem.quinnpatwardhan.com",
     "github_link": "https://github.com/QpxDesign/esteem",
     "isWebsite": true,
@@ -29,7 +39,6 @@
     "backgroundcolor": "#18567D",
     "textcolor": "white",
     "blurb": "See Exactly How Late Your Amtrak Train Is",
-
     "points": [
       "React-Native Based IOS and Android App",
       "Uses Express.js API to serve train data",
@@ -64,7 +73,6 @@
     "backgroundcolor": "#A5B4FB",
     "textcolor": "white",
     "blurb": "learn how changing the shape of your city can help change the course of climate change.",
-
     "points": [
       "Uses RESTful APIs & Advanced React Components for an interactive experience",
       "Mockups & Logos made in Adobe Illustrator",
@@ -203,7 +211,13 @@
       "Involved Usage of Git CLI and Github CLI",
       "Optimized for Accessibility"
     ],
-    "technologies": ["JavaScript", "NPM", "Git", "Github", "ReactJS"],
+    "technologies": [
+      "JavaScript",
+      "NPM",
+      "Git",
+      "Github",
+      "ReactJS"
+    ],
     "link": "https://composite.quinnpatwardhan.com/",
     "github_link": "https://github.com/QpxDesign/composite/",
     "isWebsite": true,
@@ -263,7 +277,12 @@
       "Hosts IMAP & SMTP Server to Automatically Send HTML-Formatted Emails",
       "Involved Usage of Git CLI and Github CLI"
     ],
-    "technologies": ["Python", "Git", "Github", "http"],
+    "technologies": [
+      "Python",
+      "Git",
+      "Github",
+      "http"
+    ],
     "link": "",
     "github_link": "https://github.com/QpxDesign/stugov_automailer",
     "isWebsite": false,
