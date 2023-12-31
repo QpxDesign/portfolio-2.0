@@ -9,4 +9,5 @@ export interface BlogPostData {
   PostThumbnailLink: string;
   PostHTML: string;
   timestamp: string;
+  destination: string;
 }

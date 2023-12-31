@@ -64,32 +64,38 @@ export default function Blog() {
         <div className="posts-wrapper">
           {loaded
             ? res !== undefined
-              ? res.sort().map((post: BlogPostData) => {
-                  return (
-                    <Link
-                      to={
-                        "/blog/post/" +
-                        post.PostTitle.replaceAll(" ", "-").replace(
-                          /[^a-zA-Z0-9-_]/g,
-                          ""
-                        )
-                      }
-                    >
-                      <div className={"post"}>
-                        <img src={post.PostThumbnailLink} />
-                        <h1>{post.PostTitle}</h1>
-                        <p>{post.PostBlurb}</p>
-                        <div className="tags-wrapper">
-                          {post.PostTags.split(",").map((tag: string) => {
-                            return <div className="tag">{tag}</div>;
-                          })}
+              ? res
+                  .sort()
+                  .filter((a) => a.destination === "quinnpatwardhan.com")
+                  .map((post: BlogPostData) => {
+                    return (
+                      <Link
+                        to={
+                          "/blog/post/" +
+                          post.PostTitle.replaceAll(" ", "-").replace(
+                            /[^a-zA-Z0-9-_]/g,
+                            ""
+                          )
+                        }
+                      >
+                        <div className={"post"}>
+                          <img src={post.PostThumbnailLink} />
+                          <h1>{post.PostTitle}</h1>
+                          <p>{post.PostBlurb}</p>
+                          <div className="tags-wrapper">
+                            {post.PostTags.split(",").map((tag: string) => {
+                              return <div className="tag">{tag}</div>;
+                            })}
+                          </div>
+                          <h2>By {post.AuthorName}</h2>
+                          <h5>
+                            {FormatTime(post.timestamp)} -{" "}
+                            {post.views.toString()} views
+                          </h5>
                         </div>
-                        <h2>By {post.AuthorName}</h2>
-                        <h5>{FormatTime(post.timestamp)} - {post.views.toString()} views</h5>
-                      </div>
-                    </Link>
-                  );
-                })
+                      </Link>
+                    );
+                  })
               : null
             : "Loading..."}
         </div>

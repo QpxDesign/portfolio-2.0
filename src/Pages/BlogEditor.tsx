@@ -24,6 +24,7 @@ export default function BlogEditor(props: EditProps) {
   const [loggedIn, setLoggedIn] = useState<Boolean>(false);
   const [ImageURL, setImageURL] = useState<string>(props.ImageURL.toString());
   const [loaded, setLoaded] = useState<Boolean>(false);
+  const [destination, setDestination] = useState<string>("");
   function handleImageUpload(): Promise<string> {
     return new Promise((resolve) => {
       let input = document.createElement("input");
@@ -74,6 +75,7 @@ export default function BlogEditor(props: EditProps) {
       let data = {
         PostID: uuid(),
         AuthorName: "Quinn Patwardhan",
+        Destination: destination,
         PostTitle: postTitle,
         PostBlurb: Blurb,
         PostTags: Tags,
@@ -102,6 +104,7 @@ export default function BlogEditor(props: EditProps) {
         PostID: props.PostID,
         AuthorName: "Quinn Patwardhan",
         PostTitle: postTitle,
+        Destination: destination,
         PostBlurb: Blurb,
         PostTags: Tags,
         PostSlug: "/blog/post/" + encodeURIComponent(postTitle),
@@ -182,6 +185,13 @@ export default function BlogEditor(props: EditProps) {
                 }}
                 value={ImageURL}
                 type="url"
+              />
+            </div>{" "}
+            <div className="form-item">
+              <label>Destination</label>
+              <input
+                onChange={(e) => setDestination(e.target.value)}
+                value={destination}
               />
             </div>{" "}
             <div className="form-item">

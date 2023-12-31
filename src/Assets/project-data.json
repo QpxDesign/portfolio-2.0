@@ -10,7 +10,8 @@
       "took steps to increase performance and reduce load times",
       "optimized for SEO ",
       "used advanced methods to restrict API keys",
-      "used redis cache layer to store and serve data from downstream API with Redis and Flask"
+      "used redis cache layer to store and serve data from downstream API with Redis and Flask",
+      "added blog feature using multi-layer blog post distribution system"
     ],
     "technologies": [
       "ReactJS",
@@ -31,7 +32,7 @@
     "onPlayStore": false,
     "appstore_link": "",
     "playstore_link": "",
-    "featured": false
+    "featured": true
   },
   {
     "name": "locomotive",
