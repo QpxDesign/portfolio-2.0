@@ -9,6 +9,7 @@ import { Helmet } from "react-helmet";
 
 export default function About() {
   const skills = [
+    "Rust",
     "JavaScript",
     "ReactJS",
     "Typescript",
@@ -89,11 +90,11 @@ export default function About() {
           >
             <p>
               I'm a high school senior in Washington, DC. My hobbies include
-              skateboarding, comedy, photography, graphic design, 3D printing, and
-              programming. I am a die-hard Ravens fan and an environmentalist. I
-              play ultimate frisbee. I am an apsiring Software Engineer and
-              Comedy Writer. See below for some of what i'm up to in and out of
-              school:
+              skateboarding, comedy, photography, graphic design, 3D printing,
+              and programming. I am a die-hard Ravens fan and an
+              environmentalist. I play ultimate frisbee. I am an apsiring
+              Software Engineer and Comedy Writer. See below for some of what
+              i'm up to in and out of school:
             </p>
             <ul style={{ marginTop: ".3em", fontFamily: "Basic-sans, sans" }}>
               <li>Graphics Editor of School Newspaper</li>
@@ -180,7 +181,7 @@ export default function About() {
             <h1 className="center" style={{ marginTop: ".5em" }}>
               Skills:
             </h1>
-            <div className="logos-wrapper" style={{maxWidth:"100%"}}>
+            <div className="logos-wrapper" style={{ maxWidth: "100%" }}>
               {skills.map((skill, index) => {
                 return (
                   <img src={"Assets/logos/" + skill + ".png"} alt={skill} />

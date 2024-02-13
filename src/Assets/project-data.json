@@ -1,13 +1,42 @@
 [
   {
+    "name": "ngxav-rs",
+    "title": "ngxav: Comb through NGINX Logs at the Speed of Light",
+    "backgroundcolor": "#f1f5f9",
+    "textcolor": "black",
+    "blurb": "A multi-threaded, deep-search capable, full-featured, and intelligent NGINX log parser, written in Rust",
+    "points": [
+      "Leverages several open source rust packages such as Rayon for threading to increase performance",
+      "Uses advanced profiling tools such as Flamegraph to improve performance and reduce memory usage",
+      "Written from scratch in Rust, using several Computer Science Mainstay Optimizations such as Dynamic Programming, Hashmaps, Threading/Parallelization, and Ownership",
+      "Uses Custom-Written Testing System to ensure peak performance and accuracy",
+      "Developmental Process Requires Use of Git, Cargo, Time, and Other Unix CLI Interfaces",
+      "Received Significant Traffic on Crates.io, Tested Daily Using Dogfooding"
+    ],
+    "technologies": [
+      "Git",
+      "Github",
+      "Rust"
+    ],
+    "link": "https://crates.io/crates/ngxav",
+    "github_link": "https://github.com/QpxDesign/ngxav-rs",
+    "isWebsite": true,
+    "centerButtons": true,
+    "onAppStore": false,
+    "onPlayStore": false,
+    "appstore_link": "",
+    "playstore_link": "",
+    "featured": true
+  },
+  {
     "name": "quail",
     "title": "Quail: Dual-LM, High-Accuracy QA Text Summarizer",
     "backgroundcolor": "#fca5a5",
     "textcolor": "white",
     "blurb": "Get Answeres Directly from the Source. Hallucination-Lite.",
     "points": [
-      "Uses innovative, self-designed Dual-LM approach, as published in Paper for TREC iKAT (see Resume for Paper Details)", 
-      "Uses BERT & T5 based Langague Models to Rank Passage Sentences by Relevance Then Summarize", 
+      "Uses innovative, self-designed Dual-LM approach, as published in Paper for TREC iKAT (see Resume for Paper Details)",
+      "Uses BERT & T5 based Langague Models to Rank Passage Sentences by Relevance Then Summarize",
       "React based web app that calls Flask/Python Based API to Exchange Summary Metadata",
       "Uses a Redis-Based Jobs System to Handle Queries to Avoid GPU Overloading",
       "Uses HuggingFace Transformers, PyTorch, and CUDA with a self-hosted worker",
