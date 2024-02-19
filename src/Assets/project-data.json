@@ -11,12 +11,13 @@
       "Written from scratch in Rust, using several Computer Science Mainstay Optimizations such as Dynamic Programming, Hashmaps, Threading/Parallelization, and Ownership",
       "Uses Custom-Written Testing System to ensure peak performance and accuracy",
       "Developmental Process Requires Use of Git, Cargo, Time, and Other Unix CLI Interfaces",
+      "Built Custom TOML Based Tests and Testrunner for running Dozens of Checksum, Output, and Line Count Based Tests in Rust",
       "Received Significant Traffic on Crates.io, Tested Daily Using Dogfooding"
     ],
     "technologies": [
       "Git",
       "Github",
-      "Rust"
+      "Rust",
     ],
     "link": "https://crates.io/crates/ngxav",
     "github_link": "https://github.com/QpxDesign/ngxav-rs",
