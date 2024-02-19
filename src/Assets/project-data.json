@@ -17,7 +17,7 @@
     "technologies": [
       "Git",
       "Github",
-      "Rust",
+      "Rust"
     ],
     "link": "https://crates.io/crates/ngxav",
     "github_link": "https://github.com/QpxDesign/ngxav-rs",
