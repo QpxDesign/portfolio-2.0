@@ -77,6 +77,9 @@ export default function About() {
               <a href="https://www.linkedin.com/in/quinn-patwardhan-3b32441b4/">
                 <img src={LinkedInLogo} />
               </a>
+              <a href="https://www.buymeacoffee.com/quinnpatwardhan">
+              <img src={"https://miro.medium.com/v2/resize:fit:1400/1*VJdus0nKuy1uNoByh5BN3w.png"}/>
+              </a>
             </div>
           </div>
           <div
