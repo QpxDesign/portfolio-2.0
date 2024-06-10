@@ -44,39 +44,10 @@ export default function Contact() {
         <h1 className="center" style={{ marginTop: ".5em" }}>
           Contact Me
         </h1>
-        <div className="blog-editor-wrapper">
-          <div className="form-item">
-            <label>Title</label>
-            <input
-              onChange={(e) => setMessageTitle(e.target.value)}
-              value={messageTitle}
-            />
-          </div>{" "}
-          <div className="form-item">
-            <label>Name</label>
-            <input
-              onChange={(e) => setMessageName(e.target.value)}
-              value={messageName}
-            />
-          </div>{" "}
-          <div className="form-item">
-            <label>Post</label>
-            <textarea
-              className="big"
-              style={{ height: "40vh" }}
-              onChange={(e) => setMessageBody(e.target.value)}
-              value={messageBody}
-            />
-          </div>{" "}
-          <button
-            onClick={() => handleSendContactField()}
-            className="cool-purple-button"
-            style={{ fontSize: "1.5em" }}
-          >
-            Send
-          </button>
+        <div className="center" style={{fontWeight:"300"}}>
+          <h2>Please email me: qroshan5 [a_t] gmail.com </h2>
         </div>
-      </div>
+        </div>
     </>
   );
 }
