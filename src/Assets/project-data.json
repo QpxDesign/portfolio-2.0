@@ -14,50 +14,9 @@
       "Built Custom TOML Based Tests and Testrunner for running Dozens of Checksum, Output, and Line Count Based Tests in Rust",
       "Received Significant Traffic on Crates.io, Tested Daily Using Dogfooding"
     ],
-    "technologies": [
-      "Git",
-      "Github",
-      "Rust"
-    ],
+    "technologies": ["Git", "Github", "Rust"],
     "link": "https://crates.io/crates/ngxav",
     "github_link": "https://github.com/QpxDesign/ngxav-rs",
-    "isWebsite": true,
-    "centerButtons": true,
-    "onAppStore": false,
-    "onPlayStore": false,
-    "appstore_link": "",
-    "playstore_link": "",
-    "featured": true
-  },
-  {
-    "name": "quail",
-    "title": "Quail: Dual-LM, High-Accuracy QA Text Summarizer",
-    "backgroundcolor": "#fca5a5",
-    "textcolor": "white",
-    "blurb": "Get Answeres Directly from the Source. Hallucination-Lite.",
-    "points": [
-      "Uses innovative, self-designed Dual-LM approach, as published in Paper for TREC iKAT (see Resume for Paper Details)",
-      "Uses BERT & T5 based Langague Models to Rank Passage Sentences by Relevance Then Summarize",
-      "React based web app that calls Flask/Python Based API to Exchange Summary Metadata",
-      "Uses a Redis-Based Jobs System to Handle Queries to Avoid GPU Overloading",
-      "Uses HuggingFace Transformers, PyTorch, and CUDA with a self-hosted worker",
-      "Uses Docker to host API and PM2 to run worker"
-    ],
-    "technologies": [
-      "ReactJS",
-      "Git",
-      "Github",
-      "http",
-      "Typescript",
-      "Redis",
-      "Python",
-      "Flask",
-      "http",
-      "cuda",
-      "hftransformers"
-    ],
-    "link": "https://quail.quinnpatwardhan.com",
-    "github_link": "https://github.com/QpxDesign/quail-api",
     "isWebsite": true,
     "centerButtons": true,
     "onAppStore": false,
@@ -279,13 +238,7 @@
       "Involved Usage of Git CLI and Github CLI",
       "Optimized for Accessibility"
     ],
-    "technologies": [
-      "JavaScript",
-      "NPM",
-      "Git",
-      "Github",
-      "ReactJS"
-    ],
+    "technologies": ["JavaScript", "NPM", "Git", "Github", "ReactJS"],
     "link": "https://composite.quinnpatwardhan.com/",
     "github_link": "https://github.com/QpxDesign/composite/",
     "isWebsite": true,
@@ -345,12 +298,7 @@
       "Hosts IMAP & SMTP Server to Automatically Send HTML-Formatted Emails",
       "Involved Usage of Git CLI and Github CLI"
     ],
-    "technologies": [
-      "Python",
-      "Git",
-      "Github",
-      "http"
-    ],
+    "technologies": ["Python", "Git", "Github", "http"],
     "link": "",
     "github_link": "https://github.com/QpxDesign/stugov_automailer",
     "isWebsite": false,

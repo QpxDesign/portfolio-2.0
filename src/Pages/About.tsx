@@ -29,6 +29,9 @@ export default function About() {
     "AdobeIllustrator",
     "AdobePhotoshop",
     "AdobeLightroom",
+    "AfterEffects",
+    "Blender",
+    "DavinciResolve",
   ];
 
   return (
@@ -78,7 +81,11 @@ export default function About() {
                 <img src={LinkedInLogo} />
               </a>
               <a href="https://www.buymeacoffee.com/quinnpatwardhan">
-              <img src={"https://miro.medium.com/v2/resize:fit:1400/1*VJdus0nKuy1uNoByh5BN3w.png"}/>
+                <img
+                  src={
+                    "https://miro.medium.com/v2/resize:fit:1400/1*VJdus0nKuy1uNoByh5BN3w.png"
+                  }
+                />
               </a>
             </div>
           </div>
@@ -92,21 +99,39 @@ export default function About() {
             }}
           >
             <p>
-              I'm a high school senior in Washington, DC. My hobbies include
-              skateboarding, comedy, photography, graphic design, 3D printing,
-              and programming. I am a die-hard Ravens fan and an
-              environmentalist. I play ultimate frisbee. I am an apsiring
-              Software Engineer and Comedy Writer. See below for some of what
-              i'm up to in and out of school:
+              I'm a current sophmore at Occidental College in Los Angeles. I'm
+              from Silver Spring, M.D, and my hobbies include skateboarding,
+              comedy, photography, graphic design, 3D printing, and programming.
+              I am an apsiring Software Engineer and Comedy Writer. See below
+              for some of what i'm up to in and out of school:
             </p>
             <ul style={{ marginTop: ".3em", fontFamily: "Basic-sans, sans" }}>
-              <li>Graphics Editor of School Newspaper</li>
-              <li>Editor-in-Chief of School Satirical Newspaper</li>
-              <li>Founder, Co-Head, & Lead Developer of CS Club</li>
-              <li>Member of Varisty Ultimate Frisbee Team</li>
+              <li>Co-President of 2PawsUp, Sketch Comedy Club</li>
               <li>
-                Intern at Georgetown University Department of Computer Science's
-                InfoSense Artificial Intelligence Research Lab{" "}
+                Treasuer of Fang (I also built the{" "}
+                <a href="https://fang.news" style={{ color: "#E91E63" }}>
+                  fang.news
+                </a>{" "}
+                website in Rust/Axum)
+              </li>
+              <li>
+                Founder of{" "}
+                <a
+                  href="https://www.youtube.com/@sicprods"
+                  style={{ color: "#E91E63" }}
+                >
+                  [sic] productions
+                </a>
+              </li>
+              <li>
+                A play I wrote (
+                <a
+                  href="https://www.oxy.edu/academics/areas-study/theater/new-works-festival-2025"
+                  style={{ color: "#E91E63" }}
+                >
+                  Transplants: An L.A. Comedy
+                </a>
+                ) was performed at Occidental's New Works Festival{" "}
               </li>
               <li>
                 I've appeared in the{" "}

@@ -1,0 +1,39 @@
+[
+  {
+    "name": "quail",
+    "title": "Quail: Dual-LM, High-Accuracy QA Text Summarizer",
+    "backgroundcolor": "#fca5a5",
+    "textcolor": "white",
+    "blurb": "Get Answeres Directly from the Source. Hallucination-Lite.",
+    "points": [
+      "Uses innovative, self-designed Dual-LM approach, as published in Paper for TREC iKAT (see Resume for Paper Details)",
+      "Uses BERT & T5 based Langague Models to Rank Passage Sentences by Relevance Then Summarize",
+      "React based web app that calls Flask/Python Based API to Exchange Summary Metadata",
+      "Uses a Redis-Based Jobs System to Handle Queries to Avoid GPU Overloading",
+      "Uses HuggingFace Transformers, PyTorch, and CUDA with a self-hosted worker",
+      "Uses Docker to host API and PM2 to run worker"
+    ],
+    "technologies": [
+      "ReactJS",
+      "Git",
+      "Github",
+      "http",
+      "Typescript",
+      "Redis",
+      "Python",
+      "Flask",
+      "http",
+      "cuda",
+      "hftransformers"
+    ],
+    "link": "https://quail.quinnpatwardhan.com",
+    "github_link": "https://github.com/QpxDesign/quail-api",
+    "isWebsite": true,
+    "centerButtons": true,
+    "onAppStore": false,
+    "onPlayStore": false,
+    "appstore_link": "",
+    "playstore_link": "",
+    "featured": true
+  }
+]
