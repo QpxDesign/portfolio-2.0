@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.753c2063.css",
+    "main.js": "/static/js/main.a5a7b89f.js",
+    "static/media/self.jpeg": "/static/media/self.358ba3e11acf9911978d.jpeg",
+    "static/media/LinkedIn.png": "/static/media/LinkedIn.e9db41041d38d6fb97b4.png",
+    "static/media/google-play-cusus.svg": "/static/media/google-play-cusus.9290eb771c8b67ad7603223d4992a438.svg",
+    "static/media/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg": "/static/media/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.db03919a9d868d2946a7e5cf4ad95cea.svg",
+    "index.html": "/index.html",
+    "main.753c2063.css.map": "/static/css/main.753c2063.css.map",
+    "main.a5a7b89f.js.map": "/static/js/main.a5a7b89f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.753c2063.css",
+    "static/js/main.a5a7b89f.js"
+  ]
+}
