@@ -1,50 +1,87 @@
-import React from "react";
-import { TbMapPin } from "react-icons/tb";
-import { BsArrowRight } from "react-icons/bs";
 import graphics_key from "../Assets/graphics_key.json";
-import { Link } from "react-router-dom";
+import { FaArrowRightLong } from "react-icons/fa6";
 
 export default function GraphicDesign() {
   return (
-    <section
-      className="graphic-section"
-      style={{
-        color: "white",
-        background: "#64748b",
-        justifyContent: "flex-start",
-        overflow: "hidden",
-      }}
-    >
-      <div
-        className="project-info-wrapper"
+    <>
+      <section
+        className="vstack projects-condensed"
         style={{
-          textAlign: "left",
-          marginLeft: "none",
-          marginRight: "auto",
           width: "100%",
+          alignItems: "flex-start",
+          backgroundColor: "#d6d3d1",
+          color: "black",
         }}
       >
-        <h2>Graphic Design</h2>
-      </div>
-      <div className="photo-stack">
-        {graphics_key.map((image, index) => {
-          if (image.isFeatured === true) {
+        <h1
+          style={{
+            padding: ".2em 1em",
+            paddingTop: ".75em",
+            fontSize: "1.7rem",
+          }}
+        >
+          Graphic Design
+        </h1>
+        <div
+          style={{
+            display: "flex",
+            margin: "0 auto",
+            width: "95%",
+            justifyContent: "flex-start",
+            gap: "1em",
+            overflowX: "scroll",
+            paddingBottom: "2em",
+          }}
+        >
+          {graphics_key.slice(0, 5).map((g) => {
             return (
-              <div className="photo-frame" key={index}>
-                <img src={"Assets/graphics/" + image.filename} alt="" />
-                <h5>{image.name}</h5>
+              <div
+                className="vstack"
+                style={{
+                  cursor: "pointer",
+                  minWidth: "20em",
+                  background: "rgba(255, 255, 255, 0.3)",
+                  padding: ".5em 1em",
+                  borderRadius: "1em",
+                  paddingBottom: "1em",
+                  justifyContent: "space-around",
+                  flex: 1,
+                }}
+              >
+                <img
+                  src={"Assets/graphics/" + g.filename}
+                  style={{
+                    width: "100%",
+                    objectFit: "contain",
+                    maxHeight: "20em",
+                  }}
+                />
               </div>
             );
-          }
-        })}
-      </div>
-      <div className="container">
-        <Link to="/graphics-gallery">
-          <button className="button-1">
-            Gallery <BsArrowRight />
-          </button>
-        </Link>
-      </div>
-    </section>
+          })}
+          <div
+            onClick={() => {
+              window.open("/graphics-gallery");
+            }}
+            className="vstack"
+            style={{
+              cursor: "pointer",
+              minWidth: "20em",
+              background: "rgba(255, 255, 255, 0.3)",
+              padding: ".5em 1em",
+              borderRadius: "1em",
+              paddingBottom: "1em",
+              justifyContent: "space-around",
+              flex: 1,
+            }}
+          >
+            <a href="/graphics-gallery" className="vstack">
+              <FaArrowRightLong fontSize={"7em"} />
+              <h1 style={{ fontSize: "2em" }}>See More</h1>
+            </a>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }

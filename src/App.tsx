@@ -52,7 +52,6 @@ function App() {
           <Route path="/404" element={<NotFoundPage />} />
           <Route path="/aboutme" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/projects" element={<Projects />} />
           <Route
             path="/blog-editor"
             element={

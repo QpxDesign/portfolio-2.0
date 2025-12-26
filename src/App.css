@@ -25,7 +25,8 @@ a:hover {
 }
 .lead {
   background-color: white !important;
-  background: radial-gradient(at 64% 59%, #e34f6a 0, transparent 50%),
+  background:
+    radial-gradient(at 64% 59%, #e34f6a 0, transparent 50%),
     radial-gradient(at 39% 30%, #fe897c 0, transparent 50%),
     radial-gradient(at 16% 50%, #f68dc5 0, transparent 50%),
     radial-gradient(at 51% 27%, #e84f59 0, transparent 50%),
@@ -994,13 +995,28 @@ hr {
 .scrolljumper-container h1:not(.active) {
   margin-left: 1em;
 }
-.content-wrapper span.codeblock{
-  padding: .2em 1.75em;
+.content-wrapper span.codeblock {
+  padding: 0.2em 1.75em;
   font-family: monospace;
   background-color: #d4d4d4;
-  text-indent: 0em ;
-
+  text-indent: 0em;
 }
 .content-wrapper img.subimage {
   max-width: 45%;
+}
+.projects-condensed,
+.projects-condensed h1,
+.projects-condensed h2 {
+  font-family: "Source Serif Pro", serif !important;
+}
+.vstack {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.hstack {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

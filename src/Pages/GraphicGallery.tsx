@@ -18,7 +18,7 @@ interface GraphicProps {
 
 export default function GraphicsGallery() {
   const [graphics, setGraphics] = useState<[GraphicProps] | undefined>(
-    undefined
+    undefined,
   );
   const [showSlideshow, toggleSlideshow] = useState(false);
   const [showAddImageOption, setShowAddImageOption] = useState(false);
@@ -118,26 +118,24 @@ export default function GraphicsGallery() {
           >
             <AiFillPlusCircle style={{ fontSize: "4rem" }} />
           </div>
-          {graphics !== undefined
-            ? graphics.map((graphic: GraphicProps, index) => {
-                return (
-                  <img
-                    src={graphic.imageURL}
-                    className="graphic"
-                    onClick={() => {
-                      setActiveImage(index);
+          {graphics_key.map((graphic, index) => {
+            return (
+              <img
+                src={"Assets/graphics/" + graphic.filename}
+                className="graphic"
+                onClick={() => {
+                  setActiveImage(index);
 
-                      toggleSlideshow(true);
-                    }}
-                    onContextMenu={(e) => {
-                      e.preventDefault();
-                      return false;
-                    }}
-                    alt={graphic.title}
-                  />
-                );
-              })
-            : "loading"}
+                  toggleSlideshow(true);
+                }}
+                onContextMenu={(e) => {
+                  e.preventDefault();
+                  return false;
+                }}
+                alt={graphic.name}
+              />
+            );
+          })}
         </div>
       </div>
       <Footer />

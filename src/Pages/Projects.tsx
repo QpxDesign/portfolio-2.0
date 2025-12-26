@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import projectdata from "../Assets/project-data.json";
+import projectdata from "../Assets/project-data-old.json";
 import Project from "../Sections/Project";
 import Header from "../Components/Header";
 

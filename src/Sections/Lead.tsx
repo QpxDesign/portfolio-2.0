@@ -32,7 +32,8 @@ export default function Lead() {
           <Cycle
             prefix={"i'm a "}
             values={[
-              "web developer",
+              "developer",
+              "transit enthusiast",
               "photographer",
               "marylander",
               "graphic designer",
@@ -41,7 +42,7 @@ export default function Lead() {
               "human",
             ]}
             interval={5000}
-            suffix={""}
+            suffix={"."}
             textcolor={"white"}
           />
         </div>
@@ -50,10 +51,10 @@ export default function Lead() {
         style={{
           marginTop: "10vh",
           bottom: "2em",
-          padding: ".5em 2em",
+          padding: ".5em .5em",
           borderRadius: "10000rem",
           border: "none",
-          fontSize: "1em",
+          fontSize: "1.2em",
           background: "#e2e8f0",
           gap: ".5em",
           fontFamily: "Basic-sans, sans",

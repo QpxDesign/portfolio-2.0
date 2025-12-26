@@ -1,8 +1,32 @@
 [
   {
-    "id": 9,
-    "filename": "DensityMatters.png",
-    "name": "logo for Density Matters",
+    "id": 19,
+    "filename": "McGruff.webp",
+    "name": "Lying Club Poster",
+    "isFeatured": true
+  },
+  {
+    "id": 18,
+    "filename": "subaru.webp",
+    "name": "Subaru Impreza Hatchback Club Poster",
+    "isFeatured": true
+  },
+  {
+    "id": 17,
+    "filename": "stationicon.png",
+    "name": "Station Icon",
+    "isFeatured": true
+  },
+  {
+    "id": 16,
+    "filename": "lyingclub.png",
+    "name": "Lying club logo",
+    "isFeatured": true
+  },
+  {
+    "id": 15,
+    "filename": "locomotive.png",
+    "name": "Locomotive logo",
     "isFeatured": true
   },
   {
@@ -51,6 +75,12 @@
     "id": 8,
     "filename": "Snowflake.png",
     "name": "Snowflake",
+    "isFeatured": true
+  },
+  {
+    "id": 9,
+    "filename": "DensityMatters.png",
+    "name": "logo for Density Matters",
     "isFeatured": true
   },
   {
