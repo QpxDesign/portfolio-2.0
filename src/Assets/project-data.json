@@ -21,7 +21,7 @@
     "name": "fang",
     "title": "fang.news: #1 Online Source for Fake News",
     "blurb": "Website for Oxy's Satirical Newspaper",
-    "technologies": ["rust", "mysql"],
+    "technologies": ["Rust", "mysql"],
     "link": "https://fang.news",
     "featured": true
   },
