@@ -7,8 +7,8 @@
     "technologies": [
       "ReactJS",
       "Git",
-      "rust",
-      "redis",
+      "Rust",
+      "Redis",
       "AdobeIllustrator",
       "swift",
       "Typescript"
@@ -101,7 +101,7 @@
     "type": "WRITING",
     "name": "standup",
     "title": "Stand-Up (Highlights)",
-    "blurb": "A 3 min collection of my all my funny jokes. Edited down from 180+ hours of footage.",
+    "blurb": "A 3 min collection of all my funny jokes. Edited down from 180+ hours of footage.",
     "link": "https://www.youtube.com/watch?v=ZrqcoHqp2Sg",
     "featured": true
   },
