@@ -74,10 +74,10 @@ export default function About() {
               }}
             />
             <div className="logos-wrapper">
-              <a href="https://github.com/qpxdesign">
+              <a href="https://qpxdesign.com/27G6cg">
                 <img src={GithubLogo} />
               </a>
-              <a href="https://www.linkedin.com/in/quinn-patwardhan-3b32441b4/">
+              <a href="https://qpxdesign.com/6uwiGf">
                 <img src={LinkedInLogo} />
               </a>
               <a href="https://www.buymeacoffee.com/quinnpatwardhan">

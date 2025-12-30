@@ -53,6 +53,7 @@ export default function Photography() {
                     width: "100%",
                     objectFit: "contain",
                     maxHeight: "20em",
+                    minWidth: "20em",
                   }}
                 />
               </div>
