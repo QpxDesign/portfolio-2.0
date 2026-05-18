@@ -91,18 +91,34 @@
   },
   {
     "type": "WRITING",
+    "name": "watercooler",
+    "title": "The Water Cooler",
+    "blurb": "A play I wrote that had a reading directed by a professional director and actors as part of Oxy's 2026 New Works Festival. It had a runtime of 75 minutes, a small handful of which garnered laughs.",
+    "link": "https://qpxdesign.com/pCXmwk",
+    "featured": true
+  },
+  {
+    "type": "WRITING",
+    "name": "fang",
+    "title": "FANG (Oxy's 80 Year Old Humor/Satire Magazine)",
+    "blurb": "Articles I've written for FANG, Oxy's humor/satire magazine. I also frequently write/design posts for our instagram, @oxy.fang (I also made the FANG website!)",
+    "link": "https://fang.news/author/Quinn-Patwardhan",
+    "featured": true
+  },
+  {
+    "type": "WRITING",
     "name": "transplants",
     "title": "Transplants: An L.A. Comedy",
-    "blurb": "A play I wrote that had a reading directed by a professional director and actors as part of Oxy's 2025 New Works Festival.",
-    "link": "https://qpxdesign.com/pCXmwk",
+    "blurb": "Another play I wrote that was also preformed in Oxy's (2025) New Works Festival.",
+    "link": "https://www.oxy.edu/academics/areas-study/theater/events-performances/past-seasons/2024-2025-season#schedule",
     "featured": true
   },
   {
     "type": "WRITING",
     "name": "standup",
     "title": "Stand-Up (Highlights)",
-    "blurb": "A 3 min collection of all my funny jokes. Edited down from 180+ hours of footage.",
-    "link": "https://qpxdesign.com/IAZBdm",
+    "blurb": "A 10 min collection of all my funny jokes. Edited down from 180+ hours of footage.",
+    "link": "https://www.youtube.com/watch?v=tIDoSD5BDik",
     "featured": true
   },
   {

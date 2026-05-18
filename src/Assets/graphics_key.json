@@ -1,5 +1,35 @@
 [
   {
+    "id": 24,
+    "filename": "Nose-1.webp",
+    "name": "'Uninostril' (for FANG)",
+    "isFeatured": false
+  },
+  {
+    "id": 23,
+    "filename": "Nose-2.webp",
+    "name": "'Uninostril' (for FANG)",
+    "isFeatured": true
+  },
+  {
+    "id": 22,
+    "filename": "WaterCooler.webp",
+    "name": "Poster for 'The Water Cooler' (my play)",
+    "isFeatured": true
+  },
+  {
+    "id": 21,
+    "filename": "Sniffing.webp",
+    "name": "Lying Club Anti-AI Poster",
+    "isFeatured": true
+  },
+  {
+    "id": 20,
+    "filename": "WhatYouCallIt.webp",
+    "name": "Lying Club Anti-AI Poster",
+    "isFeatured": true
+  },
+  {
     "id": 19,
     "filename": "McGruff.webp",
     "name": "Lying Club Poster",
@@ -9,7 +39,7 @@
     "id": 18,
     "filename": "subaru.webp",
     "name": "Subaru Impreza Hatchback Club Poster",
-    "isFeatured": true
+    "isFeatured": false
   },
   {
     "id": 17,
@@ -33,7 +63,7 @@
     "id": 1,
     "filename": "CaldataLogo.png",
     "name": "Caldata Logo",
-    "isFeatured": true
+    "isFeatured": false
   },
   {
     "id": 2,

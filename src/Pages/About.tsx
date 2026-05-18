@@ -99,16 +99,15 @@ export default function About() {
             }}
           >
             <p>
-              I'm a current sophmore at Occidental College in Los Angeles. I'm
-              from Silver Spring, M.D, and my hobbies include skateboarding,
-              comedy, photography, graphic design, 3D printing, and programming.
-              I am an apsiring Software Engineer and Comedy Writer. See below
-              for some of what i'm up to in and out of school:
+              I'm a rising junior at Occidental College in Los Angeles. I'm from
+              Kensington, M.D, and my hobbies include skateboarding, comedy,
+              photography, graphic design, 3D printing, and programming. I am an
+              apsiring Software Engineer and Comedy Writer. See below for some
+              of what i'm up to in and out of school:
             </p>
             <ul style={{ marginTop: ".3em", fontFamily: "Basic-sans, sans" }}>
-              <li>Co-President of 2PawsUp, Sketch Comedy Club</li>
               <li>
-                Treasuer of Fang (I also built the{" "}
+                Vice President of Fang (I also built the{" "}
                 <a href="https://fang.news" style={{ color: "#E91E63" }}>
                   fang.news
                 </a>{" "}
@@ -121,17 +120,20 @@ export default function About() {
                   style={{ color: "#E91E63" }}
                 >
                   [sic] productions
+                </a>{" "}
+                and{" "}
+                <a href="https://lying.club" style={{ color: "#E91E63" }}>
+                  Lying Club
                 </a>
               </li>
               <li>
-                A play I wrote (
+                I'm an (associate) member of the{" "}
                 <a
-                  href="https://www.oxy.edu/academics/areas-study/theater/new-works-festival-2025"
+                  href="https://www.dramatistsguild.com/member/directory"
                   style={{ color: "#E91E63" }}
                 >
-                  Transplants: An L.A. Comedy
+                  Dramatists Guild of America
                 </a>
-                ) was performed at Occidental's New Works Festival{" "}
               </li>
               <li>
                 I've appeared in the{" "}
