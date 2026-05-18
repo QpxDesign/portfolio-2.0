@@ -36,7 +36,8 @@ export default function GraphicDesign() {
           {graphics_key.slice(0, 5).map((g) => {
             return (
               <div
-                className="vstack"
+                data-image-label={g.name}
+                className="vstack graphic-display"
                 style={{
                   cursor: "pointer",
                   minWidth: "20em",

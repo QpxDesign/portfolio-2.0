@@ -17,9 +17,8 @@ interface GraphicProps {
 }
 
 export default function GraphicsGallery() {
-  const [graphics, setGraphics] = useState<[GraphicProps] | undefined>(
-    undefined,
-  );
+  const graphics = graphics_key;
+
   const [showSlideshow, toggleSlideshow] = useState(false);
   const [showAddImageOption, setShowAddImageOption] = useState(false);
   const [activeImage, setActiveImage] = useState(0);
@@ -56,17 +55,7 @@ export default function GraphicsGallery() {
       }
     });
   }
-  useEffect(() => {
-    fetch("https://api.quinnpatwardhan.com/get-graphics")
-      .then((r) => r.json())
-      .then((r2) => setGraphics(r2));
-    checkVal();
-    window.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") {
-        toggleSlideshow(false);
-      }
-    });
-  }, []);
+
   function handleSlideshowClose() {
     toggleSlideshow(false);
   }
@@ -88,10 +77,15 @@ export default function GraphicsGallery() {
           <div className="backward-area" onClick={() => handleSlideShowBack()}>
             <IoIosArrowBack className="backward-button" />
           </div>
-          <img
-            style={{ objectFit: "contain" }}
-            src={graphics !== undefined ? graphics[activeImage].imageURL : ""}
-          />
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <img
+              style={{ objectFit: "contain" }}
+              src={"/Assets/graphics/" + graphics[activeImage].filename}
+            />
+            <h1 style={{ textAlign: "center", marginTop: "1em" }}>
+              {graphics[activeImage].name}
+            </h1>
+          </div>
           <div
             className="forward-area"
             onClick={() => handleSlideShowForward()}
@@ -120,20 +114,25 @@ export default function GraphicsGallery() {
           </div>
           {graphics_key.map((graphic, index) => {
             return (
-              <img
-                src={"Assets/graphics/" + graphic.filename}
-                className="graphic"
+              <div
+                className="graphic-display"
+                data-image-label={graphic.name}
                 onClick={() => {
                   setActiveImage(index);
 
                   toggleSlideshow(true);
                 }}
-                onContextMenu={(e) => {
-                  e.preventDefault();
-                  return false;
-                }}
-                alt={graphic.name}
-              />
+              >
+                <img
+                  src={"Assets/graphics/" + graphic.filename}
+                  className="graphic "
+                  onContextMenu={(e) => {
+                    e.preventDefault();
+                    return false;
+                  }}
+                  alt={graphic.name}
+                />
+              </div>
             );
           })}
         </div>

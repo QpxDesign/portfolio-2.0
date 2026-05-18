@@ -1020,3 +1020,25 @@ hr {
   justify-content: center;
   align-items: center;
 }
+.graphic-display {
+  position: relative;
+  cursor: pointer;
+}
+.graphic-display:hover::after {
+  background-color: rgba(0, 0, 0, 0.3);
+  content: attr(data-image-label);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  color: white;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  text-align: center;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+}
